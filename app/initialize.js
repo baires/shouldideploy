@@ -1,5 +1,3 @@
-import WebFont from 'webfontloader';
-
 const d = new Date(); // current time
 const hours = d.getHours();
 const mins = d.getMinutes();
@@ -31,10 +29,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   el.innerHTML = getRandom(itemsYes);
 
-});
-
-WebFont.load({
-  google: {
-    families: ['Rubik:900', 'Roboto+Mono:300'],
-  },
 });
