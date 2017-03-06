@@ -1,0 +1,57 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    height: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+ol, ul {
+    padding: 0;
+    list-style-type: none
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, li, ul, dl, dd, blockquote, figure, hr, pre {
+    margin: 0;
+    line-height: 1em
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.bio {
+    font-family: 'BioRhyme', serif;
+}
+
+.chonburi {
+    font-family: 'Chonburi', cursive;
+}
+
+.item {
+    align-self: center;
+    margin: auto;
+    text-align: center;
+}
+
+.tagline {
+  font: 300 30px/38px 'Roboto Mono', monospace;
+  margin-bottom: 1em;
+  color: #999;
+  text-transform: uppercase;
+  padding: 14px 0 13px 0;
+}
+#text{
+  font: 900 90px/60px 'Rubik', sans-serif;
+  color: #111;
+  text-transform: uppercase;
+}
