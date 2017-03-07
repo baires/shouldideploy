@@ -1,50 +1,27 @@
-const d = new Date(); // current time
-const hours = d.getHours();
-const mins = d.getMinutes();
-const day = d.getDay();
+import {
+  IS_FRIDAY,
+  IS_FRIDAY_AFTERNOON,
+  getRandom,
+} from './constants';
 
-const isFridayAfternoon = day === 5 && hours >= 16 && (hours < 17 || hours === 18 && mins <= 30);
-const isFriday = day === 5;
-
-const reasonsToDeploy = [
-  'I don\'t see why not',
-  'It\'s a free country',
-  'Go ahead my friend!',
-  'Go for it',
-  'Go go go go!',
-  'Let\'s do it!',
-  'Ship it! 🚢',
-];
-
-const reasonsToNotDeploy = [
-  'I wouldn\'t recommend it',
-  'No man, it\'s Friday',
-];
-
-const reasonForFridayAfternoon = [
-  'Nope',
-  'Not by any chance',
-  'U mad?',
-  'What you are thinking?',
-  'No no no no no no no no',
-  'How do you feel about working nights and weekends?',
-  '🔥 🚒 🚨 ⛔️ 🔥 🚒 🚨 ⛔️ 🔥 🚒 🚨 ⛔️',
-];
-
-const getRandom = function(list) {
-  return list[Math.floor((Math.random() * list.length))];
-};
+import {
+  REASONS_TO_DEPLOY,
+  REASONS_TO_NOT_DEPLOY,
+  REASONS_FOR_FRIDAY_AFTERNOON,
+} from './reasons';
 
 document.addEventListener('DOMContentLoaded', () => {
 
   const el = document.getElementById('text');
+  const printText = function(day) {
+    el.innerHTML = getRandom(day);
+  };
 
-  if (isFriday) {
-    el.innerHTML = getRandom(reasonsToNotDeploy);
-
-  } else if (isFridayAfternoon) {
-    el.innerHTML = getRandom(reasonForFridayAfternoon);
+  if (IS_FRIDAY) {
+    printText(REASONS_TO_NOT_DEPLOY);
+  } else if (IS_FRIDAY_AFTERNOON) {
+    printText(REASONS_FOR_FRIDAY_AFTERNOON);
   }
-  el.innerHTML = getRandom(reasonsToDeploy);
-
+  printText(REASONS_TO_DEPLOY);
+  
 });

@@ -1,10 +1,11 @@
 html {
     box-sizing: border-box;
     height: 100%;
+    font-size: 62.5%;
 }
 
 body {
-    font-size: 16px;
+    font-size: 1.4rem;
     height: 100%;
 }
 
@@ -29,12 +30,8 @@ body {
     justify-content: center;
 }
 
-.bio {
-    font-family: 'BioRhyme', serif;
-}
-
-.chonburi {
-    font-family: 'Chonburi', cursive;
+.aligner {
+    margin: 4rem
 }
 
 .item {
@@ -44,14 +41,24 @@ body {
 }
 
 .tagline {
-  font: 300 30px/38px 'Roboto Mono', monospace;
-  margin-bottom: 1em;
-  color: #999;
-  text-transform: uppercase;
-  padding: 14px 0 13px 0;
+    font: 300 2rem/2.5rem 'Roboto Mono', monospace;
+    margin-bottom: 1em;
+    color: #999;
+    text-transform: uppercase;
+    padding: 14px 0 13px 0;
 }
-#text{
-  font: 900 90px/60px 'Rubik', sans-serif;
-  color: #111;
-  text-transform: uppercase;
+
+#text {
+    font: 900 6rem/6rem 'Rubik', sans-serif;
+    color: #111;
+    text-transform: uppercase;
+}
+
+@media (min-width: 800px) {
+  .tagline {
+      font: 300 3rem/2.8rem 'Roboto Mono', monospace;
+  }
+  #text {
+      font: 900 9rem/8.5rem 'Rubik', sans-serif;
+  }
 }
