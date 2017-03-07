@@ -7,6 +7,10 @@ html {
 body {
   font-size: 1.4rem;
   height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 *, *:before, *:after {
@@ -23,11 +27,8 @@ body, h1, h2, h3, h4, h5, h6, p, ol, li, ul, dl, dd, blockquote, figure, hr, pre
   line-height: 1em
 }
 
-body {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+a:hover, a:active, a:focus {
+  outline: none;
 }
 
 .aligner {
@@ -52,9 +53,15 @@ body {
   font: 900 6rem/6rem 'Rubik', sans-serif;
   color: #111;
   text-transform: uppercase;
-  word-break: break-all;
-  width: 80%;
-  margin: 0 10%;
+}
+
+.meta {
+  text-align: center;
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+  left: 0;
+  font: 300 1rem/1.25rem 'Roboto Mono', monospace;
 }
 
 #reload {
@@ -62,7 +69,32 @@ body {
   font: 300 1.5rem/1.5rem 'Roboto Mono', monospace;
   text-decoration: none;
   color: #ddd;
-  margin-top: 1rem;
+  margin-top: 4rem;
+}
+
+ul.share-buttons {
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li {
+  display: inline;
+  color: #222;
+}
+
+ul.share-buttons a {
+  color: #777
+}
+
+ul.share-buttons .sr-only {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }
 
 @media (min-width: 800px) {

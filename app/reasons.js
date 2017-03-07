@@ -29,7 +29,7 @@ export const REASONS_FOR_FRIDAY_AFTERNOON = [
   'How do you feel about working nights and weekends?',
   '🔥 🚒 🚨 ⛔️ 🔥 🚒 🚨 ⛔️ 🔥 🚒 🚨 ⛔️',
   'No! God! Please! No',
-  'Nooooooooooooooooooooooooooooo!',
+  'No no no no no no no!',
   'Keep dreaming darling',
   'Why why Bro why?',
   'But but but... why?',
