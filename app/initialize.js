@@ -1,27 +1,21 @@
 import {
-  IS_FRIDAY,
-  IS_FRIDAY_AFTERNOON,
   getRandom,
+  dayHelper,
 } from './constants';
-
-import {
-  REASONS_TO_DEPLOY,
-  REASONS_TO_NOT_DEPLOY,
-  REASONS_FOR_FRIDAY_AFTERNOON,
-} from './reasons';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const el = document.getElementById('text');
+  const TEXT = document.getElementById('text');
+  const BTN = document.getElementById('reload');
+
   const printText = function(day) {
-    el.innerHTML = getRandom(day);
+    TEXT.innerHTML = getRandom(day);
   };
 
-  if (IS_FRIDAY) {
-    printText(REASONS_TO_NOT_DEPLOY);
-  } else if (IS_FRIDAY_AFTERNOON) {
-    printText(REASONS_FOR_FRIDAY_AFTERNOON);
-  }
-  printText(REASONS_TO_DEPLOY);
-  
+  printText(dayHelper());
+
+  BTN.onclick = function(event) {
+    printText(dayHelper());
+    event.preventDefault();
+  };
 });

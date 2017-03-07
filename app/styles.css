@@ -1,64 +1,73 @@
 html {
-    box-sizing: border-box;
-    height: 100%;
-    font-size: 62.5%;
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 62.5%;
 }
 
 body {
-    font-size: 1.4rem;
-    height: 100%;
+  font-size: 1.4rem;
+  height: 100%;
 }
 
 *, *:before, *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 ol, ul {
-    padding: 0;
-    list-style-type: none
+  padding: 0;
+  list-style-type: none
 }
 
 body, h1, h2, h3, h4, h5, h6, p, ol, li, ul, dl, dd, blockquote, figure, hr, pre {
-    margin: 0;
-    line-height: 1em
+  margin: 0;
+  line-height: 1em
 }
 
 body {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .aligner {
-    margin: 4rem
+  margin: 4rem
 }
 
 .item {
-    align-self: center;
-    margin: auto;
-    text-align: center;
+  align-self: center;
+  margin: auto;
+  text-align: center;
 }
 
 .tagline {
-    font: 300 2rem/2.5rem 'Roboto Mono', monospace;
-    margin-bottom: 1em;
-    color: #999;
-    text-transform: uppercase;
-    padding: 14px 0 13px 0;
+  font: 300 2rem/2.5rem 'Roboto Mono', monospace;
+  margin-bottom: 1em;
+  color: #999;
+  text-transform: uppercase;
+  padding: 14px 0 13px 0;
 }
 
 #text {
-    font: 900 6rem/6rem 'Rubik', sans-serif;
-    color: #111;
-    text-transform: uppercase;
+  font: 900 6rem/6rem 'Rubik', sans-serif;
+  color: #111;
+  text-transform: uppercase;
+  word-break: break-all;
+}
+
+#reload {
+  display: inline-block;
+  font: 300 1.5rem/1.5rem 'Roboto Mono', monospace;
+  text-decoration: none;
+  color: #ddd;
+  margin-top: 1rem;
 }
 
 @media (min-width: 800px) {
   .tagline {
-      font: 300 3rem/2.8rem 'Roboto Mono', monospace;
+    font: 300 3rem/2.8rem 'Roboto Mono', monospace;
   }
   #text {
-      font: 900 9rem/8.5rem 'Rubik', sans-serif;
+    font: 900 9rem/8.5rem 'Rubik', sans-serif;
   }
 }
