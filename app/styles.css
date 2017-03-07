@@ -53,6 +53,8 @@ body {
   color: #111;
   text-transform: uppercase;
   word-break: break-all;
+  width: 80%;
+  margin: 0 10%;
 }
 
 #reload {
