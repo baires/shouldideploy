@@ -9,9 +9,6 @@
     "start": "brunch watch --server",
     "build": "brunch build --production"
   },
-  "dependencies": {
-    "webfontloader": "^1.6.27"
-  },
   "devDependencies": {
     "auto-reload-brunch": "^2.7.1",
     "babel-brunch": "~6.0",
