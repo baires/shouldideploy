@@ -80,6 +80,7 @@ ul.share-buttons {
 ul.share-buttons li {
   display: inline;
   color: #222;
+  margin: 0 .25rem
 }
 
 ul.share-buttons a {
