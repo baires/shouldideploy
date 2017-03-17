@@ -1,5 +1,7 @@
 # shouldideploy.today
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/baires/shouldideploy.svg)](https://greenkeeper.io/)
+
 ## Getting started
 
 * Install (if you don't have them):
