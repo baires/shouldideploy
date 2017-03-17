@@ -9,7 +9,7 @@ const HOURS = D.getHours();
 const DAY = D.getDay();
 
 export const IS_FRIDAY = DAY === 5;
-export const IS_FRIDAY_AFTERNOON = IS_FRIDAY && HOURS >= 17;
+export const IS_FRIDAY_AFTERNOON = IS_FRIDAY && HOURS >= 16;
 
 export const getRandom = function(list) {
   return list[Math.floor((Math.random() * list.length))];

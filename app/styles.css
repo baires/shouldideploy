@@ -106,3 +106,19 @@ ul.share-buttons .sr-only {
     font: 900 9rem/8.5rem 'Rubik', sans-serif;
   }
 }
+
+.its-friday {
+  background-color: #FF4136;
+}
+
+.its-friday .tagline {
+  color: #fff;
+}
+
+.its-friday #reload, .its-friday .share-buttons li {
+  color: #FF9089;
+}
+
+.its-friday .share-buttons a {
+  color: #B30A00;
+}
