@@ -15,7 +15,7 @@ export const getRandom = function(list) {
   return list[Math.floor((Math.random() * list.length))];
 };
 
-export   function dayHelper(){
+export function dayHelper(){
   if (IS_FRIDAY_AFTERNOON) {
     return REASONS_FOR_FRIDAY_AFTERNOON;
   } else if (IS_FRIDAY) {
