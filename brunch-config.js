@@ -1,5 +1,5 @@
 // See http://brunch.io for documentation.
-exports.files = {
+module.exports.files = {
   javascripts: {
     joinTo: {
       'vendor.js': /^(?!app)/, // Files that are not in `app` dir.
@@ -9,7 +9,7 @@ exports.files = {
   stylesheets: {joinTo: 'app.css'},
 };
 
-exports.plugins = {
+module.exports.plugins = {
   babel: {presets: ['latest']},
   htmlPages: {
     htmlMin: {
