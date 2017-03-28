@@ -1,10 +1,10 @@
 {
-  "name": "brunch-app",
-  "description": "Brunch.io application",
+  "name": "shouldideploy",
+  "description": "Should I Deploy today?",
   "private": true,
-  "author": "Brunch",
-  "version": "0.0.1",
-  "repository": "",
+  "author": "Alexis Sagrbossa",
+  "version": "0.0.5",
+  "repository": "https://github.com/baires/shouldideploy/",
   "scripts": {
     "start": "brunch watch --server",
     "build": "brunch build --production"
