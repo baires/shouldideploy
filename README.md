@@ -1,6 +1,6 @@
 # shouldideploy.today
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/baires/shouldideploy.svg)](https://greenkeeper.io/)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/baires/shouldideploy/badges/devDependencies.svg)](https://www.bithound.io/github/baires/shouldideploy/master/dependencies/npm) [![bitHound Code](https://www.bithound.io/github/baires/shouldideploy/badges/code.svg)](https://www.bithound.io/github/baires/shouldideploy)
 
 ## Getting started
 
