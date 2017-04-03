@@ -13,6 +13,7 @@ body {
   justify-content: center;
 }
 
+/*csslint box-sizing:false,universal-selector: false*/
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -29,6 +30,7 @@ body, h1, h2, h3, h4, h5, h6, p, ol, li, ul, dl, dd, blockquote, figure, hr, pre
 
 a:hover, a:active, a:focus {
   outline: none;
+  color: #000;
 }
 
 .aligner {
@@ -78,7 +80,7 @@ ul.share-buttons {
 }
 
 ul.share-buttons li {
-  display: inline;
+  display: inline-block;
   color: #222;
   margin: 0 .25rem
 }

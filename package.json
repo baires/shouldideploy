@@ -1,7 +1,6 @@
 {
   "name": "shouldideploy",
   "description": "Should I Deploy today?",
-  "private": true,
   "author": "Alexis Sagrbossa",
   "version": "0.0.5",
   "repository": "https://github.com/baires/shouldideploy/",
@@ -12,7 +11,6 @@
   "devDependencies": {
     "auto-reload-brunch": "^2.7.1",
     "babel-brunch": "~6.1.1",
-    "babel-preset-latest": "^6",
     "brunch": "^2",
     "clean-css-brunch": "^2",
     "eslint": "^3.15.0",
@@ -20,5 +18,8 @@
     "gzip-brunch": "^1.3.0",
     "html-pages-brunch": "^2.6.0",
     "uglify-js-brunch": "^2"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.3.2"
   }
 }
