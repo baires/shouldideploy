@@ -1011,7 +1011,7 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
 
-concat-stream@^1.4.6, concat-stream@^1.5.2:
+concat-stream@^1.5.2:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/concat-stream/-/concat-stream-1.6.0.tgz#0aac662fd52be78964d5532f694784e70110acf7"
   dependencies:
@@ -1236,13 +1236,6 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
-doctrine@^1.2.2:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-1.5.0.tgz#379dce730f6166f76cefa4e6707a159b02c5a6fa"
-  dependencies:
-    esutils "^2.0.2"
-    isarray "^1.0.0"
-
 doctrine@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-2.0.0.tgz#c73d8d2909d22291e1a007a395804da8b665fe63"
@@ -1376,46 +1369,7 @@ eslint-brunch@^3.12.0:
   dependencies:
     eslint "^3.0"
 
-eslint@^3.0:
-  version "3.17.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-3.17.0.tgz#e2704b09c5bae9fb49ee8bafeea3832c7257d498"
-  dependencies:
-    babel-code-frame "^6.16.0"
-    chalk "^1.1.3"
-    concat-stream "^1.4.6"
-    debug "^2.1.1"
-    doctrine "^1.2.2"
-    escope "^3.6.0"
-    espree "^3.4.0"
-    estraverse "^4.2.0"
-    esutils "^2.0.2"
-    file-entry-cache "^2.0.0"
-    glob "^7.0.3"
-    globals "^9.14.0"
-    ignore "^3.2.0"
-    imurmurhash "^0.1.4"
-    inquirer "^0.12.0"
-    is-my-json-valid "^2.10.0"
-    is-resolvable "^1.0.0"
-    js-yaml "^3.5.1"
-    json-stable-stringify "^1.0.0"
-    levn "^0.3.0"
-    lodash "^4.0.0"
-    mkdirp "^0.5.0"
-    natural-compare "^1.4.0"
-    optionator "^0.8.2"
-    path-is-inside "^1.0.1"
-    pluralize "^1.2.1"
-    progress "^1.1.8"
-    require-uncached "^1.0.2"
-    shelljs "^0.7.5"
-    strip-bom "^3.0.0"
-    strip-json-comments "~2.0.1"
-    table "^3.7.8"
-    text-table "~0.2.0"
-    user-home "^2.0.0"
-
-eslint@^3.19.0:
+eslint@^3.0, eslint@^3.19.0:
   version "3.19.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-3.19.0.tgz#c8fc6201c7f40dd08941b87c085767386a679acc"
   dependencies:
