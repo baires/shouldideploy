@@ -1,3 +1,4 @@
+/*eslint no-useless-escape: "off"*/
 export const REASONS_TO_DEPLOY = [
   'I don\'t see why not',
   'It\'s a free country',

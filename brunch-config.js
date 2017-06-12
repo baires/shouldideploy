@@ -1,3 +1,4 @@
+/*eslint no-useless-escape: "off"*/
 // See http://brunch.io for documentation.
 module.exports.files = {
   javascripts: {
