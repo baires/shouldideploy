@@ -9,6 +9,7 @@ export const REASONS_TO_DEPLOY = [
   'Go with the flow 🌊',
   'Harder better faster stronger',
   'Rock on!',
+  'Make me proud',
   'Break a leg!',
 ];
 
@@ -23,6 +24,7 @@ export const REASONS_TO_NOT_DEPLOY = [
   'Did the tests pass? Probably not',
   '¯\_(ツ)_/¯',
   '😹',
+  'No,
   'No. Breath and count to 10, start again',
 ];
 
