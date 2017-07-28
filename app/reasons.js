@@ -22,7 +22,7 @@ export const REASONS_TO_NOT_DEPLOY = [
   'Nope',
   'Why?',
   'Did the tests pass? Probably not',
-  '¯\_(ツ)_/¯',
+  '¯\\_(ツ)_/¯',
   '😹',
   'No',
   'No. Breath and count to 10, start again',
