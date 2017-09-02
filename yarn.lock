@@ -1498,9 +1498,9 @@ eslint@^3.0:
     text-table "~0.2.0"
     user-home "^2.0.0"
 
-eslint@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.5.0.tgz#bb75d3b8bde97fb5e13efcd539744677feb019c3"
+eslint@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.6.0.tgz#98ced4a706a87abbe63207895d0023a38e250bbe"
   dependencies:
     ajv "^5.2.0"
     babel-code-frame "^6.22.0"
