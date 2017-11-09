@@ -13,7 +13,7 @@
     "babel-brunch": "~6.1.1",
     "brunch": "^2",
     "clean-css-brunch": "^2",
-    "eslint": "^4.9.0",
+    "eslint": "^4.10.0",
     "eslint-brunch": "^3.12.0",
     "gzip-brunch": "^1.3.0",
     "html-pages-brunch": "^2.6.0",
