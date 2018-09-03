@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "auto-reload-brunch": "^2.7.1",
-    "babel-brunch": "~6.1.1",
+    "babel-brunch": "~7.0.0",
     "brunch": "^2",
     "clean-css-brunch": "^2",
     "eslint": "^5.4.0",
