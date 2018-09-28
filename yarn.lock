@@ -906,8 +906,8 @@ brunch-skeletons@~0.1.4:
   resolved "https://registry.yarnpkg.com/brunch-skeletons/-/brunch-skeletons-0.1.5.tgz#2b35112b8c792d8f11087653d3fc8febf892375b"
 
 brunch@^2:
-  version "2.10.16"
-  resolved "https://registry.yarnpkg.com/brunch/-/brunch-2.10.16.tgz#766434918a278ed5e302fd8346e6c2e2e30b0b11"
+  version "2.10.17"
+  resolved "https://registry.yarnpkg.com/brunch/-/brunch-2.10.17.tgz#f85fd02826c4078b04881d4537e5d817a817a04e"
   dependencies:
     anymatch "^2.0"
     anysort "~1.0"
