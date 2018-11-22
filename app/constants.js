@@ -22,11 +22,14 @@ export const getRandom = function(list) {
 export function dayHelper(){
   if (IS_FRIDAY_AFTERNOON) {
     return REASONS_FOR_FRIDAY_AFTERNOON;
-  } else if (IS_FRIDAY) {
+  }
+  if (IS_FRIDAY) {
     return REASONS_TO_NOT_DEPLOY;
-  } else if (IS_AFTERNOON) {
+  }
+  if (IS_AFTERNOON) {
     return REASONS_FOR_AFTERNOON;
-  } else if (IS_WEEKEND) {
+  }
+  if (IS_WEEKEND) {
     return REASONS_FOR_WEEKEND;
   }
   return REASONS_TO_DEPLOY;
