@@ -41,3 +41,17 @@ export const REASONS_FOR_FRIDAY_AFTERNOON = [
   'Why why Bro why?',
   'But but but... why?',
 ];
+
+export const REASONS_FOR_AFTERNOON = [
+  'You still want to sleep?',
+  'Call your wife!',
+  'Gonne stay late today?',
+];
+
+export const REASONS_FOR_WEEKEND = [
+  'Go home, you\'re drunk',
+  'How about Monday?',
+  'Beer?',
+  'Drunk development is not a good idea!',
+  'I see you deployed on friday'
+]
