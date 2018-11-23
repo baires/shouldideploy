@@ -60,5 +60,5 @@ export const REASONS_FOR_WEEKEND = [
   'Beer?',
   'Drunk development is not a good idea!',
   'I see you deployed on Friday',
-  'Told you that Monday would be better idea!',
+  'Told you that Monday would be a better idea!',
 ]
