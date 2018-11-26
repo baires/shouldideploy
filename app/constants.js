@@ -13,7 +13,7 @@ const DAY = D.getDay();
 export const IS_FRIDAY = DAY === 5;
 export const IS_AFTERNOON = HOURS >= 16;
 export const IS_FRIDAY_AFTERNOON = IS_FRIDAY && IS_AFTERNOON;
-export const IS_WEEKEND = DAY < 5;
+export const IS_WEEKEND = DAY > 5;
 
 export const getRandom = function(list) {
   return list[Math.floor(Math.random() * list.length)];
