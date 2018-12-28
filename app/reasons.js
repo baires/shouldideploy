@@ -10,7 +10,7 @@ export const REASONS_TO_DEPLOY = [
   'Harder better faster stronger',
   'Rock on!',
   'Make me proud',
-  'Break a leg!',
+  'Break a leg!'
 ];
 
 export const REASONS_TO_NOT_DEPLOY = [
@@ -26,6 +26,7 @@ export const REASONS_TO_NOT_DEPLOY = [
   '😹',
   'No',
   'No. Breath and count to 10, start again',
+  'Next week, bolsonaro will be president, trust me there is no reason for deploy'
 ];
 
 export const REASONS_FOR_FRIDAY_AFTERNOON = [
