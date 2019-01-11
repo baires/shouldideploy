@@ -28,9 +28,9 @@ export const REASONS_TO_NOT_DEPLOY = [
   'No. Breath and count to 10, start again',
   'Are you out of your mind?',
   'Are you missing action in your life?',
-  'No way in hell! Are you insane? What is wrong with you?'
+  'No way in hell! Are you insane? What is wrong with you?',
   'Shut up!',
-  'Humm... let\'s think... NO'.
+  'Humm... let\'s think... NO',
 ];
 
 export const REASONS_FOR_FRIDAY_AFTERNOON = [
