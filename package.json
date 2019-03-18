@@ -12,7 +12,7 @@
     "eslint": "^5.15.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.3.0"
   },
   "dependencies": {
     "babel-preset-env": "^1.7.0"
