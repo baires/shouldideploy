@@ -1,0 +1,129 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/*csslint box-sizing:false,universal-selector: false*/
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+ol, ul {
+  padding: 0;
+  list-style-type: none
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, li, ul, dl, dd, blockquote, figure, hr, pre {
+  margin: 0;
+  line-height: 1em
+}
+
+a:hover, a:active, a:focus {
+  outline: none;
+  color: #000;
+}
+
+.aligner {
+  margin: 4rem
+}
+
+.item {
+  align-self: center;
+  margin: auto;
+  text-align: center;
+}
+
+.tagline {
+  font: 300 2rem/2.5rem 'Roboto Mono', monospace;
+  margin-bottom: 1em;
+  color: #999;
+  text-transform: uppercase;
+  padding: 14px 0 13px 0;
+}
+
+#text {
+  font: 900 6rem/6rem 'Rubik', sans-serif;
+  color: #111;
+  text-transform: uppercase;
+}
+
+.meta {
+  text-align: center;
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+  left: 0;
+  font: 300 1rem/1.25rem 'Roboto Mono', monospace;
+}
+
+#reload {
+  display: inline-block;
+  font: 300 1.5rem/1.5rem 'Roboto Mono', monospace;
+  text-decoration: none;
+  color: #ddd;
+  margin-top: 4rem;
+}
+
+ul.share-buttons {
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li {
+  display: inline-block;
+  color: #222;
+  margin: 0 .25rem
+}
+
+ul.share-buttons a {
+  color: #777
+}
+
+ul.share-buttons .sr-only {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+@media (min-width: 800px) {
+  .tagline {
+    font: 300 3rem/2.8rem 'Roboto Mono', monospace;
+  }
+  #text {
+    font: 900 9rem/8.5rem 'Rubik', sans-serif;
+  }
+}
+
+.its-friday {
+  background-color: #FF4136;
+}
+
+.its-friday .tagline {
+  color: #fff;
+}
+
+.its-friday #reload, .its-friday .share-buttons li {
+  color: #FF9089;
+}
+
+.its-friday .share-buttons a {
+  color: #B30A00;
+}
+
+
+/*# sourceMappingURL=app.css.map*/
