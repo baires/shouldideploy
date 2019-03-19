@@ -2,23 +2,17 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import serverless from 'serverless-http';
 
-import {
-  getRandom,
-  dayHelper,
-  IS_FRIDAY,
-} from '../js/constants';
+import { getRandom, dayHelper, IS_FRIDAY } from '../src/js/constants';
 
-let app = express ();
+let app = express();
 
 const router = express.Router();
 
 app.get('/api', function(req, res) {
-  res.status(200).send(
-    {
-      'shouldideploy': !IS_FRIDAY,
-      'reason': getRandom(dayHelper()),
-    }
-  );
+  res.status(200).send({
+    shouldideploy: !IS_FRIDAY,
+    reason: getRandom(dayHelper()),
+  });
 });
 
 app.use(bodyParser.json());
