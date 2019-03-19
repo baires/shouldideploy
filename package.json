@@ -7,8 +7,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "node src/server-local.js",
-    "lambda": "netlify-lambda build src/api",
-    "run": "npm run lambda && npm run build"
+    "lambda": "netlify-lambda build src/api"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
