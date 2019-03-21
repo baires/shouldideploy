@@ -2,6 +2,8 @@
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fbaires%2Fshouldideploy.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fbaires%2Fshouldideploy?ref=badge_shield)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/904ec38f-922f-4647-8efc-e6f82db8b067/deploy-status)](https://app.netlify.com/sites/auditor-beaver-22645/deploys)
+
 ## Getting started
 
 * Run:
