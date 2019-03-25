@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "css-loader": "^2.1.1",
-    "eslint": "^5.15.2",
+    "eslint": "^5.15.3",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
