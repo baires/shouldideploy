@@ -45,7 +45,7 @@ export const REASONS_FOR_FRIDAY_AFTERNOON = [
 export const REASONS_FOR_AFTERNOON = [
   'You still want to sleep?',
   'Call your wife!',
-  'Gonne stay late today?',
+  'Gonna stay late today?',
   'Tomorrow?',
   'No',
   'Tell your boss that you found a bug and go home',
