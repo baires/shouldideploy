@@ -8,7 +8,7 @@
     "build": "webpack --mode production"
   },
   "devDependencies": {
-    "css-loader": "^2.1.1",
+    "css-loader": "^3.0.0",
     "eslint": "^5.16.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.32.2",
