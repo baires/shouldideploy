@@ -5,7 +5,9 @@
   "version": "1.0.1",
   "repository": "https://github.com/baires/shouldideploy/",
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "css-loader": "^3.0.0",
@@ -15,6 +17,8 @@
     "webpack-cli": "^3.3.4"
   },
   "dependencies": {
-    "babel-preset-env": "^1.7.0"
-  }
+    "babel-preset-env": "^1.7.0",
+    "snyk": "^1.192.4"
+  },
+  "snyk": true
 }
