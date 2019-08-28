@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "babel-preset-env": "^1.7.0",
-    "snyk": "^1.216.0"
+    "snyk": "^1.219.0"
   },
   "snyk": true
 }
