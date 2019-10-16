@@ -278,3 +278,8 @@ patch:
         patched: '2019-07-09T00:27:44.391Z'
     - babel-preset-env > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-helper-function-name > babel-template > babel-traverse > babel-types > lodash:
         patched: '2019-07-09T00:27:44.391Z'
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - snyk > proxy-agent > https-proxy-agent:
+        patched: '2019-10-04T17:26:03.123Z'
+    - snyk > proxy-agent > pac-proxy-agent > https-proxy-agent:
+        patched: '2019-10-04T17:26:03.123Z'
