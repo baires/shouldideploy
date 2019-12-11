@@ -43,15 +43,15 @@ export const REASONS_FOR_FRIDAY_AFTERNOON = [
 ];
 
 export const REASONS_FOR_AFTERNOON = [
-  'You still want to sleep?',
-  'Call your wife!',
-  'Gonna stay late today?',
-  'Tomorrow?',
-  'No',
-  'Tell your boss that you found a bug and go home',
-  'You have full day ahead of you tomorrow!',
-  'Trust me, (s)he will be much happier if it wasn\'t broken for a night',
-  'How much do you trust your logging tools?',
+  'Daí..........',
+  'Vai saber!',
+  'Cachorro quente frio é cachorro frio ou cachorro quente frio?',
+  'Eu sou um meme físico',
+  'Blz vazava',
+  'Milho de beira de estrada foi feito pra ser roubado.',
+  'Comprei um chuveiro bom, paguei 30 pila.',
+  'Floripa é loco.',
+  'Se eu for chamado eu vou, se eu não for chamado não tem como eu ir.',
 ];
 
 export const REASONS_FOR_WEEKEND = [
