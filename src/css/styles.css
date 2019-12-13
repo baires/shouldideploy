@@ -111,6 +111,8 @@ ul.share-buttons .sr-only {
 
 .its-friday {
   background-color: #FF4136;
+  background-image: url("luan.jpeg");
+  background-size: 21%;
 }
 
 .its-friday .tagline {
