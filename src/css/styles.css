@@ -53,8 +53,9 @@ a:hover, a:active, a:focus {
 
 #text {
   font: 900 6rem/6rem 'Rubik', sans-serif;
-  color: #111;
+  color: white;
   text-transform: uppercase;
+  text-shadow: 5px 4px 0 black;
 }
 
 .meta {
