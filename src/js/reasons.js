@@ -11,6 +11,7 @@ export const REASONS_TO_DEPLOY = [
   'Rock on!',
   'Make me proud',
   'Break a leg!',
+  'This Is the Way',
 ];
 
 export const REASONS_TO_NOT_DEPLOY = [
