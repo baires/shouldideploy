@@ -10,7 +10,7 @@
     "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
-    "css-loader": "^3.4.0",
+    "css-loader": "^3.4.1",
     "eslint": "^6.8.0",
     "style-loader": "^1.1.2",
     "webpack": "^4.41.5",
