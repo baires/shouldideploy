@@ -16,7 +16,7 @@ export const REASONS_TO_DEPLOY = [
 
 export const REASONS_TO_NOT_DEPLOY = [
   'I wouldn\'t recommend it',
-  'No man, it\'s Friday',
+  'No, it\'s Friday',
   'What about Monday?',
   'Not today',
   'Tomorrow?',
@@ -45,7 +45,7 @@ export const REASONS_FOR_FRIDAY_AFTERNOON = [
 
 export const REASONS_FOR_AFTERNOON = [
   'You still want to sleep?',
-  'Call your wife!',
+  'Call your partner!',
   'Gonna stay late today?',
   'Tomorrow?',
   'No',
