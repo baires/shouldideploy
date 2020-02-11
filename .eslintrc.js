@@ -1,48 +1,34 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es6": true
-  },
-  "extends": ["eslint:recommended"],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
-      "jsx": true
+    "env": {
+        "browser": true,
+        "es6": true
     },
-    "sourceType": "module"
-  },
-  "globals": {
-    "componentHandler": false,
-    "module": false
-  },
-  "rules": {
-    "indent": [
-      "error",
-      2
+    "parser": "babel-eslint",
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
     ],
-    "linebreak-style": [
-      "error",
-      "unix"
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
     ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "comma-dangle": [
-      "error",
-      "always-multiline"
-    ],
-    "no-unused-vars": [
-      "error",
-      {
-        "varsIgnorePattern": "^(m)$"
-      }
-    ],
-    "react/no-unknown-property": 0,
-    "react/prop-types": 0
-  }
+    "rules": {
+        "react/display-name": 0,
+        "react/prop-types": 0
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
 };

@@ -26,12 +26,13 @@ export default () => (
       </li>
       <li>
         Source:{' '}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="http://github.com/baires/shouldideploy/"
-        >
+        <a target="_blank" rel="noopener noreferrer" href="http://github.com/baires/shouldideploy/">
           Github
+        </a>
+      </li>
+      <li>
+        <a href="/api">
+          <mark>New API</mark>
         </a>
       </li>
     </ul>
