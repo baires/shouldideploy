@@ -22,6 +22,7 @@ export default () => (
 
     <meta name="theme-color" content="#1E1F29" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="true" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400|Rubik:900&display=swap" rel="preload" rel="stylesheet" />
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:300,400|Rubik:900&display=swap" as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400|Rubik:900&display=swap" />
   </>
 );
