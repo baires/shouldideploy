@@ -14,27 +14,48 @@ body {
 }
 
 /*csslint box-sizing:false,universal-selector: false*/
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-ol, ul {
+ol,
+ul {
   padding: 0;
-  list-style-type: none
+  list-style-type: none;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ol, li, ul, dl, dd, blockquote, figure, hr, pre {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+li,
+ul,
+dl,
+dd,
+blockquote,
+figure,
+hr,
+pre {
   margin: 0;
-  line-height: 1em
+  line-height: 1em;
 }
 
-a:hover, a:active, a:focus {
+a:hover,
+a:active,
+a:focus {
   outline: none;
   color: #000;
 }
 
 .aligner {
-  margin: 4rem
+  margin: 4rem;
 }
 
 .item {
@@ -69,9 +90,13 @@ a:hover, a:active, a:focus {
 #reload {
   display: inline-block;
   font: 300 1.5rem/1.5rem 'Roboto Mono', monospace;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
   text-decoration: none;
   color: #ddd;
   margin-top: 4rem;
+  outline: none;
 }
 
 ul.share-buttons {
@@ -82,11 +107,11 @@ ul.share-buttons {
 ul.share-buttons li {
   display: inline-block;
   color: #222;
-  margin: 0 .25rem
+  margin: 0 0.25rem;
 }
 
 ul.share-buttons a {
-  color: #777
+  color: #777;
 }
 
 ul.share-buttons .sr-only {
@@ -110,17 +135,18 @@ ul.share-buttons .sr-only {
 }
 
 .its-friday {
-  background-color: #FF4136;
+  background-color: #ff4136;
 }
 
 .its-friday .tagline {
   color: #fff;
 }
 
-.its-friday #reload, .its-friday .share-buttons li {
-  color: #FF9089;
+.its-friday #reload,
+.its-friday .share-buttons li {
+  color: #ff9089;
 }
 
 .its-friday .share-buttons a {
-  color: #B30A00;
+  color: #b30a00;
 }

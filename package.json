@@ -5,20 +5,43 @@
   "version": "1.0.1",
   "repository": "https://github.com/baires/shouldideploy/",
   "scripts": {
-    "build": "webpack --mode production",
+    "precommit": "NODE_ENV=production lint-staged",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
-  },
-  "devDependencies": {
-    "css-loader": "^3.4.0",
-    "eslint": "^6.8.0",
-    "style-loader": "^1.1.2",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "prepare": "npm run snyk-protect",
+    "test": "snyk test"
   },
   "dependencies": {
-    "babel-preset-env": "^1.7.0",
-    "snyk": "^1.267.0"
+    "next": "^9.1.8-canary.11",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "snyk": "^1.291.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "pretty-quick --staged",
+      "eslint src/ --fix",
+      "git add"
+    ]
   },
   "snyk": true
 }
