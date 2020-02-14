@@ -2,6 +2,7 @@ import React from 'react';
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import HeadElements from "../component/head";
 import { IS_FRIDAY } from "../helpers/constans";
+import BodyColor from "../component/body_color";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -17,10 +18,10 @@ class MyDocument extends Document {
           <meta name="og:image" content={IS_FRIDAY ? "no.png" : "yes.png"} />
           <HeadElements />
         </Head>
-        <body className={IS_FRIDAY ? "its-friday" : null}>
+        <BodyColor bodyClass={IS_FRIDAY ? "its-friday" : null}>
           <Main />
           <NextScript />
-        </body>
+        </BodyColor>
       </Html>
     );
   }
