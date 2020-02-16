@@ -3,7 +3,7 @@ import React from "react";
 class BodyColor extends React.Component {
   componentDidMount() {
     const { bodyClass } = this.props;
-    document.querySelector("body").classList.add(bodyClass);
+    document.body.classList.add(bodyClass);
   }
 
   render() {
