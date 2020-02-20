@@ -17,7 +17,7 @@
     "next": "^9.1.8-canary.11",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "snyk": "^1.290.1"
+    "snyk": "^1.294.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
