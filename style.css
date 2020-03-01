@@ -54,6 +54,18 @@ a:focus {
   color: #000;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .aligner {
   margin: 4rem;
 }

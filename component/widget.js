@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getRandom, dayHelper } from "../helpers/constans";
+import { getRandom, dayHelper, IS_FRIDAY } from "../helpers/constans";
 import Footer from "./footer";
 
 function getData() {
@@ -14,15 +14,17 @@ function Widget() {
   }
 
   return (
-    <div className="aligner">
-      <div className="item">
-        <h3 className="tagline">Should I Deploy Today?</h3>
-        <h2 id="text">{data}</h2>
-        <button type="button" id="reload" onClick={onClick}>
-          Hit me again
-        </button>
+    <div className={`wrapper ${IS_FRIDAY && "its-friday"}`}>
+      <div className="aligner">
+        <div className="item">
+          <h3 className="tagline">Should I Deploy Today?</h3>
+          <h2 id="text">{data}</h2>
+          <button type="button" id="reload" onClick={onClick}>
+            Hit me again
+          </button>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
