@@ -2,6 +2,7 @@
   "name": "shouldideploy",
   "description": "Should I Deploy today?",
   "author": "Alexis Sagrbossa",
+  "license": "WTFPL",
   "version": "1.0.1",
   "repository": "https://github.com/baires/shouldideploy/",
   "scripts": {
@@ -14,7 +15,6 @@
     "test": "snyk test"
   },
   "dependencies": {
-    "isomorphic-unfetch": "^3.0.0",
     "next": "^9.2.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
