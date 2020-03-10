@@ -12,8 +12,8 @@ class Page extends React.Component {
     return (
       <>
         <Head>
-          <link rel="icon" type="image/png" href={this.props.color ? "/dots-red.png" : "/dots.png"} sizes="32x32" />
-          <meta name="og:image" content={this.props.color ? "no.png" : "yes.png"} />
+          <link rel="icon" type="image/png" href={this.props.color ? "https://shouldideploy.today/dots-red.png" : "https://shouldideploy.today/dots.png"} sizes="32x32" />
+          <meta property="og:image" content={this.props.color ? "no.png" : "yes.png"} />
         </Head>
         <div className={`wrapper ${this.props.color && "its-friday"}`}>
           <Widget />

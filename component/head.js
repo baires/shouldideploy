@@ -14,11 +14,11 @@ export default () => (
     <meta name="twitter:title" content="Should I Deploy Today" />
     <meta name="twitter:description" content="A friendly reminder to all Developers, Designers, CEO's" />
 
-    <meta name="og:title" content="Should I Deploy Today" />
-    <meta name="og:description" content="A friendly reminder to all Developers, Designers, CEO's" />
-    <meta name="og:url" content="https://shouldideploy.today" />
-    <meta name="og:site_name" content="Should I Deploy Today" />
-    <meta name="og:type" content="website" />
+    <meta property="og:title" content="Should I Deploy Today" />
+    <meta property="og:description" content="A friendly reminder to all Developers, Designers, CEO's" />
+    <meta property="og:url" content="https://shouldideploy.today" />
+    <meta property="og:site_name" content="Should I Deploy Today" />
+    <meta property="og:type" content="website" />
 
     <meta name="theme-color" content="#1E1F29" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="true" />
