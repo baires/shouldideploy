@@ -4,7 +4,6 @@ export default () => (
   <>
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Should I Deploy Today?</title>
     <meta name="description" content="A friendly reminder to all Developers, Designers, CEO's" />
 
     <meta itemProp="name" content="Should I Deploy Today" />
