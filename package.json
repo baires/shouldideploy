@@ -15,7 +15,7 @@
     "test": "snyk test"
   },
   "dependencies": {
-    "next": "^9.3.3",
+    "next": "^9.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "snyk": "^1.305.0"
