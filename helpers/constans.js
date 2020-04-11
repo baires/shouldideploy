@@ -1,3 +1,4 @@
+import Time from './time';
 import {
   REASONS_TO_DEPLOY,
   REASONS_TO_NOT_DEPLOY,
@@ -6,30 +7,27 @@ import {
   REASONS_FOR_WEEKEND
 } from './reasons';
 
-const D = new Date();
-const HOURS = D.getHours();
-const DAY = D.getDay();
-
-export const IS_FRIDAY = DAY === 5;
-export const IS_AFTERNOON = HOURS >= 16;
-export const IS_FRIDAY_AFTERNOON = IS_FRIDAY && IS_AFTERNOON;
-export const IS_WEEKEND = DAY > 5;
-
 export const getRandom = function ranDay(list) {
   return list[Math.floor(Math.random() * list.length)];
 };
 
-export function dayHelper() {
-  if (IS_FRIDAY_AFTERNOON) {
+/**
+ * Return a list of reasons according of time parameter
+ * @param string[]
+ */
+export function dayHelper(time) {
+  time = time || new Time();
+
+  if (time.isFridayAfternoon()) {
     return REASONS_FOR_FRIDAY_AFTERNOON;
   }
-  if (IS_FRIDAY) {
+  if (time.isFriday()) {
     return REASONS_TO_NOT_DEPLOY;
   }
-  if (IS_AFTERNOON && !!IS_WEEKEND) {
+  if (time.isAfternoon() && !!time.isWeekend()) {
     return REASONS_FOR_AFTERNOON;
   }
-  if (IS_WEEKEND) {
+  if (time.isWeekend()) {
     return REASONS_FOR_WEEKEND;
   }
   return REASONS_TO_DEPLOY;

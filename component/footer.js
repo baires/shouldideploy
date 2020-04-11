@@ -1,7 +1,6 @@
 import React from 'react';
 
-export default () => (
-  <div className="meta">
+export default (props) => (
     <ul className="share-buttons">
       <li>Share:</li>
       <li>
@@ -31,10 +30,9 @@ export default () => (
         </a>
       </li>
       <li>
-        <a href="/api">
+        <a href={"/api?tz=" + props.timezone}>
           <mark>New API</mark>
         </a>
       </li>
     </ul>
-  </div>
 );
