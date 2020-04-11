@@ -11,9 +11,14 @@ class Page extends React.Component {
   constructor(props) {
     super(props);
 
+    let timezoneError = false;
+
+    if (!Time.zoneExists(this.props.timezone)) {
+        timezoneError = true;
+    }
     this.state = {
-        timezone: this.props.timezone,
-        now: new Time(this.props.timezone)
+        timezone: timezoneError ? 'UTC' : this.props.timezone,
+        now: new Time(timezoneError ? 'UTC' : this.props.timezone),
     };
   }
 
@@ -26,11 +31,17 @@ class Page extends React.Component {
   }
 
   changeTimeZone = (timezone) => {
+    if (!Time.zoneExists(this.props.timezone)) {
+        return ;
+    }
     let newUrl = new URL(location);
         newUrl.searchParams.set('tz', timezone);
 
     Router.push(newUrl.pathname + newUrl.search);
-    this.setState({timezone: timezone, now: new Time(timezone)});
+    this.setState({
+        timezone: timezone,
+        now: new Time(timezone),
+    });
   }
 
   render() {

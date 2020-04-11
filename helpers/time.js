@@ -7,6 +7,15 @@ export default class Time {
     }
 
     /**
+     * Check if a timezone exist
+     * @param {string} timezone
+     * @return {bool}
+     */
+    static zoneExists(timezone) {
+        return moment.tz.zone(timezone) !== null;
+    }
+
+    /**
      * Return current date
      * @return moment.Moment
      */
