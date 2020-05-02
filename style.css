@@ -114,6 +114,7 @@ a:focus {
 ul.footer-list {
   list-style: none;
   padding: 0;
+  display: inline-flex;
 }
 
 ul.footer-list li {
