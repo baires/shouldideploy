@@ -1,30 +1,65 @@
-import React, { useState } from "react";
+import React from "react";
 import { getRandom, dayHelper } from "../helpers/constans";
-import Footer from "./footer";
+export default class Widget extends React.Component {
 
-function getData() {
-  return new Promise(resolve => setTimeout(() => resolve(getRandom(dayHelper())), 1000));
-}
+  /**
+   * Set default state element based on props
+   * @param {any} props
+   */
+  constructor(props)
+  {
+    super(props);
 
-function Widget() {
-  const [data, setData] = useState(getRandom(dayHelper()));
-
-  function onClick() {
-    getData().then(setData);
+    this.state = {
+        timezone: this.props.now.timezone,
+        reason: getRandom(this.getReasons())
+    };
   }
 
-  return (
-    <div className="aligner">
-      <div className="item">
-        <h3 className="tagline">Should I Deploy Today?</h3>
-        <h2 id="text">{data}</h2>
-        <button type="button" id="reload" onClick={onClick}>
-          Hit me again
-        </button>
-      </div>
-      <Footer />
-    </div>
-  );
-}
+  /**
+   * On props change update state
+   * @param {any} nextProps
+   * @return void
+   */
+  componentDidUpdate(nextProps) {
+    if (nextProps.now.timezone !== this.state.timezone) {
+        this.setState({
+            timezone: nextProps.now.timezone,
+            reason: getRandom(this.getReasons())
+        });
+    }
+  }
 
-export default Widget;
+  /**
+   * Get reasons according to current time
+   * @return string[]
+   */
+  getReasons() {
+    return dayHelper(this.props.now);
+  }
+
+  /**
+   * On click reload reasons
+   * @return void
+   */
+  onClick = () => {
+      let reasons = this.getReasons();
+      this.setState({ reason: getRandom(reasons) });
+  }
+
+  /**
+   * Render widget
+   * @return JSX.Element
+   */
+  render() {
+    return (
+        <div className="item">
+          <h3 className="tagline">Should I Deploy Today?</h3>
+          <h2 id="text">{this.state.reason}</h2>
+          <button type="button" id="reload" onClick={this.onClick}>
+            Hit me again
+          </button>
+        </div>
+    );
+  }
+}
