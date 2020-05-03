@@ -304,3 +304,17 @@ patch:
         patched: '2020-05-01T21:08:26.967Z'
     - next > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
         patched: '2020-05-01T21:08:26.967Z'
+    - prettier-eslint-cli > eslint > lodash:
+        patched: '2020-05-03T20:52:02.131Z'
+    - prettier-eslint-cli > eslint > inquirer > lodash:
+        patched: '2020-05-03T20:52:02.131Z'
+    - prettier-eslint-cli > eslint > table > lodash:
+        patched: '2020-05-03T20:52:02.131Z'
+    - prettier-eslint-cli > prettier-eslint > eslint > lodash:
+        patched: '2020-05-03T20:52:02.131Z'
+    - prettier-eslint-cli > prettier-eslint > vue-eslint-parser > lodash:
+        patched: '2020-05-03T20:52:02.131Z'
+    - prettier-eslint-cli > prettier-eslint > eslint > inquirer > lodash:
+        patched: '2020-05-03T20:52:02.131Z'
+    - prettier-eslint-cli > prettier-eslint > eslint > table > lodash:
+        patched: '2020-05-03T20:52:02.131Z'
