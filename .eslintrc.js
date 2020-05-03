@@ -27,6 +27,7 @@ module.exports = {
     "rules": {
         "react/display-name": 0,
         "react/prop-types": 0,
+        "no-useless-escape": 2,
         "prettier/prettier": "error"
     },
     "settings": {
