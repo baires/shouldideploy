@@ -12,11 +12,14 @@
     "start": "next start",
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect",
-    "test": "snyk test"
+    "test": "snyk test",
+    "lint": "eslint . && prettier-eslint --list-different $PWD/'**/*.js'",
+    "format": "prettier-eslint --write $PWD/'**/*.js'"
   },
   "dependencies": {
     "moment-timezone": "^0.5.28",
     "next": "^9.3.6",
+    "prettier-eslint-cli": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "snyk": "^1.316.2"
@@ -36,14 +39,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run format"
     }
-  },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint . --fix",
-      "git add"
-    ]
   },
   "snyk": true
 }

@@ -1,4 +1,4 @@
-module.exports = {
+{
     "env": {
         "browser": true,
         "es6": true
@@ -6,7 +6,8 @@ module.exports = {
     "parser": "babel-eslint",
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "prettier"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -20,15 +21,18 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "prettier"
     ],
     "rules": {
         "react/display-name": 0,
-        "react/prop-types": 0
+        "react/prop-types": 0,
+        "no-useless-escape": 0,
+        "prettier/prettier": "error"
     },
     "settings": {
         "react": {
             "version": "detect"
         }
     }
-};
+}

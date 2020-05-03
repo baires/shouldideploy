@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export default (props) => (
   <ul className="footer-list">
@@ -24,7 +24,7 @@ export default (props) => (
       </a>
     </li>
     <li>
-      Source:{" "}
+      Source:{' '}
       <a
         target="_blank"
         rel="noopener noreferrer"
@@ -34,9 +34,9 @@ export default (props) => (
       </a>
     </li>
     <li>
-      <a href={"/api?tz=" + props.timezone}>
+      <a href={'/api?tz=' + props.timezone}>
         <mark>New API</mark>
       </a>
     </li>
   </ul>
-);
+)
