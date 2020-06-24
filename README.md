@@ -11,7 +11,7 @@
 
 ## Add your reasons
 
-Reasons are located under [reasons.js](https://github.com/baires/shouldideploy/tree/master/src/js/reasons.js)
+Reasons are located under [reasons.js](https://github.com/baires/shouldideploy/blob/master/helpers/reasons.js)
 
 ## API endpoint
 There is an enpoint to use on your CI or just for fun at `https://shouldideploy.today/api`
