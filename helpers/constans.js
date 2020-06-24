@@ -4,7 +4,7 @@ import {
   REASONS_TO_NOT_DEPLOY,
   REASONS_FOR_FRIDAY_AFTERNOON,
   REASONS_FOR_AFTERNOON,
-  REASONS_FOR_WEEKEND,
+  REASONS_FOR_WEEKEND
 } from './reasons'
 
 export const getRandom = function ranDay(list) {
