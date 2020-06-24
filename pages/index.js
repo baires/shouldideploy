@@ -17,7 +17,7 @@ class Page extends React.Component {
     }
     this.state = {
       timezone: timezoneError ? 'UTC' : this.props.timezone,
-      now: new Time(timezoneError ? 'UTC' : this.props.timezone),
+      now: new Time(timezoneError ? 'UTC' : this.props.timezone)
     }
   }
 
@@ -25,7 +25,7 @@ class Page extends React.Component {
     let timezone = request.query.tz || 'UTC'
 
     return {
-      timezone: timezone,
+      timezone: timezone
     }
   }
 
@@ -39,7 +39,7 @@ class Page extends React.Component {
     Router.push(newUrl.pathname + newUrl.search)
     this.setState({
       timezone: timezone,
-      now: new Time(timezone),
+      now: new Time(timezone)
     })
   }
 

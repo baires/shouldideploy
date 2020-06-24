@@ -9,8 +9,8 @@ export default (req, res) => {
       error: {
         message: `Timezone \`${timezone}\` does not exist`,
         type: 'Bad Request',
-        code: 400,
-      },
+        code: 400
+      }
     })
   }
   let time = new Time(timezone)
@@ -18,6 +18,6 @@ export default (req, res) => {
   res.status(200).json({
     timezone: timezone,
     shouldideploy: !time.isFriday(),
-    message: getRandom(dayHelper(time)),
+    message: getRandom(dayHelper(time))
   })
 }

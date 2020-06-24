@@ -10,7 +10,7 @@ export default class Widget extends React.Component {
 
     this.state = {
       timezone: this.props.now.timezone,
-      reason: getRandom(this.getReasons()),
+      reason: getRandom(this.getReasons())
     }
   }
 
@@ -23,7 +23,7 @@ export default class Widget extends React.Component {
     if (nextProps.now.timezone !== this.state.timezone) {
       this.setState({
         timezone: nextProps.now.timezone,
-        reason: getRandom(this.getReasons()),
+        reason: getRandom(this.getReasons())
       })
     }
   }
