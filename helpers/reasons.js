@@ -20,7 +20,6 @@ export const REASONS_TO_NOT_DEPLOY = [
   "No, it's Friday",
   'What about Monday?',
   'Not today',
-  'Tomorrow?',
   'Nope',
   'Why?',
   'Did the tests pass? Probably not',
