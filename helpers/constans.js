@@ -24,6 +24,9 @@ export function dayHelper(time) {
   if (time.isFriday()) {
     return REASONS_TO_NOT_DEPLOY
   }
+  if (time.isThursdayAfternoon()) {
+    return REASONS_FOR_THURSDAY_AFTERNOON
+  }
   if (time.isAfternoon() && !!time.isWeekend()) {
     return REASONS_FOR_AFTERNOON
   }
