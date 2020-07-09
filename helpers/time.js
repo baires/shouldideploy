@@ -23,6 +23,14 @@ export default class Time {
   }
 
   /**
+   * Today is Thursday
+   * @return bool
+   */
+  isThursday() {
+    return this.now().day() === 4
+  }
+
+  /**
    * Today is Friday
    * @return bool
    */
@@ -39,7 +47,15 @@ export default class Time {
   }
 
   /**
-   * Are we friday afternoon?
+   * Are we Thursday afternoon?
+   * @return bool
+   */
+  isThursdayAfternoon() {
+    return this.isThursday() && this.isAfternoon()
+  }
+
+  /**
+   * Are we Friday afternoon?
    * @return bool
    */
   isFridayAfternoon() {

@@ -20,13 +20,24 @@ export const REASONS_TO_NOT_DEPLOY = [
   "No, it's Friday",
   'What about Monday?',
   'Not today',
-  'Tomorrow?',
   'Nope',
   'Why?',
   'Did the tests pass? Probably not',
   '¯\\_(ツ)_/¯',
   '😹',
   'No',
+  'No. Breathe and count to 10, start again'
+]
+
+export const REASONS_FOR_THURSDAY_AFTERNOON = [
+  'You still want to sleep?',
+  'Call your partner!',
+  'Gonna stay late today?',
+  'Tell your boss that you found a bug and go home',
+  'What about Monday?',
+  "I wouldn't recommend it",
+  'Not today',
+  'Nope',
   'No. Breathe and count to 10, start again'
 ]
 

@@ -2,6 +2,7 @@ import Time from './time'
 import {
   REASONS_TO_DEPLOY,
   REASONS_TO_NOT_DEPLOY,
+  REASONS_FOR_THURSDAY_AFTERNOON,
   REASONS_FOR_FRIDAY_AFTERNOON,
   REASONS_FOR_AFTERNOON,
   REASONS_FOR_WEEKEND
@@ -23,6 +24,9 @@ export function dayHelper(time) {
   }
   if (time.isFriday()) {
     return REASONS_TO_NOT_DEPLOY
+  }
+  if (time.isThursdayAfternoon()) {
+    return REASONS_FOR_THURSDAY_AFTERNOON
   }
   if (time.isAfternoon() && !!time.isWeekend()) {
     return REASONS_FOR_AFTERNOON
