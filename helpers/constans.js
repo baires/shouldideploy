@@ -28,7 +28,7 @@ export function dayHelper(time) {
   if (time.isThursdayAfternoon()) {
     return REASONS_FOR_THURSDAY_AFTERNOON
   }
-  if (time.isAfternoon() && !!time.isWeekend()) {
+  if (time.isAfternoon() && !time.isWeekend()) {
     return REASONS_FOR_AFTERNOON
   }
   if (time.isWeekend()) {
