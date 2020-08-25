@@ -22,7 +22,7 @@
     "prettier-eslint-cli": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "snyk": "^1.377.0"
+    "snyk": "^1.382.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
