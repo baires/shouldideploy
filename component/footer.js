@@ -15,7 +15,7 @@ export default (props) => (
     </li>
     <li>
       <a
-        href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fshouldideploy.today%2F&text=Should%20I%20Deploy%20Today%3F:%20http%3A%2F%2Fshouldideploy.today%2F&via=baires"
+        href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fshouldideploy.today%2F&text=Should%20I%20Deploy%20Today%3F:%20http%3A%2F%2Fshouldideploy.today"
         target="_blank"
         rel="noopener noreferrer"
         title="Tweet"
