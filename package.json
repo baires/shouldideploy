@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "moment-timezone": "^0.5.31",
-    "next": "^9.5.4",
+    "next": "^9.5.5",
     "prettier-eslint-cli": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
