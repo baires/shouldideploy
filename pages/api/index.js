@@ -17,7 +17,7 @@ export default (req, res) => {
 
   res.status(200).json({
     timezone: timezone,
-    shouldideploy: !time.isFriday(),
+    shouldideploy: !time.isFriday() && !time.isWeekend(),
     message: getRandom(dayHelper(time))
   })
 }
