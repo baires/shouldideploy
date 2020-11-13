@@ -55,6 +55,18 @@ export const REASONS_FOR_FRIDAY_AFTERNOON = [
   'But but but... why?'
 ]
 
+export const REASONS_FOR_FRIDAY_13TH = [
+  'Man, really? It\'s friday the 13th!',
+  'Do you believe in bad luck?',
+  'Jason is watching you',
+  'If you want to spend your weekend in Crystal Lake, go ahead',
+  'To pray is no help if you take this bad decision',
+  'Did you look at the calendar today?',
+  '📅 Friday the 13th. What do you think about it?',
+  'Just no!',
+  'But but but... why?'
+]
+
 export const REASONS_FOR_AFTERNOON = [
   'You still want to sleep?',
   'Call your partner!',

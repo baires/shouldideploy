@@ -4,6 +4,7 @@ import {
   REASONS_TO_NOT_DEPLOY,
   REASONS_FOR_THURSDAY_AFTERNOON,
   REASONS_FOR_FRIDAY_AFTERNOON,
+  REASONS_FOR_FRIDAY_13TH,
   REASONS_FOR_AFTERNOON,
   REASONS_FOR_WEEKEND
 } from './reasons'
@@ -19,9 +20,14 @@ export const getRandom = function ranDay(list) {
 export function dayHelper(time) {
   time = time || new Time()
 
+  if (time.isFriday13th()) {
+    return REASONS_FOR_FRIDAY_13TH
+  }
+
   if (time.isFridayAfternoon()) {
     return REASONS_FOR_FRIDAY_AFTERNOON
   }
+
   if (time.isFriday()) {
     return REASONS_TO_NOT_DEPLOY
   }
