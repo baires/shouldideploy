@@ -56,7 +56,7 @@ export const REASONS_FOR_FRIDAY_AFTERNOON = [
 ]
 
 export const REASONS_FOR_FRIDAY_13TH = [
-  'Man, really? It\'s friday the 13th!',
+  "Man, really? It's friday the 13th!",
   'Do you believe in bad luck?',
   'Jason is watching you',
   'If you want to spend your weekend in Crystal Lake, go ahead',

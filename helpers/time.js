@@ -70,7 +70,7 @@ export default class Time {
     return this.isFriday() && this.isAfternoon()
   }
 
-   /**
+  /**
    * Are we Friday the 13th?
    * @return bool
    */
