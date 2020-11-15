@@ -67,6 +67,6 @@ export default class Time {
    * @return bool
    */
   isWeekend() {
-    return this.now().day() > 5
+    return this.now().day() == 6 || this.now().day() == 0
   }
 }
