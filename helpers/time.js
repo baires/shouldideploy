@@ -39,6 +39,14 @@ export default class Time {
   }
 
   /**
+   * Today is day 13
+   * @return bool
+   */
+  is13th() {
+    return this.now().date() === 13
+  }
+
+  /**
    * Are we in the afternoon?
    * @return bool
    */
@@ -60,6 +68,14 @@ export default class Time {
    */
   isFridayAfternoon() {
     return this.isFriday() && this.isAfternoon()
+  }
+
+  /**
+   * Are we Friday the 13th?
+   * @return bool
+   */
+  isFriday13th() {
+    return this.isFriday() && this.is13th()
   }
 
   /**
