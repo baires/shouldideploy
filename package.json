@@ -17,7 +17,7 @@
     "format": "prettier-eslint --write $PWD/'**/*.js'"
   },
   "dependencies": {
-    "moment-timezone": "^0.5.31",
+    "moment-timezone": "^0.5.32",
     "next": "^10.0.1",
     "prettier-eslint-cli": "^5.0.0",
     "react": "^17.0.1",
