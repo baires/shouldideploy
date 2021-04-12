@@ -26,7 +26,9 @@ export const REASONS_TO_NOT_DEPLOY = [
   '¯\\_(ツ)_/¯',
   '😹',
   'No',
-  'No. Breathe and count to 10, start again'
+  'No. Breathe and count to 10, start again',
+  "I'd rather have ice-cream 🍦",
+  'How could you? 🥺'
 ]
 
 export const REASONS_FOR_THURSDAY_AFTERNOON = [
