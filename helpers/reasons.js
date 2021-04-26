@@ -55,7 +55,8 @@ export const REASONS_FOR_FRIDAY_AFTERNOON = [
   'Keep dreaming darling',
   'Why why Bro why?',
   'But but but... why?',
-  'Deploys are for Monday, so you can fix them till Friday.'
+  'Deploys are for Monday, so you can fix them till Friday.',
+  'YOLO ! You only live once !'
 ]
 
 export const REASONS_FOR_FRIDAY_13TH = [
