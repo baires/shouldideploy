@@ -77,7 +77,7 @@ a:focus {
 }
 
 .tagline {
-  font: 300 2rem/2.5rem "Roboto Mono", monospace;
+  font: 300 2rem/2.5rem SFMono-Regular, Menlo, Monaco,Consolas, "Liberation Mono","Courier New", monospace;
   margin-bottom: 1em;
   color: #999;
   text-transform: uppercase;
@@ -85,7 +85,7 @@ a:focus {
 }
 
 #text {
-  font: 900 6rem/6rem "Rubik", sans-serif;
+  font: 900 6rem/6rem -apple-system, BlinkMacSystemFont, "Segoe UI",Roboto, Oxygen-Sans, Ubuntu, Cantarell,"Helvetica Neue", sans-serif;
   color: #111;
   text-transform: uppercase;
 }
@@ -96,12 +96,12 @@ a:focus {
   bottom: 1em;
   width: 100%;
   left: 0;
-  font: 300 1rem/1.25rem "Roboto Mono", monospace;
+  font: 300 1rem/1.25rem SFMono-Regular, Menlo, Monaco,Consolas, "Liberation Mono","Courier New", monospace;
 }
 
 #reload {
   display: inline-block;
-  font: 300 1.5rem/1.5rem "Roboto Mono", monospace;
+  font: 300 1.5rem/1.5rem SFMono-Regular, Menlo, Monaco,Consolas, "Liberation Mono","Courier New", monospace;
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -144,10 +144,10 @@ ul.footer-list select {
 
 @media (min-width: 800px) {
   .tagline {
-    font: 300 3rem/2.8rem "Roboto Mono", monospace;
+    font: 300 3rem/2.8rem SFMono-Regular, Menlo, Monaco,Consolas, "Liberation Mono","Courier New", monospace;
   }
   #text {
-    font: 900 9rem/8.5rem "Rubik", sans-serif;
+    font: 900 9rem/8.5rem -apple-system, BlinkMacSystemFont, "Segoe UI",Roboto, Oxygen-Sans, Ubuntu, Cantarell,"Helvetica Neue", sans-serif;
   }
 }
 
