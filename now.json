@@ -5,6 +5,10 @@
     "trailingSlash": false,
     "redirects": [
         {
+            "source": "/api/slack/(.*)",
+            "destination": "/api/slack"
+        },
+        {
             "source": "/api/(.*)",
             "destination": "/api"
         }

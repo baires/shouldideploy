@@ -1,8 +1,8 @@
 import Time from '../../helpers/time'
-import { getRandom, dayHelper } from '../../helpers/constans'
+import { getRandom, dayHelper, shouldIDeploy } from '../../helpers/constans'
 
 export default (req, res) => {
-  let timezone = req.query.tz || 'UTC'
+  let timezone = req.query.tz || Time.DEFAULT_TIMEZONE
 
   if (!Time.zoneExists(timezone)) {
     return res.status(400).json({
@@ -17,7 +17,7 @@ export default (req, res) => {
 
   res.status(200).json({
     timezone: timezone,
-    shouldideploy: !time.isFriday() && !time.isWeekend(),
+    shouldideploy: shouldIDeploy(time),
     message: getRandom(dayHelper(time))
   })
 }
