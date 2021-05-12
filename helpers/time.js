@@ -1,8 +1,10 @@
 import moment from 'moment-timezone'
 
 export default class Time {
+  static DEFAULT_TIMEZONE = 'UTC'
+
   constructor(timezone) {
-    this.timezone = timezone || 'UTC'
+    this.timezone = timezone || Time.DEFAULT_TIMEZONE
   }
 
   /**
@@ -12,6 +14,14 @@ export default class Time {
    */
   static zoneExists(timezone) {
     return moment.tz.zone(timezone) !== null
+  }
+
+  static validOrNull(timezone) {
+    if (!timezone) {
+      timezone = Time.DEFAULT_TIMEZONE
+    }
+
+    return this.zoneExists(timezone) ? new Time(timezone) : null
   }
 
   /**

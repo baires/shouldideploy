@@ -1,5 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
+import {
+  shouldIDeploy,
+  shouldIDeployFavIcon,
+  shouldIDeployAnswerImage
+} from '../helpers/constans'
 import Time from '../helpers/time'
 import Widget from '../component/widget'
 import Footer from '../component/footer'
@@ -50,24 +55,20 @@ class Page extends React.Component {
           <link
             rel="icon"
             type="image/png"
-            href={
-              this.state.now.isFriday()
-                ? 'https://shouldideploy.today/dots-red.png'
-                : 'https://shouldideploy.today/dots.png'
-            }
+            href={shouldIDeployFavIcon(this.state.now)}
             sizes="32x32"
           />
           <meta
             property="og:image"
-            content={
-              this.state.now.isFriday()
-                ? 'https://shouldideploy.today/no.png'
-                : 'https://shouldideploy.today/yes.png'
-            }
+            content={shouldIDeployAnswerImage(this.state.now)}
           />
           <title>Should I Deploy Today?</title>
         </Head>
-        <div className={`wrapper ${this.state.now.isFriday() && 'its-friday'}`}>
+        <div
+          className={`wrapper ${
+            !shouldIDeploy(this.state.now) && 'its-friday'
+          }`}
+        >
           <div className="aligner">
             <Widget now={this.state.now} />
             <div className="meta">

@@ -9,6 +9,24 @@ import {
   REASONS_FOR_WEEKEND
 } from './reasons'
 
+export const HOST = 'https://shouldideploy.today'
+
+export const shouldIDeploy = function (time) {
+  return time && !time.isFriday() && !time.isWeekend()
+}
+
+export const shouldIDeployAnswerImage = function (time) {
+  return shouldIDeploy(time) ? `${HOST}/yes.png` : `${HOST}/no.png`
+}
+
+export const shouldIDeployColorTheme = function (time) {
+  return shouldIDeploy(time) ? '#36a64f' : '#ff4136'
+}
+
+export const shouldIDeployFavIcon = function (time) {
+  return shouldIDeploy(time) ? `${HOST}/dots.png` : `${HOST}/dots-red.png`
+}
+
 export const getRandom = function ranDay(list) {
   return list[Math.floor(Math.random() * list.length)]
 }
