@@ -9,7 +9,7 @@
             "destination": "/api/slack"
         },
         {
-            "source": "/api/(.*)",
+            "source": "/api/((?!slack).*)",
             "destination": "/api"
         }
     ]
