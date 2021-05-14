@@ -9,3 +9,5 @@ jspm_packages
 public/bundle.js
 .next/
 .now/
+
+.vercel
