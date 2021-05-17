@@ -12,8 +12,13 @@ export default class Time {
    * @param {string} timezone
    * @return {bool}
    */
-  static zoneExists(timezone) {
-    return moment.tz.zone(timezone) !== null
+  static zoneExists(timeZone) {
+    try {
+      Intl.DateTimeFormat('en-US', { timeZone }).format(Date.now())
+      return true
+    } catch (error) {
+      return false
+    }
   }
 
   static validOrNull(timezone) {
