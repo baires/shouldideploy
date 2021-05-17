@@ -38,5 +38,10 @@ export default (props) => (
         <mark>New API</mark>
       </a>
     </li>
+    <li>
+      <a href={'/api/slack?tz=' + props.timezone}>
+        <mark>New Slack API</mark>
+      </a>
+    </li>
   </ul>
 )
