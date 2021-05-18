@@ -1,5 +1,3 @@
-import moment from 'moment-timezone'
-
 export default class Time {
   static DEFAULT_TIMEZONE = 'UTC'
 
@@ -12,8 +10,13 @@ export default class Time {
    * @param {string} timezone
    * @return {bool}
    */
-  static zoneExists(timezone) {
-    return moment.tz.zone(timezone) !== null
+  static zoneExists(timeZone) {
+    try {
+      Intl.DateTimeFormat('en-US', { timeZone }).format(Date.now())
+      return true
+    } catch (error) {
+      return false
+    }
   }
 
   static validOrNull(timezone) {
@@ -26,10 +29,13 @@ export default class Time {
 
   /**
    * Return current date
-   * @return moment.Moment
+   * @return {Date}
    */
   now() {
-    return moment.tz(this.timezone)
+    let timeZoneDate = new Date().toLocaleString('en-US', {
+      timeZone: this.timezone
+    })
+    return new Date(timeZoneDate)
   }
 
   /**
@@ -37,7 +43,7 @@ export default class Time {
    * @return bool
    */
   isThursday() {
-    return this.now().day() === 4
+    return this.now().getDay() === 4
   }
 
   /**
@@ -45,7 +51,7 @@ export default class Time {
    * @return bool
    */
   isFriday() {
-    return this.now().day() === 5
+    return this.now().getDay() === 5
   }
 
   /**
@@ -53,7 +59,7 @@ export default class Time {
    * @return bool
    */
   is13th() {
-    return this.now().date() === 13
+    return this.now().getDate() === 13
   }
 
   /**
@@ -61,7 +67,7 @@ export default class Time {
    * @return bool
    */
   isAfternoon() {
-    return this.now().hour() >= 16
+    return this.now().getHours() >= 16
   }
 
   /**
@@ -93,6 +99,6 @@ export default class Time {
    * @return bool
    */
   isWeekend() {
-    return this.now().day() == 6 || this.now().day() == 0
+    return this.now().getDay() === 6 || this.now().getDay() === 0
   }
 }

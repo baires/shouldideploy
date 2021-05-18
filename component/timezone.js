@@ -1,5 +1,5 @@
 import React from 'react'
-import moment from 'moment-timezone'
+import names from '../helpers/timezones'
 
 export default class Timezone extends React.Component {
   /**
@@ -15,7 +15,7 @@ export default class Timezone extends React.Component {
    * @return JSX.Element[]
    */
   options = () => {
-    return moment.tz.names().map((name, index) => {
+    return names.map((name, index) => {
       return (
         <option value={name} key={index}>
           {name}
