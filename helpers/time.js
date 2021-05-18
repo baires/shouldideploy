@@ -32,7 +32,10 @@ export default class Time {
    * @return {Date}
    */
   now() {
-    return new Date()
+    let timeZoneDate = new Date().toLocaleString('en-US', {
+      timeZone: this.timezone
+    })
+    return new Date(timeZoneDate)
   }
 
   /**
