@@ -113,11 +113,19 @@ a:focus {
     'Liberation Mono', 'Courier New', monospace;
   border: 0;
   background: transparent;
-  cursor: pointer;
   text-decoration: none;
-  color: #ddd;
+  color: #a3a3a3;
   margin-top: 4rem;
   outline: none;
+}
+
+.space-btn {
+  width: 15rem;
+  padding: 0.25em 1em;
+
+  border: 1px solid #a3a3a3;
+  border-radius: 4px;
+  color: #000;
 }
 
 ul.footer-list {
