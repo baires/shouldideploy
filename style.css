@@ -135,17 +135,6 @@ ul.footer-list a {
   color: #777;
 }
 
-/* ul.footer-list .sr-only {
-  position: absolute;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-} */
-
 ul.footer-list select {
   max-width: 110px;
 }
