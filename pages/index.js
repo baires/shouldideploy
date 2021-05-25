@@ -69,20 +69,12 @@ class Page extends React.Component {
             !shouldIDeploy(this.state.now) && 'its-friday'
           }`}
         >
-          <div className="aligner">
-            <Widget now={this.state.now} />
-            <div className="meta">
-              <Footer timezone={this.state.timezone} />
-              <ul className="footer-list">
-                <li>
-                  Timezone:{' '}
-                  <Timezone
-                    onChange={this.changeTimeZone}
-                    timezone={this.state.timezone}
-                  />
-                </li>
-              </ul>
-            </div>
+          <Widget now={this.state.now} />
+          <div className="meta">
+            <Footer
+              timezone={this.state.timezone}
+              changeTimeZone={this.changeTimeZone}
+            />
           </div>
         </div>
       </>
