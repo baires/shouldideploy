@@ -8,7 +8,6 @@ import {
 import Time from '../helpers/time'
 import Widget from '../component/widget'
 import Footer from '../component/footer'
-import Timezone from '../component/timezone'
 import Router from 'next/router'
 
 class Page extends React.Component {
