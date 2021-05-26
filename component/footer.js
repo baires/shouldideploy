@@ -1,6 +1,7 @@
 import React from 'react'
+import Timezone from './timezone'
 
-export default (props) => (
+const Footer = (props) => (
   <ul className="footer-list">
     <li>Share:</li>
     <li>
@@ -43,5 +44,10 @@ export default (props) => (
         <mark>New Slack API</mark>
       </a>
     </li>
+    <li>
+      Timezone:{' '}
+      <Timezone onChange={props.changeTimeZone} timezone={props.timezone} />
+    </li>
   </ul>
 )
+export default Footer
