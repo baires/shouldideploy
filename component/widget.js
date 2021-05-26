@@ -29,19 +29,19 @@ export default class Widget extends React.Component {
   }
 
   componentDidMount() {
-    document.addEventListener('keydown', this.onSpacePress)
+    document.addEventListener('keydown', this.onSpacePressOrClick)
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.onSpacePress)
+    document.removeEventListener('keydown', this.onSpacePressOrClick)
   }
 
   /**
    * On hitting Space reload reasons
    * @return void
    */
-  onSpacePress = (event) => {
-    if (event.keyCode == 32) {
+  onSpacePressOrClick = (event) => {
+    if (event.type === 'click' || event?.keyCode == 32) {
       let reasons = this.getReasons()
       this.setState({ reason: getRandom(reasons) })
     }
@@ -64,8 +64,8 @@ export default class Widget extends React.Component {
       <div className="item">
         <h3 className="tagline">Should I Deploy Today?</h3>
         <h2 id="text">{this.state.reason}</h2>
-        <span id="reload">
-          Hit <span className="space-btn">Space</span> to get another reason
+        <span id="reload" onClick={this.onSpacePressOrClick}>
+          Hit <span className="space-btn">Space</span> or Click
         </span>
       </div>
     )

@@ -107,6 +107,8 @@ a:focus {
   color: #a3a3a3;
   margin-top: 4rem;
   outline: none;
+
+  cursor: pointer;
 }
 
 .space-btn {
