@@ -54,12 +54,16 @@ a:focus {
   color: #000;
 }
 
+#__next {
+  text-align: center;
+  width: 100%;
+}
 .wrapper {
   min-height: 100vh;
 
   display: grid;
   grid-template-rows: 1fr auto;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .aligner {
