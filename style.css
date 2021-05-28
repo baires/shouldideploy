@@ -7,10 +7,6 @@ html {
 body {
   font-size: 1.4rem;
   height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 }
 
 /*csslint box-sizing:false,universal-selector: false*/
@@ -59,7 +55,7 @@ a:focus {
 
   display: grid;
   grid-template-rows: 1fr auto;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .aligner {
