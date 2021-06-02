@@ -9,6 +9,8 @@
     * `npm run dev` start dev server
     * `now dev` if you need local serveless function (requires now)
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://github.com/baires/shouldideploy)
+
 ## Add your reasons
 
 Reasons are located under [reasons.js](https://github.com/baires/shouldideploy/blob/master/helpers/reasons.js)
