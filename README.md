@@ -9,7 +9,7 @@
     * `npm run dev` start dev server
     * `now dev` if you need local serveless function (requires now)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://github.com/baires/shouldideploy)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/baires/shouldideploy)
 
 ## Add your reasons
 
