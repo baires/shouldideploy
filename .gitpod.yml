@@ -1,0 +1,7 @@
+image: node:12.16.3-alpine
+ports:
+- port: 3000
+  onOpen: open-preview
+tasks:
+  - init: npm install
+    command: npm run dev
