@@ -1,3 +1,4 @@
+image: node:14.17.0-alpine
 ports:
 - port: 3000
   onOpen: open-preview
