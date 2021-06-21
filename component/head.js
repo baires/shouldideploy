@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default () => (
+const Head = () => (
   <>
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -34,3 +34,5 @@ export default () => (
     <meta name="theme-color" content="#1E1F29" />
   </>
 )
+
+export default Head
