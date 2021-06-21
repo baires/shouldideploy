@@ -55,4 +55,5 @@ const Footer = (props) => (
     </ul>
   </>
 )
+
 export default Footer
