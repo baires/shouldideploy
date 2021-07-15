@@ -1,5 +1,5 @@
 import Time from '../../helpers/time'
-import { getRandom, dayHelper, shouldIDeploy } from '../../helpers/constans'
+import { getRandom, dayHelper, shouldIDeploy } from '../../helpers/constants'
 
 export default (req, res) => {
   let timezone = req.query.tz || Time.DEFAULT_TIMEZONE
