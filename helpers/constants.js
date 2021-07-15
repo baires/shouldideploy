@@ -7,7 +7,7 @@ import {
   REASONS_FOR_FRIDAY_13TH,
   REASONS_FOR_AFTERNOON,
   REASONS_FOR_WEEKEND
-} from './reasons'
+} from './reasons-with-gif'
 
 export const HOST = 'https://shouldideploy.today'
 
