@@ -18,6 +18,6 @@ export default (req, res) => {
   res.status(200).json({
     timezone: timezone,
     shouldideploy: shouldIDeploy(time),
-    message: getRandom(dayHelper(time))
+    message: getRandom(dayHelper(time)).reason
   })
 }
