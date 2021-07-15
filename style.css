@@ -75,10 +75,15 @@ a:focus {
 .tagline {
   font: 300 2rem/2.5rem SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
-  margin-bottom: 1em;
   color: #999;
   text-transform: uppercase;
   padding: 14px 0 13px 0;
+}
+
+.gif-reason {
+  margin-top: 1em;
+  width: 350px;
+  border-radius: 4px;
 }
 
 #text {
@@ -106,7 +111,8 @@ a:focus {
   background: transparent;
   text-decoration: none;
   color: #a3a3a3;
-  margin-top: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   outline: none;
   cursor: pointer;
 }
