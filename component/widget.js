@@ -1,5 +1,5 @@
 import React from 'react'
-import { getRandom, dayHelper } from '../helpers/constans'
+import { getRandom, dayHelper } from '../helpers/constanst'
 export default class Widget extends React.Component {
   /**
    * Set default state element based on props
