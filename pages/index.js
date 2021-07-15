@@ -4,7 +4,7 @@ import {
   shouldIDeploy,
   shouldIDeployFavIcon,
   shouldIDeployAnswerImage
-} from '../helpers/constanst'
+} from '../helpers/constants'
 import Time from '../helpers/time'
 import Widget from '../component/widget'
 import Footer from '../component/footer'

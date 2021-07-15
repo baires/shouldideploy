@@ -1,5 +1,5 @@
 import React from 'react'
-import { getRandom, dayHelper } from '../helpers/constanst'
+import { getRandom, dayHelper } from '../helpers/constants'
 export default class Widget extends React.Component {
   /**
    * Set default state element based on props
@@ -60,10 +60,12 @@ export default class Widget extends React.Component {
    * @return JSX.Element
    */
   render() {
+    const chosenReason = this.state.reason
+    const reasonText = chosenReason.reason
     return (
       <div className="item">
         <h3 className="tagline">Should I Deploy Today?</h3>
-        <h2 id="text">{this.state.reason}</h2>
+        <h2 id="text">{reasonText}</h2>
         <span id="reload" onClick={this.onSpacePressOrClick}>
           Hit <span className="space-btn">Space</span> or Click
         </span>
