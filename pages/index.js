@@ -3,7 +3,9 @@ import Head from 'next/head'
 import {
   shouldIDeploy,
   shouldIDeployFavIcon,
-  shouldIDeployAnswerImage
+  shouldIDeployAnswerImage,
+  getRandom,
+  dayHelper
 } from '../helpers/constans'
 import Time from '../helpers/time'
 import Widget from '../component/widget'
@@ -13,23 +15,20 @@ import Router from 'next/router'
 class Page extends React.Component {
   constructor(props) {
     super(props)
-
-    let timezoneError = false
-
-    if (!Time.zoneExists(this.props.timezone)) {
-      timezoneError = true
-    }
     this.state = {
-      timezone: timezoneError ? 'UTC' : this.props.timezone,
-      now: new Time(timezoneError ? 'UTC' : this.props.timezone)
+      timezone: this.props.timezone,
+      now: Time.validOrNull(this.props.timezone)
     }
   }
 
   static async getInitialProps(request) {
-    let timezone = request.query.tz || 'UTC'
+    const { tz } = request.query
+    const timezone = tz && Time.zoneExists(tz) ? tz : 'UTC'
+    const now = Time.validOrNull(timezone)
 
     return {
-      timezone: timezone
+      timezone: timezone,
+      initialReason: getRandom(dayHelper(now))
     }
   }
 
@@ -68,7 +67,10 @@ class Page extends React.Component {
             !shouldIDeploy(this.state.now) && 'its-friday'
           }`}
         >
-          <Widget now={this.state.now} />
+          <Widget
+            initialReason={this.props.initialReason}
+            now={this.state.now}
+          />
           <div className="meta">
             <Footer
               timezone={this.state.timezone}
