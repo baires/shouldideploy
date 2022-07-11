@@ -17,19 +17,19 @@
     "format": "prettier-eslint --write $PWD/'**/*.js'"
   },
   "dependencies": {
-    "next": "^12.1.6",
+    "next": "^12.2.2",
     "prettier-eslint-cli": "^6.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "snyk": "^1.958.0"
+    "snyk": "^1.966.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^8.18.0",
-    "eslint-config-next": "^12.1.6",
+    "eslint": "^8.19.0",
+    "eslint-config-next": "^12.2.2",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1"
