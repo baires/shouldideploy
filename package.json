@@ -39,5 +39,8 @@
       "pre-commit": "npm run format && npm run lint"
     }
   },
+  "engines": {
+    "node": "16.x"
+  },
   "snyk": true
 }
