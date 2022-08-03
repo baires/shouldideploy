@@ -101,4 +101,25 @@ export default class Time {
   isWeekend() {
     return this.now().getDay() === 6 || this.now().getDay() === 0
   }
+
+  isDayBeforeChristmas() {
+    return (
+      this.now().getMonth() === 11 &&
+      this.now().getDate() === 24 &&
+      this.now().getHours() >= 16
+    )
+  }
+
+  isChristmas() {
+    return this.now().getMonth() === 11 && this.now().getDate() === 25
+  }
+
+  isNewYear() {
+    return (
+      (this.now().getMonth() === 11 &&
+        this.now().getDate() === 31 &&
+        this.now().getHours() >= 16) ||
+      (this.now().getMonth() === 0 && this.now().getDate() === 1)
+    )
+  }
 }

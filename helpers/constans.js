@@ -6,7 +6,10 @@ import {
   REASONS_FOR_FRIDAY_AFTERNOON,
   REASONS_FOR_FRIDAY_13TH,
   REASONS_FOR_AFTERNOON,
-  REASONS_FOR_WEEKEND
+  REASONS_FOR_WEEKEND,
+  REASONS_FOR_DAY_BEFORE_CHRISTMAS,
+  REASONS_FOR_CHRISTMAS,
+  REASONS_NEW_YEAR
 } from './reasons'
 
 export const HOST = 'https://shouldideploy.today'
@@ -37,6 +40,17 @@ export const getRandom = function ranDay(list) {
  */
 export function dayHelper(time) {
   time = time || new Time()
+
+  if (time.isDayBeforeChristmas()) {
+    return REASONS_FOR_DAY_BEFORE_CHRISTMAS
+  }
+  if (time.isChristmas()) {
+    return REASONS_FOR_CHRISTMAS
+  }
+
+  if (time.isNewYear()) {
+    return REASONS_NEW_YEAR
+  }
 
   if (time.isFriday13th()) {
     return REASONS_FOR_FRIDAY_13TH

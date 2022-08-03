@@ -189,3 +189,14 @@ ul.footer-list select {
   border-color: #b30a00;
   color: #b30a00;
 }
+
+.reason {
+  white-space: pre-line;
+  padding: 0 6rem;
+}
+
+@media screen and (max-width: 400px) {
+  .reason {
+    padding: 0 2rem;
+  }
+}
