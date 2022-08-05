@@ -102,6 +102,10 @@ export default class Time {
     return this.now().getDay() === 6 || this.now().getDay() === 0
   }
 
+  /**
+   * Is it Christmas eve?
+   * @returns
+   */
   isDayBeforeChristmas() {
     return (
       this.now().getMonth() === 11 &&
@@ -110,10 +114,18 @@ export default class Time {
     )
   }
 
+  /**
+   * Is it Christmas?
+   * @returns
+   */
   isChristmas() {
     return this.now().getMonth() === 11 && this.now().getDate() === 25
   }
 
+  /**
+   * Is it New Years eve or New Year?
+   * @returns
+   */
   isNewYear() {
     return (
       (this.now().getMonth() === 11 &&
@@ -121,5 +133,13 @@ export default class Time {
         this.now().getHours() >= 16) ||
       (this.now().getMonth() === 0 && this.now().getDate() === 1)
     )
+  }
+
+  /**
+   * Combine if holidays
+   * @returns
+   */
+  isHolidays() {
+    return this.isDayBeforeChristmas() || this.isChristmas() || this.isNewYear()
   }
 }

@@ -97,7 +97,8 @@ export const REASONS_FOR_DAY_BEFORE_CHRISTMAS = [
   '🎶🎵 You better watch out 🎵🎶',
   '🎄 Enjoy the holiday season! 🎄 ',
   'Just take another glass of eggnog',
-  "Can't you just wait after present unwrapping?"
+  "Can't you just wait after present unwrapping?",
+  'Sure, deploy... \n your family will appreciate you fixing things on your phone during dinner'
 ]
 
 export const REASONS_FOR_CHRISTMAS = [

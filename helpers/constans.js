@@ -15,7 +15,8 @@ import {
 export const HOST = 'https://shouldideploy.today'
 
 export const shouldIDeploy = function (time) {
-  return time && !time.isFriday() && !time.isWeekend()
+  console.log(time.isHolidays())
+  return time && !time.isFriday() && !time.isWeekend() && !time.isHolidays()
 }
 
 export const shouldIDeployAnswerImage = function (time) {
