@@ -91,3 +91,26 @@ export const REASONS_FOR_WEEKEND = [
   'I see you deployed on Friday',
   'Told you that Monday would be a better idea!'
 ]
+
+export const REASONS_FOR_DAY_BEFORE_CHRISTMAS = [
+  'Are you Santa 🧑‍🎄 or what?',
+  '🎶🎵 You better watch out 🎵🎶',
+  '🎄 Enjoy the holiday season! 🎄 ',
+  'Just take another glass of eggnog',
+  "Can't you just wait after present unwrapping?",
+  'Sure, deploy... \n your family will appreciate you fixing things on your phone during dinner'
+]
+
+export const REASONS_FOR_CHRISTMAS = [
+  ...REASONS_FOR_DAY_BEFORE_CHRISTMAS,
+  'No, Rudolf will hunt you down 🦌 ',
+  'Just watch Home Alone today',
+  "Shouldn't you be preparing a christmas diner?"
+]
+
+export const REASONS_NEW_YEAR = [
+  'Happy New Year! \n deploy the 2nd of january',
+  "Aren't you hungover?",
+  'Take another glass of champagne 🥂',
+  'Celebrate today, deploy tomorrow 🎇'
+]
