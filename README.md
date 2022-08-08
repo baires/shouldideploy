@@ -18,7 +18,15 @@ Reasons are located under [reasons.js](https://github.com/baires/shouldideploy/b
 ## API endpoint
 There is an enpoint to use on your CI or just for fun at `https://shouldideploy.today/api`
 
-## Credit
+## Community projects
+ - [gustamms/devo-fazer-deploy-hoje](https://github.com/gustamms/devo-fazer-deploy-hoje) Versão brasileira do site https://shouldideploy.today/
+ - [timelfrink/shouldideploy-action](https://github.com/timelfrink/shouldideploy-action) This action checks the website shouldideploy.today and stops deployments if the site tells us not to do so.
+ - [panacaqui/should-i-deploy-today-discord-bot](https://github.com/panacaqui/should-i-deploy-today-discord-bot) A simple API to send a daily message from shouldideploy.today in a Discord channel.
+ - [MatheusHAS/shouldideploytoday-for-pipeline](https://github.com/MatheusHAS/shouldideploytoday-for-pipeline) This example of implementation, consumes the shouldideploy.today API to decide on my pipeline if will be deploy process run or not.
+ - [Brunomachadob/shouldideploy-slack](https://github.com/Brunomachadob/shouldideploy-slack) Should I Deploy Slack command
+ - [gpalomar/shouldideploy-vscode](https://github.com/gpalomar/shouldideploy-vscode) A Visual Studio Code Extension that uses https://github.com/baires/shouldideploy 🍻⚠️
+
+## Credits
 
 Favicon created by [emilegraphics](https://thenounproject.com/search/?q=dot&i=1359410)
 
