@@ -104,7 +104,7 @@ export default class Time {
 
   /**
    * Is it Christmas eve?
-   * @returns
+   * @returns bool
    */
   isDayBeforeChristmas() {
     return (
@@ -116,7 +116,7 @@ export default class Time {
 
   /**
    * Is it Christmas?
-   * @returns
+   * @returns bool
    */
   isChristmas() {
     return this.now().getMonth() === 11 && this.now().getDate() === 25
@@ -124,7 +124,7 @@ export default class Time {
 
   /**
    * Is it New Years eve or New Year?
-   * @returns
+   * @returns bool
    */
   isNewYear() {
     return (
@@ -137,7 +137,7 @@ export default class Time {
 
   /**
    * Combine if holidays
-   * @returns
+   * @returns bool
    */
   isHolidays() {
     return this.isDayBeforeChristmas() || this.isChristmas() || this.isNewYear()
