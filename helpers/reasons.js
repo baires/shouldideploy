@@ -12,22 +12,33 @@ export const REASONS_TO_DEPLOY = [
   'Make me proud',
   'Break a leg!',
   'This Is the Way',
-  'Strike First, Strike Hard, No Mercy!'
+  'Strike First, Strike Hard, No Mercy!',
+  'Yes! Grab you coffee and be prepared! :pray emoji'
 ]
 
 export const REASONS_TO_NOT_DEPLOY = [
-  "I wouldn't recommend it",
-  "No, it's Friday",
-  'What about Monday?',
-  'Not today',
-  'Nope',
-  'Why?',
+  "Let's deploy Live instead!",
+  "Let's deploy Studio instead!",
+  "Let's deploy Stage instead!",
+  "Let's deploy Writer Access instead!",
+  "Let's do it next Sunday! 🍦",
+  "At 9pm BRT? I'd rather watch Netflix!",
+  'Did the product team ask you to do it? Yes? OMG! Are they nuts?',
+  'Do you have the courage to not break it into 3 waves? :evil emoji:',
+  "I'll create an interactive content to prove you that today is not a good day.",
+  'Have you changed Creative Studio? I think you should review your code once again, just in case.',
+  "I'd rather have 100% bounce rate!",
+  "You don't have enough leads to do it.",
+  'Are you trying to convert me?',
+  'The result of the quiz is: NO!',
+  "Accordingly to this interactive ebook, you shouldn't.",
+  'My respondents said that today is not a good day.',
+  "I've integrated your question with other MarTech tools and all of them returned that it's not a good idea!",
+  "I've scheduled a report with the answer. Click here to download the NO.pdf",
   'Did the tests pass? Probably not',
   '¯\\_(ツ)_/¯',
   '😹',
-  'No',
   'No. Breathe and count to 10, start again',
-  "I'd rather have ice-cream 🍦",
   'How could you? 🥺'
 ]
 
