@@ -60,7 +60,7 @@ class Page extends React.Component {
             property="og:image"
             content={shouldIDeployAnswerImage(this.state.now)}
           />
-          <title>Should I Deploy Today?</title>
+          <title>Should I Deploy Ion Today?</title>
         </Head>
         <div
           className={`wrapper ${
