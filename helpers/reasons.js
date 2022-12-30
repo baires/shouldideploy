@@ -28,7 +28,8 @@ export const REASONS_TO_NOT_DEPLOY = [
   'No',
   'No. Breathe and count to 10, start again',
   "I'd rather have ice-cream 🍦",
-  'How could you? 🥺'
+  'How could you? 🥺',
+  'Some people just want to watch the world burn 🔥'
 ]
 
 export const REASONS_FOR_THURSDAY_AFTERNOON = [
