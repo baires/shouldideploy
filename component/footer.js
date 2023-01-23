@@ -49,7 +49,7 @@ const Footer = (props) => (
       </li>
       <li>
         <a href={'/api/slack?tz=' + props.timezone}>
-          <mark>New Slack API</mark>
+          <mark>Slack API</mark>
         </a>
       </li>
     </ul>
