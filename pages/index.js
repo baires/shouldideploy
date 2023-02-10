@@ -32,7 +32,7 @@ class Page extends React.Component {
     }
   }
 
-  changeTimeZone = (timezone) => {
+  changeTimezone = (timezone) => {
     if (!Time.zoneExists(this.props.timezone)) {
       return
     }
@@ -63,9 +63,8 @@ class Page extends React.Component {
           <title>Should I Deploy Today?</title>
         </Head>
         <div
-          className={`wrapper ${
-            !shouldIDeploy(this.state.now) && 'its-friday'
-          }`}
+          className={`wrapper ${!shouldIDeploy(this.state.now) && 'its-friday'
+            }`}
         >
           <Widget
             initialReason={this.props.initialReason}
@@ -74,7 +73,7 @@ class Page extends React.Component {
           <div className="meta">
             <Footer
               timezone={this.state.timezone}
-              changeTimeZone={this.changeTimeZone}
+              changeTimezone={this.changeTimezone}
             />
           </div>
         </div>

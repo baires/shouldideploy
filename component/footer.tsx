@@ -2,10 +2,7 @@ import React from 'react'
 import Timezone from './timezone'
 
 interface IFooter {
-  changeTimeZone: {
-    timezone: string,
-    changeTimezone: (timezone: string) => void
-  },
+  changeTimezone: (timezone: string) => void
   timezone: string
 }
 
@@ -46,7 +43,7 @@ const Footer = (props: IFooter) => {
         </li>
         <li>
           Timezone:{' '}
-          <Timezone onChange={props.changeTimeZone} timezone={props.timezone} />
+          <Timezone onChange={props.changeTimezone} timezone={props.timezone} />
         </li>
       </ul>
 
