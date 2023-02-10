@@ -63,5 +63,4 @@ const Footer = (props: IFooter) => {
   )
 }
 
-
 export default Footer

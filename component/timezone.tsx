@@ -6,13 +6,11 @@ interface ITimezone {
   timezone: string
 }
 
-
 const Timezone = (props: ITimezone) => {
-
   /**
- * On change timezone propagate new timezone value
- * @return void
- */
+   * On change timezone propagate new timezone value
+   * @return void
+   */
   const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     props.onChange(event.target.value)
   }
