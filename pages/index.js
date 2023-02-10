@@ -62,7 +62,10 @@ class Page extends React.Component {
           />
           <title>Should I Deploy Today?</title>
         </Head>
-        <div className={`wrapper ${!shouldIDeploy(this.state.now) && 'its-friday'}`}>
+        <div
+          className={`wrapper ${!shouldIDeploy(this.state.now) && 'its-friday'
+            }`}
+        >
           <Widget
             initialReason={this.props.initialReason}
             now={this.state.now}
