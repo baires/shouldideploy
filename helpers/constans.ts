@@ -46,7 +46,7 @@ export const shouldIDeployFavIcon = function (time: {
   return shouldIDeploy(time) ? `${HOST}/dots.png` : `${HOST}/dots-red.png`
 }
 
-export const getRandom = function ranDay(list: string | number[]) {
+export const getRandom = function ranDay(list: string | string[]) {
   return list[Math.floor(Math.random() * list.length)]
 }
 

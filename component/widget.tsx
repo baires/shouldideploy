@@ -1,8 +1,12 @@
 import React from 'react'
 import { getRandom, dayHelper } from '../helpers/constans'
+import Time from '../helpers/time'
 
 interface IWidget {
-  now: { timezone: string }
+  now: {
+    timezone: string
+    time: Time
+  }
   reason: string
 }
 
@@ -34,7 +38,7 @@ const Widget = (props: IWidget) => {
    * @return string[]
    */
   const getReasons = () => {
-    return dayHelper(props.now)
+    return dayHelper(props.now.time)
   }
 
   /**
