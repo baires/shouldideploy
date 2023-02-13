@@ -7,7 +7,25 @@ import {
 } from '../../../helpers/constans'
 import Time from '../../../helpers/time'
 
-export default (req, res) => {
+export default (
+  req: { body: { text: string }; query: { tz: string } },
+  res: {
+    status: (response: number) => {
+      json: {
+        (response: {
+          response_type: string
+          attachments: {
+            text: string
+            color: string
+            thumb_url: string
+            footer_icon: string
+            footer: string
+          }[]
+        }): void
+      }
+    }
+  }
+) => {
   let timezone = req.body.text || req.query.tz || Time.DEFAULT_TIMEZONE
   let time = Time.validOrNull(timezone)
 

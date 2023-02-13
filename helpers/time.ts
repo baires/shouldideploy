@@ -2,7 +2,7 @@ export default class Time {
   static DEFAULT_TIMEZONE = 'UTC'
   timezone: string
 
-  constructor(timezone?: string) {
+  constructor(timezone: string) {
     this.timezone = timezone || Time.DEFAULT_TIMEZONE
   }
 
@@ -20,7 +20,7 @@ export default class Time {
     }
   }
 
-  static validOrNull(timezone: string) {
+  static validOrNull(timezone: string | null) {
     if (!timezone) {
       timezone = Time.DEFAULT_TIMEZONE
     }
