@@ -14,35 +14,19 @@ import {
 
 export const HOST = 'https://shouldideploy.today'
 
-export const shouldIDeploy = function (time: {
-  isFriday: () => boolean
-  isWeekend: () => boolean
-  isHolidays: () => boolean
-}) {
+export const shouldIDeploy = function (time: Time | null) {
   return time && !time.isFriday() && !time.isWeekend() && !time.isHolidays()
 }
 
-export const shouldIDeployAnswerImage = function (time: {
-  isFriday: () => boolean
-  isWeekend: () => boolean
-  isHolidays: () => boolean
-}) {
+export const shouldIDeployAnswerImage = function (time: Time | null) {
   return shouldIDeploy(time) ? `${HOST}/yes.png` : `${HOST}/no.png`
 }
 
-export const shouldIDeployColorTheme = function (time: {
-  isFriday: () => boolean
-  isWeekend: () => boolean
-  isHolidays: () => boolean
-}) {
+export const shouldIDeployColorTheme = function (time: Time | null) {
   return shouldIDeploy(time) ? '#36a64f' : '#ff4136'
 }
 
-export const shouldIDeployFavIcon = function (time: {
-  isFriday: () => boolean
-  isWeekend: () => boolean
-  isHolidays: () => boolean
-}) {
+export const shouldIDeployFavIcon = function (time: Time | null) {
   return shouldIDeploy(time) ? `${HOST}/dots.png` : `${HOST}/dots-red.png`
 }
 
@@ -55,7 +39,7 @@ export const getRandom = function ranDay(list: string | string[]) {
  * @param string[]
  */
 export function dayHelper(time: Time) {
-  time = time || new Time()
+  time = time || new Time(time)
 
   if (time.isDayBeforeChristmas()) {
     return REASONS_FOR_DAY_BEFORE_CHRISTMAS

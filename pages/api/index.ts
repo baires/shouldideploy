@@ -1,7 +1,21 @@
 import Time from '../../helpers/time'
 import { getRandom, dayHelper, shouldIDeploy } from '../../helpers/constans'
 
-export default (req, res) => {
+export default (
+  req: { query: { tz: string } },
+  res: {
+    status: (response: number) => {
+      json: {
+        (response: {
+          error?: { message: string; type: string; code: number }
+          timezone?: string
+          shouldideploy?: boolean | null
+          message?: string
+        }): void
+      }
+    }
+  }
+) => {
   let timezone = req.query.tz || Time.DEFAULT_TIMEZONE
 
   if (!Time.zoneExists(timezone)) {
