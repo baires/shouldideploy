@@ -3,20 +3,17 @@ import { getRandom, dayHelper } from '../helpers/constans'
 import Time from '../helpers/time'
 
 interface IWidget {
-  now: {
-    timezone: string
-    time: Time
-  }
+  now: Time
   reason: string
 }
 
 const Widget = (props: IWidget) => {
   const [reason, setReasons] = React.useState<string>()
-  const [timezone, setTimezone] = React.useState<string>()
+  const [timezone, setTimezone] = React.useState<Time>()
 
   React.useEffect(() => {
-    if (props.now.timezone !== timezone) {
-      setTimezone(props.now.timezone)
+    if (props.now !== timezone) {
+      setTimezone(props.now)
       updateReasons()
     }
     document.addEventListener('keydown', onSpacePressOrClick)
@@ -38,7 +35,7 @@ const Widget = (props: IWidget) => {
    * @return string[]
    */
   const getReasons = () => {
-    return dayHelper(props.now.time)
+    return dayHelper(props.now)
   }
 
   /**
