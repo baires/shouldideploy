@@ -17,7 +17,7 @@
     "format": "prettier-eslint --write $PWD/'**/*.js'"
   },
   "dependencies": {
-    "@vercel/analytics": "^0.1.8",
+    "@vercel/analytics": "^0.1.10",
     "next": "^13.1.6",
     "prettier-eslint-cli": "^7.1.0",
     "react": "^18.2.0",
