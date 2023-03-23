@@ -1,16 +1,17 @@
 export default class Time {
   static DEFAULT_TIMEZONE = 'UTC'
+  timezone: string
 
-  constructor(timezone) {
+  constructor(timezone: string) {
     this.timezone = timezone || Time.DEFAULT_TIMEZONE
   }
 
   /**
    * Check if a timezone exist
-   * @param {string} timezone
+   * @param {string} timeZone
    * @return {bool}
    */
-  static zoneExists(timeZone) {
+  static zoneExists(timeZone: string): boolean {
     try {
       Intl.DateTimeFormat('en-US', { timeZone }).format(Date.now())
       return true
@@ -19,7 +20,7 @@ export default class Time {
     }
   }
 
-  static validOrNull(timezone) {
+  static validOrNull(timezone: string | null) {
     if (!timezone) {
       timezone = Time.DEFAULT_TIMEZONE
     }
@@ -31,7 +32,7 @@ export default class Time {
    * Return current date
    * @return {Date}
    */
-  now() {
+  now(): Date {
     let timeZoneDate = new Date().toLocaleString('en-US', {
       timeZone: this.timezone
     })
@@ -40,73 +41,73 @@ export default class Time {
 
   /**
    * Today is Thursday
-   * @return bool
+   * @return boolean
    */
-  isThursday() {
+  isThursday(): boolean {
     return this.now().getDay() === 4
   }
 
   /**
    * Today is Friday
-   * @return bool
+   * @return boolean
    */
-  isFriday() {
+  isFriday(): boolean {
     return this.now().getDay() === 5
   }
 
   /**
    * Today is day 13
-   * @return bool
+   * @return boolean
    */
-  is13th() {
+  is13th(): boolean {
     return this.now().getDate() === 13
   }
 
   /**
    * Are we in the afternoon?
-   * @return bool
+   * @return boolean
    */
-  isAfternoon() {
+  isAfternoon(): boolean {
     return this.now().getHours() >= 16
   }
 
   /**
    * Are we Thursday afternoon?
-   * @return bool
+   * @return boolean
    */
-  isThursdayAfternoon() {
+  isThursdayAfternoon(): boolean {
     return this.isThursday() && this.isAfternoon()
   }
 
   /**
    * Are we Friday afternoon?
-   * @return bool
+   * @return boolean
    */
-  isFridayAfternoon() {
+  isFridayAfternoon(): boolean {
     return this.isFriday() && this.isAfternoon()
   }
 
   /**
    * Are we Friday the 13th?
-   * @return bool
+   * @return boolean
    */
-  isFriday13th() {
+  isFriday13th(): boolean {
     return this.isFriday() && this.is13th()
   }
 
   /**
    * Are we the weekend (Saturday, Sunday)
-   * @return bool
+   * @return boolean
    */
-  isWeekend() {
+  isWeekend(): boolean {
     return this.now().getDay() === 6 || this.now().getDay() === 0
   }
 
   /**
    * Is it Christmas eve?
-   * @returns bool
+   * @returns boolean
    */
-  isDayBeforeChristmas() {
+  isDayBeforeChristmas(): boolean {
     return (
       this.now().getMonth() === 11 &&
       this.now().getDate() === 24 &&
@@ -116,17 +117,17 @@ export default class Time {
 
   /**
    * Is it Christmas?
-   * @returns bool
+   * @returns boolean
    */
-  isChristmas() {
+  isChristmas(): boolean {
     return this.now().getMonth() === 11 && this.now().getDate() === 25
   }
 
   /**
    * Is it New Years eve or New Year?
-   * @returns bool
+   * @returns boolean
    */
-  isNewYear() {
+  isNewYear(): boolean {
     return (
       (this.now().getMonth() === 11 &&
         this.now().getDate() === 31 &&
@@ -137,9 +138,9 @@ export default class Time {
 
   /**
    * Combine if holidays
-   * @returns bool
+   * @returns boolean
    */
-  isHolidays() {
+  isHolidays(): boolean {
     return this.isDayBeforeChristmas() || this.isChristmas() || this.isNewYear()
   }
 }

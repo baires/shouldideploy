@@ -14,23 +14,23 @@ import {
 
 export const HOST = 'https://shouldideploy.today'
 
-export const shouldIDeploy = function (time) {
+export const shouldIDeploy = function (time: Time | null) {
   return time && !time.isFriday() && !time.isWeekend() && !time.isHolidays()
 }
 
-export const shouldIDeployAnswerImage = function (time) {
+export const shouldIDeployAnswerImage = function (time: Time | null) {
   return shouldIDeploy(time) ? `${HOST}/yes.png` : `${HOST}/no.png`
 }
 
-export const shouldIDeployColorTheme = function (time) {
+export const shouldIDeployColorTheme = function (time: Time | null) {
   return shouldIDeploy(time) ? '#36a64f' : '#ff4136'
 }
 
-export const shouldIDeployFavIcon = function (time) {
+export const shouldIDeployFavIcon = function (time: Time | null) {
   return shouldIDeploy(time) ? `${HOST}/dots.png` : `${HOST}/dots-red.png`
 }
 
-export const getRandom = function ranDay(list) {
+export const getRandom = function ranDay(list: string | string[]) {
   return list[Math.floor(Math.random() * list.length)]
 }
 
@@ -38,8 +38,8 @@ export const getRandom = function ranDay(list) {
  * Return a list of reasons according of time parameter
  * @param string[]
  */
-export function dayHelper(time) {
-  time = time || new Time()
+export function dayHelper(time: Time) {
+  time = time || new Time(time)
 
   if (time.isDayBeforeChristmas()) {
     return REASONS_FOR_DAY_BEFORE_CHRISTMAS

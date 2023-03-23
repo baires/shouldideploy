@@ -1,20 +1,25 @@
 import React from 'react'
 import names from '../helpers/timezones'
 
-export default class Timezone extends React.Component {
+interface ITimezone {
+  onChange: (value: string) => void
+  timezone: string
+}
+
+const Timezone = (props: ITimezone) => {
   /**
    * On change timezone propagate new timezone value
    * @return void
    */
-  onChange = (event) => {
-    this.props.onChange(event.target.value)
+  const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    props.onChange(event.target.value)
   }
 
   /**
    * Build options list
    * @return JSX.Element[]
    */
-  options = () => {
+  const options = () => {
     return names.map((name, index) => {
       return (
         <option value={name} key={index}>
@@ -28,11 +33,11 @@ export default class Timezone extends React.Component {
    * Render timezone selector
    * @return JSX.Element[]
    */
-  render() {
-    return (
-      <select value={this.props.timezone} onChange={this.onChange}>
-        {this.options()}
-      </select>
-    )
-  }
+  return (
+    <select value={props.timezone} onChange={onChange}>
+      {options()}
+    </select>
+  )
 }
+
+export default Timezone
