@@ -18,7 +18,9 @@ interface IPage {
 
 const Page = ({ tz }: IPage) => {
   const router = useRouter()
-  const initialTimezone = tz || router.query.tz || 'UTC' // Set the default timezone value to 'UTC' when it's not provided
+  const queryTimezone =
+    typeof router.query.tz === 'string' ? router.query.tz : '' // Add type check for router.query.tz
+  const initialTimezone = tz || queryTimezone || 'UTC' // Use queryTimezone instead of router.query.tz
   const [timezone, setTimezone] = React.useState<string>(initialTimezone)
   const [now, setNow] = React.useState<any>(Time.validOrNull(initialTimezone))
   const [initialReason, setInitialReason] = React.useState<string>('')
