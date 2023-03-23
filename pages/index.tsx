@@ -10,15 +10,17 @@ import {
 import Time from '../helpers/time'
 import Widget from '../component/widget'
 import Footer from '../component/footer'
-import Router from 'next/router'
+import Router, { useRouter } from 'next/router'
 
 interface IPage {
-  tz: string
+  tz?: string
 }
 
 const Page = ({ tz }: IPage) => {
-  const [timezone, setTimezone] = React.useState<string>(tz)
-  const [now, setNow] = React.useState<any>(Time.validOrNull(tz))
+  const router = useRouter()
+  const initialTimezone = tz || router.query.tz || 'UTC' // Set the default timezone value to 'UTC' when it's not provided
+  const [timezone, setTimezone] = React.useState<string>(initialTimezone)
+  const [now, setNow] = React.useState<any>(Time.validOrNull(initialTimezone))
   const [initialReason, setInitialReason] = React.useState<string>('')
 
   React.useEffect(() => {
