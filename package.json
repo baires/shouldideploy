@@ -25,7 +25,7 @@
     "snyk": "^1.1127.0"
   },
   "devDependencies": {
-    "@types/node": "18.13.0",
+    "@types/node": "18.15.10",
     "@types/react": "18.0.29",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.36.0",
