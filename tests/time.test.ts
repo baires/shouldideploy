@@ -21,6 +21,4 @@ describe('Time Class', () => {
     expect(time1.isFriday()).toBe(true)
     expect(time2.isFriday()).toBe(true)
   })
-
-  // Add more tests as needed for other Time class methods.
 })
