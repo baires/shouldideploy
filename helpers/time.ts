@@ -15,8 +15,6 @@ export default class Time {
     }
   }
 
-  customDate?: Date
-
   getDate(): Date {
     if (this.customDate) {
       return this.customDate
