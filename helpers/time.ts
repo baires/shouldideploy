@@ -1,9 +1,30 @@
 export default class Time {
   static DEFAULT_TIMEZONE = 'UTC'
   timezone: string
+  customDate: Date | null
 
-  constructor(timezone: string) {
+  constructor(timezone: string, customDate?: string) {
     this.timezone = timezone || Time.DEFAULT_TIMEZONE
+    if (customDate) {
+      const utcDate = new Date(customDate + 'T00:00:00Z')
+      const offset = utcDate.getTimezoneOffset() * 60 * 1000
+      const adjustedDate = new Date(utcDate.getTime() + offset)
+      this.customDate = adjustedDate
+    } else {
+      this.customDate = null
+    }
+  }
+
+  customDate?: Date
+
+  getDate(): Date {
+    if (this.customDate) {
+      return this.customDate
+    }
+    let timeZoneDate = new Date().toLocaleString('en-US', {
+      timeZone: this.timezone
+    })
+    return new Date(timeZoneDate)
   }
 
   /**
@@ -33,6 +54,9 @@ export default class Time {
    * @return {Date}
    */
   now(): Date {
+    if (this.customDate) {
+      return this.customDate
+    }
     let timeZoneDate = new Date().toLocaleString('en-US', {
       timeZone: this.timezone
     })
@@ -44,7 +68,7 @@ export default class Time {
    * @return boolean
    */
   isThursday(): boolean {
-    return this.now().getDay() === 4
+    return this.getDate().getDay() === 4
   }
 
   /**
@@ -52,7 +76,7 @@ export default class Time {
    * @return boolean
    */
   isFriday(): boolean {
-    return this.now().getDay() === 5
+    return this.getDate().getDay() === 5
   }
 
   /**
@@ -60,7 +84,7 @@ export default class Time {
    * @return boolean
    */
   is13th(): boolean {
-    return this.now().getDate() === 13
+    return this.getDate().getDate() === 13
   }
 
   /**
@@ -68,7 +92,7 @@ export default class Time {
    * @return boolean
    */
   isAfternoon(): boolean {
-    return this.now().getHours() >= 16
+    return this.getDate().getHours() >= 16
   }
 
   /**
@@ -100,7 +124,7 @@ export default class Time {
    * @return boolean
    */
   isWeekend(): boolean {
-    return this.now().getDay() === 6 || this.now().getDay() === 0
+    return this.getDate().getDay() === 6 || this.getDate().getDay() === 0
   }
 
   /**
@@ -109,9 +133,9 @@ export default class Time {
    */
   isDayBeforeChristmas(): boolean {
     return (
-      this.now().getMonth() === 11 &&
-      this.now().getDate() === 24 &&
-      this.now().getHours() >= 16
+      this.getDate().getMonth() === 11 &&
+      this.getDate().getDate() === 24 &&
+      this.getDate().getHours() >= 16
     )
   }
 
@@ -120,7 +144,7 @@ export default class Time {
    * @returns boolean
    */
   isChristmas(): boolean {
-    return this.now().getMonth() === 11 && this.now().getDate() === 25
+    return this.getDate().getMonth() === 11 && this.getDate().getDate() === 25
   }
 
   /**
