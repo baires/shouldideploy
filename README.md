@@ -55,6 +55,7 @@ https://shouldideploy.today/api?tz=America/New_York&date=2023-03-31
 The API returns a JSON object containing the following keys:
 
 - `timezone`: The timezone used for evaluating the date and time.
+- `date`: The date provided as parameter in ISO format (YYYY-MM-DDTHH:mm:ss.sssZ)
 - `shouldideploy`: A boolean value indicating whether you should deploy today or not.
 - `message`: A string containing a reason or explanation for the `shouldideploy` result.
 
@@ -63,6 +64,7 @@ Example response:
 ```
 {
   "timezone": "UTC",
+  "date": "2023-03-31T00:00:00.000Z",
   "shouldideploy": false,
   "message": "It's Friday, better not deploy today."
 }
