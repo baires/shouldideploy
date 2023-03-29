@@ -18,6 +18,57 @@ Reasons are located under [reasons.ts](https://github.com/baires/shouldideploy/b
 ## API endpoint
 There is an enpoint to use on your CI or just for fun at `https://shouldideploy.today/api`
 
+You can also provide optional parameters to customize the API response:
+
+- `tz`: The timezone to use when evaluating the date and time. The default value is UTC. Pass a valid timezone string, such as `America/New_York` or `Europe/London` default `UTC`.
+- `date`: The date to evaluate. The default value is the current date. Pass a valid date string in the format `YYYY-MM-DD`, such as `2023-03-31`.
+
+### Examples
+
+Get the default API response using the current date and time in the UTC timezone:
+
+
+```
+https://shouldideploy.today/api
+```
+
+Get the API response for a specific timezone (e.g., Europe/London):
+
+```
+https://shouldideploy.today/api?tz=Europe/London
+```
+
+Get the API response for a specific date (e.g., 2023-03-31) in the UTC timezone:
+
+```
+https://shouldideploy.today/api?date=2023-03-31
+```
+
+Get the API response for a specific date (e.g., 2023-03-31) in a specific timezone (e.g., America/New_York):
+
+```
+https://shouldideploy.today/api?tz=America/New_York&date=2023-03-31
+```
+
+## API Response
+
+The API returns a JSON object containing the following keys:
+
+- `timezone`: The timezone used for evaluating the date and time.
+- `shouldideploy`: A boolean value indicating whether you should deploy today or not.
+- `message`: A string containing a reason or explanation for the `shouldideploy` result.
+
+Example response:
+
+```
+{
+  "timezone": "UTC",
+  "shouldideploy": false,
+  "message": "It's Friday, better not deploy today."
+}
+```
+
+
 ## Community projects
  - [gustamms/devo-fazer-deploy-hoje](https://github.com/gustamms/devo-fazer-deploy-hoje) Versão brasileira do site https://shouldideploy.today/
  - [timelfrink/shouldideploy-action](https://github.com/timelfrink/shouldideploy-action) This action checks the website shouldideploy.today and stops deployments if the site tells us not to do so.
