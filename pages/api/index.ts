@@ -1,24 +1,40 @@
+import { NextApiRequest, NextApiResponse } from 'next'
 import Time from '../../helpers/time'
 import { getRandom, dayHelper, shouldIDeploy } from '../../helpers/constans'
 
-export default (
-  req: { query: { tz: string; date: string } },
+type ApiResponse = {
+  error?: { message: string; type: string; code: number }
+  timezone?: string
+  date?: string
+  shouldideploy?: boolean | null
+  message?: string
+}
+
+const allowCors =
+  (fn: (req: NextApiRequest, res: NextApiResponse) => Promise<void>) =>
+  async (req: NextApiRequest, res: NextApiResponse) => {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+
+    if (req.method === 'OPTIONS') {
+      res.status(200).end()
+      return
+    }
+
+    return await fn(req, res)
+  }
+
+const handler = async (
+  req: NextApiRequest,
   res: {
     status: (response: number) => {
-      json: {
-        (response: {
-          error?: { message: string; type: string; code: number }
-          timezone?: string
-          date?: string
-          shouldideploy?: boolean | null
-          message?: string
-        }): void
-      }
+      json: (response: ApiResponse) => void
     }
   }
 ) => {
-  let timezone = req.query.tz || Time.DEFAULT_TIMEZONE
-  let customDate = req.query.date
+  const timezone = (req.query.tz as string) || Time.DEFAULT_TIMEZONE
+  const customDate = req.query.date as string
 
   if (!Time.zoneExists(timezone)) {
     return res.status(400).json({
@@ -30,7 +46,10 @@ export default (
     })
   }
 
-  let time = customDate ? new Time(timezone, customDate) : new Time(timezone)
+  const parsedDate = customDate
+    ? new Date(customDate).toISOString().split('T')[0]
+    : undefined
+  const time = parsedDate ? new Time(timezone, parsedDate) : new Time(timezone)
 
   res.status(200).json({
     timezone: timezone,
@@ -41,3 +60,5 @@ export default (
     message: getRandom(dayHelper(time))
   })
 }
+
+export default allowCors(handler)
