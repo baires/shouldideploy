@@ -33,11 +33,6 @@ const Head = () => {
       <meta property="og:type" content="website" />
 
       <meta name="theme-color" content="#1E1F29" />
-      <script
-        defer
-        src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon='{"token": "f87541717296439a86907c81d3effe69"}'
-      ></script>
     </>
   )
 }
