@@ -1,46 +1,69 @@
-import React from 'react'
 import Head from 'next/head'
+import Router, { useRouter } from 'next/router'
+import React from 'react'
+import Footer from '../component/footer'
+import Widget from '../component/widget'
 import {
-  shouldIDeploy,
-  shouldIDeployFavIcon,
-  shouldIDeployAnswerImage,
+  dayHelper,
   getRandom,
-  dayHelper
+  shouldIDeploy,
+  shouldIDeployAnswerImage,
+  shouldIDeployFavIcon,
+  shouldIDeployTitle
 } from '../helpers/constans'
 import Time from '../helpers/time'
-import Widget from '../component/widget'
-import Footer from '../component/footer'
-import Router, { useRouter } from 'next/router'
+import Language from '../helpers/validations/languages'
 
 interface IPage {
-  tz?: string
+  tz?: string;
+  lang?: string;
 }
 
-const Page = ({ tz }: IPage) => {
+const Page = ({ tz, lang }: IPage) => {
   const router = useRouter()
+
   const queryTimezone =
     typeof router.query.tz === 'string' ? router.query.tz : '' // Add type check for router.query.tz
   const initialTimezone = tz || queryTimezone || 'UTC' // Use queryTimezone instead of router.query.tz
+
+  const queryLanguage =
+    typeof router.query.lang === 'string' ? router.query.lang : '' // Add type check for router.query.lang
+  const initialLanguage = lang || queryLanguage || Language.DEFAULT_LANGUAGE;
+
   const [timezone, setTimezone] = React.useState<string>(initialTimezone)
+  const [language, setLanguage] = React.useState<string>(initialLanguage)
   const [now, setNow] = React.useState<any>(Time.validOrNull(initialTimezone))
   const [initialReason, setInitialReason] = React.useState<string>('')
 
   React.useEffect(() => {
-    setInitialReason(getRandom(dayHelper(now)))
+    setInitialReason(getRandom(dayHelper(now, language)))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const changeTimezone = (timezone: string) => {
     if (!Time.zoneExists(timezone)) {
-      return
+      return;
     }
-    let newUrl = new URL(location.toString())
-    newUrl.searchParams.set('tz', timezone)
 
-    Router.push(newUrl.pathname + newUrl.search)
-
+    navigateWithQueryString('tz', timezone);
     setTimezone(timezone)
     setNow(new Time(timezone))
+  }
+
+  const changeLanguage = (language: string) => {
+    if (!Language.exists(language)) {
+      return;
+    }
+
+    navigateWithQueryString('lang', language);
+    setLanguage(language);
+  }
+
+  const navigateWithQueryString = (parameter: string, value: string) => {
+    let newUrl = new URL(location.toString())
+    newUrl.searchParams.set(parameter, value)
+
+    Router.push(newUrl.pathname + newUrl.search);
   }
 
   return (
@@ -53,12 +76,12 @@ const Page = ({ tz }: IPage) => {
           sizes="32x32"
         />
         <meta property="og:image" content={shouldIDeployAnswerImage(now)} />
-        <title>Should I Deploy Today?</title>
+        <title>{shouldIDeployTitle(language)}</title>
       </Head>
       <div className={`wrapper ${!shouldIDeploy(now) && 'its-friday'}`}>
-        <Widget reason={initialReason} now={now} />
+        <Widget reason={initialReason} now={now} language={language} />
         <div className="meta">
-          <Footer timezone={timezone} changeTimezone={changeTimezone} />
+          <Footer timezone={timezone} language={language} changeTimezone={changeTimezone} changeLanguage={changeLanguage} />
         </div>
       </div>
     </>

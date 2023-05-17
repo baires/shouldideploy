@@ -1,9 +1,11 @@
-import React from 'react'
-import Timezone from './timezone'
+import Language from './language';
+import Timezone from './timezone';
 
 interface IFooter {
-  changeTimezone: (timezone: string) => void
-  timezone: string
+  changeTimezone: (timezone: string) => void;
+  changeLanguage: (language: string) => void;
+  timezone: string;
+  language: string;
 }
 
 const Footer = (props: IFooter) => {
@@ -45,16 +47,20 @@ const Footer = (props: IFooter) => {
           Timezone:{' '}
           <Timezone onChange={props.changeTimezone} timezone={props.timezone} />
         </li>
+        <li>
+          Language:{' '}
+          <Language onChange={props.changeLanguage} language={props.language} />
+        </li>
       </ul>
 
       <ul className="footer-list">
         <li>
-          <a href={'/api?tz=' + props.timezone}>
+          <a href={'/api?tz=' + props.timezone + '&lang=' + props.language}>
             <mark>API</mark>
           </a>
         </li>
         <li>
-          <a href={'/api/slack?tz=' + props.timezone}>
+          <a href={'/api/slack?tz=' + props.timezone + '&lang=' + props.language}>
             <mark>Slack API</mark>
           </a>
         </li>

@@ -13,7 +13,9 @@
 
 ## Add your reasons
 
-Reasons are located under [reasons.ts](https://github.com/baires/shouldideploy/blob/master/helpers/reasons.ts)
+Reasons are located under [reasons](https://github.com/baires/shouldideploy/blob/master/helpers/reasons) folder. Files are separated by circunstance.
+
+Choose which language you want to add your reason and go ahead!
 
 ## API endpoint
 There is an enpoint to use on your CI or just for fun at `https://shouldideploy.today/api`
