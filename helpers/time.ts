@@ -3,8 +3,8 @@ export default class Time {
   timezone: string
   customDate: Date | null
 
-  constructor(timezone: string, customDate?: string) {
-    this.timezone = timezone || Time.DEFAULT_TIMEZONE
+  constructor(timezone: string | null = null, customDate?: string) {
+    this.timezone = timezone || Intl.DateTimeFormat().resolvedOptions().timeZone
     if (customDate) {
       const utcDate = new Date(customDate + 'T00:00:00Z')
       const offset = utcDate.getTimezoneOffset() * 60 * 1000
@@ -12,6 +12,19 @@ export default class Time {
       this.customDate = adjustedDate
     } else {
       this.customDate = null
+    }
+  }
+
+  toObject() {
+    return {
+      timezone: this.timezone,
+      customDate: this.customDate
+    }
+  }
+
+  setTimezone(timezone: string) {
+    if (Time.zoneExists(timezone)) {
+      this.timezone = timezone
     }
   }
 

@@ -25,7 +25,12 @@ export const shouldIDeploy = function (time: Time | null, date?: Date) {
     return false
   }
 
-  return !time.isFriday() && !time.isWeekend() && !time.isHolidays() && !time.isAfternoon()
+  return (
+    !time.isFriday() &&
+    !time.isWeekend() &&
+    !time.isHolidays() &&
+    !time.isAfternoon()
+  )
 }
 
 export const shouldIDeployAnswerImage = function (time: Time | null) {
