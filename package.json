@@ -7,20 +7,21 @@
   "repository": "https://github.com/baires/shouldideploy/",
   "scripts": {
     "precommit": "NODE_ENV=production lint-staged",
-    "dev": "next",
+    "dev": "next -p 3001",
     "build": "next build",
     "start": "next start",
+    "test": "jest",
     "lint": "next lint --dir  pages --dir component --dir helpers",
-    "format": "prettier-eslint --write $PWD/'**/*.js'",
-    "test": "jest"
+    "format": "prettier-eslint --write $PWD/'**/*.js'"
   },
   "dependencies": {
     "@vercel/analytics": "^1.0.1",
     "next": "^13.4.2",
+    "@vercel/og": "^0.5.4",
+    "date-fns": "^2.30.0",
     "prettier-eslint-cli": "^7.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "snyk": "^1.1155.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.1",
