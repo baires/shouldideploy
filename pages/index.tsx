@@ -1,4 +1,6 @@
-import React from 'react'
+// index.tsx
+import React, { useEffect, useState } from 'react'
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import {
   shouldIDeploy,
@@ -10,37 +12,31 @@ import {
 import Time from '../helpers/time'
 import Widget from '../component/widget'
 import Footer from '../component/footer'
-import Router, { useRouter } from 'next/router'
+import Router from 'next/router'
 
 interface IPage {
-  tz?: string
+  tz: string
+  now: { timezone: string; customDate: string }
+  initialReason: string
 }
 
-const Page = ({ tz }: IPage) => {
-  const router = useRouter()
-  const queryTimezone =
-    typeof router.query.tz === 'string' ? router.query.tz : '' // Add type check for router.query.tz
-  const initialTimezone = tz || queryTimezone || 'UTC' // Use queryTimezone instead of router.query.tz
-  const [timezone, setTimezone] = React.useState<string>(initialTimezone)
-  const [now, setNow] = React.useState<any>(Time.validOrNull(initialTimezone))
-  const [initialReason, setInitialReason] = React.useState<string>('')
+const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
+  const [timezone, setTimezone] = useState<string>(tz)
+  const [now, setNow] = useState<any>(
+    new Time(initialNow.timezone, initialNow.customDate)
+  )
 
-  React.useEffect(() => {
-    setInitialReason(getRandom(dayHelper(now)))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  const changeTimezone = (timezone: string) => {
-    if (!Time.zoneExists(timezone)) {
+  const changeTimezone = (newTimezone: string) => {
+    if (!Time.zoneExists(newTimezone)) {
       return
     }
-    let newUrl = new URL(location.toString())
-    newUrl.searchParams.set('tz', timezone)
 
+    let newUrl = new URL(window.location.toString())
+    newUrl.searchParams.set('tz', newTimezone)
     Router.push(newUrl.pathname + newUrl.search)
 
-    setTimezone(timezone)
-    setNow(new Time(timezone))
+    setTimezone(newTimezone)
+    setNow(new Time(newTimezone))
   }
 
   return (
@@ -63,6 +59,25 @@ const Page = ({ tz }: IPage) => {
       </div>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  let timezone = Array.isArray(context.query.tz)
+    ? context.query.tz[0] ?? Time.DEFAULT_TIMEZONE
+    : context.query.tz || Time.DEFAULT_TIMEZONE
+
+  if (!Time.zoneExists(timezone)) {
+    timezone = Time.DEFAULT_TIMEZONE
+  }
+
+  const time = Time.validOrNull(timezone)
+
+  return {
+    props: {
+      tz: timezone,
+      now: time ? time.toObject() : null
+    }
+  }
 }
 
 export default Page

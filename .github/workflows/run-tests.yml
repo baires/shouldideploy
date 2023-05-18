@@ -1,31 +1,19 @@
-name: Run Tests
-
+name: coverage
 on:
-  pull_request_target:
-    branches:
-      - master
-      - develop
-    paths:
-      - 'pages/api/**'
+  push:
+    branches: [master]
+  pull_request:
+    type: [opened, reopened, synchronize]
+  workflow_dispatch:
 
 jobs:
-  build:
+  Coverage-report:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 14
-
-    - name: Install dependencies
-      run: npm ci
-
-    - name: Run tests
-      run: npm test
-
-    - name: Jest coverage report
-      uses: ArtiomTr/jest-coverage-report-action@v2.2.2
+      - uses: actions/checkout@v2
+      - run: npm install
+      - uses: ArtiomTr/jest-coverage-report-action@v2.2.4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          threshold: 90
+          skip-step: install
