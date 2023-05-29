@@ -13,19 +13,10 @@ import {
 } from './reasons'
 
 export function getBaseUrl() {
-  if (typeof window !== 'undefined')
-    // browser should use relative path
-    return ''
-
-  if (process.env.VERCEL_URL)
-    // vercel.com
-    return `https://${process.env.VERCEL_URL}`
-
-  if (process.env.RENDER_INTERNAL_HOSTNAME)
-    // shouldideploy.today
-    return `http://${process.env.RENDER_INTERNAL_HOSTNAME}:${process.env.PORT}`
-
-  // localhost
+  if (typeof window !== 'undefined') return ''
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`
+  if (process.env.NODE_ENV === 'production')
+    return 'https://shouldideploy.today'
   return `http://localhost:${process.env.PORT ?? 3001}`
 }
 

@@ -1,16 +1,20 @@
 {
-    "name": "shouldideploy",
-    "version": 2,
-    "cleanUrls": true,
-    "trailingSlash": false,
-    "redirects": [
-        {
-            "source": "/api/slack/(.*)",
-            "destination": "/api/slack"
-        },
-        {
-            "source": "/api/((?!slack).*)",
-            "destination": "/api"
-        }
-    ]
+  "name": "shouldideploy",
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/api/slack/(.*)",
+      "destination": "/api/slack"
+    },
+    {
+      "source": "/api/og/(.*)",
+      "destination": "/api/og"
+    },
+    {
+      "source": "/api/((?!og|slack).*)",
+      "destination": "/api"
+    }
+  ]
 }
