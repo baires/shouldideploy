@@ -12,7 +12,22 @@ import {
   REASONS_NEW_YEAR
 } from './reasons'
 
-export const HOST = 'https://shouldideploy.today'
+export function getBaseUrl() {
+  if (typeof window !== 'undefined')
+    // browser should use relative path
+    return ''
+
+  if (process.env.VERCEL_URL)
+    // vercel.com
+    return `https://${process.env.VERCEL_URL}`
+
+  if (process.env.RENDER_INTERNAL_HOSTNAME)
+    // shouldideploy.today
+    return `http://${process.env.RENDER_INTERNAL_HOSTNAME}:${process.env.PORT}`
+
+  // localhost
+  return `http://localhost:${process.env.PORT ?? 3001}`
+}
 
 export const shouldIDeploy = function (time: Time | null, date?: Date) {
   if (!time) {
@@ -33,16 +48,18 @@ export const shouldIDeploy = function (time: Time | null, date?: Date) {
   )
 }
 
-export const shouldIDeployAnswerImage = function (time: Time | null) {
-  return shouldIDeploy(time) ? `${HOST}/yes.png` : `${HOST}/no.png`
-}
-
 export const shouldIDeployColorTheme = function (time: Time | null) {
   return shouldIDeploy(time) ? '#36a64f' : '#ff4136'
 }
 
+export const shouldIDeployFontTheme = function (time: Time | null) {
+  return shouldIDeploy(time) ? '#fff' : '#111'
+}
+
 export const shouldIDeployFavIcon = function (time: Time | null) {
-  return shouldIDeploy(time) ? `${HOST}/dots.png` : `${HOST}/dots-red.png`
+  return shouldIDeploy(time)
+    ? `${getBaseUrl()}/dots.png`
+    : `${getBaseUrl()}/dots-red.png`
 }
 
 export const getRandom = function ranDay(list: string | string[]) {

@@ -1,7 +1,7 @@
 import {
   getRandom,
   dayHelper,
-  shouldIDeployAnswerImage,
+  getBaseUrl,
   shouldIDeployColorTheme,
   shouldIDeployFavIcon
 } from '../../../helpers/constans'
@@ -28,6 +28,7 @@ export default (
 ) => {
   let timezone = req.body.text || req.query.tz || Time.DEFAULT_TIMEZONE
   let time = Time.validOrNull(timezone)
+  const thumb_url = `${getBaseUrl()}/api/og`
 
   res.status(200).json({
     response_type: time ? 'in_channel' : 'ephemeral',
@@ -37,7 +38,7 @@ export default (
           ? getRandom(dayHelper(time))
           : `Invalid time zone: '${timezone}'`,
         color: shouldIDeployColorTheme(time),
-        thumb_url: shouldIDeployAnswerImage(time),
+        thumb_url,
         footer_icon: shouldIDeployFavIcon(time),
         footer: 'Should I deploy today' + (time ? ` | ${timezone}` : '')
       }
