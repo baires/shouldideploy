@@ -7,20 +7,21 @@
   "repository": "https://github.com/baires/shouldideploy/",
   "scripts": {
     "precommit": "NODE_ENV=production lint-staged",
-    "dev": "next",
+    "dev": "next -p 3001",
     "build": "next build",
     "start": "next start",
+    "test": "jest",
     "lint": "next lint --dir  pages --dir component --dir helpers",
-    "format": "prettier-eslint --write $PWD/'**/*.js'",
-    "test": "jest"
+    "format": "prettier-eslint --write $PWD/'**/*.js'"
   },
   "dependencies": {
     "@vercel/analytics": "^1.0.1",
+    "@vercel/og": "^0.5.6",
+    "date-fns": "^2.30.0",
     "next": "^13.4.2",
     "prettier-eslint-cli": "^7.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "snyk": "^1.1155.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.1",
@@ -28,10 +29,10 @@
     "@types/react": "18.2.6",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.40.0",
-    "eslint-config-next": "^13.4.2",
+    "eslint-config-next": "^13.4.7",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react": "^7.25.3",
     "husky": "^8.0.3",
     "jest": "^29.5.0",
     "lint-staged": "^13.2.2",

@@ -5,9 +5,7 @@ import Head from 'next/head'
 import {
   shouldIDeploy,
   shouldIDeployFavIcon,
-  shouldIDeployAnswerImage,
-  getRandom,
-  dayHelper
+  getBaseUrl
 } from '../helpers/constans'
 import Time from '../helpers/time'
 import Widget from '../component/widget'
@@ -48,7 +46,7 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
           href={shouldIDeployFavIcon(now)}
           sizes="32x32"
         />
-        <meta property="og:image" content={shouldIDeployAnswerImage(now)} />
+        <meta property="og:image" content={`${getBaseUrl()}/api/og`} />
         <title>Should I Deploy Today?</title>
       </Head>
       <div className={`wrapper ${!shouldIDeploy(now) && 'its-friday'}`}>
