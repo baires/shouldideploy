@@ -2,17 +2,15 @@ name: coverage
 on:
   push:
     branches: [master]
-  pull_request:
+  pull_request_target:
     type: [opened, reopened, synchronize]
-  workflow_dispatch:
-
 jobs:
   Coverage-report:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: npm install
-      - uses: ArtiomTr/jest-coverage-report-action@v2.2.4
+      - uses: artiomtr/jest-coverage-report-action@v2
         with:
           github-token: ${{ secrets.COVERAGE_TOKEN }}
           threshold: 90
