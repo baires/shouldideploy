@@ -14,6 +14,6 @@ jobs:
       - run: npm install
       - uses: ArtiomTr/jest-coverage-report-action@v2.2.4
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.COVERAGE_TOKEN }}
           threshold: 90
           skip-step: install
