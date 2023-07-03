@@ -2,7 +2,7 @@ name: coverage
 on:
   push:
     branches: [master]
-  pull_request_target:
+  pull_request:
     types: [opened, reopened, synchronize]
 
 jobs:
@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: npm install
       - uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           threshold: 90
-          skip-step: install
