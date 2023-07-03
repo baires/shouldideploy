@@ -2,9 +2,8 @@ name: coverage
 on:
   push:
     branches: [master]
-  pull_request:
-    type: [opened, reopened, synchronize]
-  workflow_dispatch:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
 
 jobs:
   Coverage-report:
@@ -14,6 +13,5 @@ jobs:
       - run: npm install
       - uses: ArtiomTr/jest-coverage-report-action@v2.2.4
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           threshold: 90
           skip-step: install
