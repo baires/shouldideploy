@@ -10,7 +10,7 @@
     "dev": "next -p 3001",
     "build": "next build",
     "start": "next start",
-    "test": "jest",
+    "test": "jest --ci --coverage --json --outputFile=test_reports/ci_coverage.json",
     "lint": "next lint --dir  pages --dir component --dir helpers",
     "format": "prettier-eslint --write $PWD/'**/*.js'"
   },
