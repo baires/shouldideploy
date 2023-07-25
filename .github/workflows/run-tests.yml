@@ -13,6 +13,5 @@ jobs:
       - uses: ArtiomTr/jest-coverage-report-action@v2.1.3
         with:
           coverage-file: ./coverage/coverage-final.json
-          base-coverage-file: ./coverage/master/coverage-final.json
           test-script: npm test
           threshold: 90
