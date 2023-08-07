@@ -32,7 +32,7 @@
     "eslint-config-next": "^13.4.12",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-react": "^7.33.1",
     "husky": "^8.0.3",
     "jest": "^29.6.1",
     "lint-staged": "^13.2.2",
