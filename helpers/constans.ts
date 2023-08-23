@@ -67,6 +67,7 @@ export function dayHelper(time: Time) {
   if (time.isDayBeforeChristmas()) {
     return REASONS_FOR_DAY_BEFORE_CHRISTMAS
   }
+
   if (time.isChristmas()) {
     return REASONS_FOR_CHRISTMAS
   }
@@ -78,7 +79,7 @@ export function dayHelper(time: Time) {
   if (time.isFriday13th()) {
     return REASONS_FOR_FRIDAY_13TH
   }
-
+  
   if (time.isFridayAfternoon()) {
     return REASONS_FOR_FRIDAY_AFTERNOON
   }
@@ -86,14 +87,18 @@ export function dayHelper(time: Time) {
   if (time.isFriday()) {
     return REASONS_TO_NOT_DEPLOY
   }
+
   if (time.isThursdayAfternoon()) {
     return REASONS_FOR_THURSDAY_AFTERNOON
   }
-  if (time.isAfternoon() && !time.isWeekend()) {
-    return REASONS_FOR_AFTERNOON
-  }
+
   if (time.isWeekend()) {
     return REASONS_FOR_WEEKEND
   }
+
+  if (time.isAfternoon()) {
+    return REASONS_FOR_AFTERNOON
+  }
+  
   return REASONS_TO_DEPLOY
 }
