@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import Time from '../../helpers/time'
-import { getRandom, dayHelper, shouldIDeploy } from '../../helpers/constans'
+import { getRandom, dayHelper, shouldIDeploy } from '../../helpers/constants'
 
 type ApiResponse = {
   error?: { message: string; type: string; code: number }

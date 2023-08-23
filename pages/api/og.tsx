@@ -5,7 +5,7 @@ import {
   dayHelper,
   shouldIDeployColorTheme,
   shouldIDeployFontTheme
-} from '../../helpers/constans'
+} from '../../helpers/constants'
 import Time from '../../helpers/time'
 
 export const config = {
