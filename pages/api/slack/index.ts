@@ -4,7 +4,7 @@ import {
   getBaseUrl,
   shouldIDeployColorTheme,
   shouldIDeployFavIcon
-} from '../../../helpers/constans'
+} from '../../../helpers/constants'
 import Time from '../../../helpers/time'
 
 export default (

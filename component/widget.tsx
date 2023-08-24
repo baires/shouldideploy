@@ -1,5 +1,5 @@
 import React from 'react'
-import { getRandom, dayHelper } from '../helpers/constans'
+import { getRandom, dayHelper } from '../helpers/constants'
 import Time from '../helpers/time'
 
 interface IWidget {
