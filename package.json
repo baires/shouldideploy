@@ -18,7 +18,7 @@
     "@vercel/analytics": "^1.0.2",
     "@vercel/og": "^0.5.17",
     "date-fns": "^2.30.0",
-    "next": "^13.5.3",
+    "next": "^13.5.4",
     "prettier-eslint-cli": "^7.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
