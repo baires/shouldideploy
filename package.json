@@ -28,7 +28,7 @@
     "@types/node": "20.10.3",
     "@types/react": "18.2.38",
     "babel-eslint": "^10.1.0",
-    "eslint": "8.54.0",
+    "eslint": "8.55.0",
     "eslint-config-next": "^14.0.3",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.0.1",
