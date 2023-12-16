@@ -11,7 +11,7 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "lint": "next lint --dir  pages --dir component --dir helpers",
+    "lint": "next lint --dir  pages --dir component --dir helpers --dir tests",
     "format": "prettier-eslint --write $PWD/'**/*.js'"
   },
   "dependencies": {
