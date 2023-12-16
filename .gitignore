@@ -9,6 +9,6 @@ jspm_packages
 public/bundle.js
 .next/
 .now/
-
+.env
 .vercel
 .idea
