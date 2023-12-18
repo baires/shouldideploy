@@ -16,3 +16,4 @@ jobs:
           # base-coverage-file: coverage/report-final.json
           test-script: npm test
           threshold: 90
+          github-token: ${{ secrets.GH_COVERAGE }}
