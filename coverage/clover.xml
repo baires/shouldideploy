@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1690299796162" clover="3.2.0">
-  <project timestamp="1690299796162" name="All files">
+<coverage generated="1702747537343" clover="3.2.0">
+  <project timestamp="1702747537343" name="All files">
     <metrics statements="59" coveredstatements="52" conditionals="32" coveredconditionals="20" methods="20" coveredmethods="17" elements="111" coveredelements="89" complexity="0" loc="59" ncloc="59" packages="1" files="1" classes="1"/>
     <file name="time.ts" path="/Users/alexissgarbossa/playground/shouldideploy/helpers/time.ts">
       <metrics statements="59" coveredstatements="52" conditionals="32" coveredconditionals="20" methods="20" coveredmethods="17"/>

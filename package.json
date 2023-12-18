@@ -10,8 +10,8 @@
     "dev": "next -p 3001",
     "build": "next build",
     "start": "next start",
-    "test": "jest --ci --coverage --json --outputFile=test_reports/report.json",
-    "lint": "next lint --dir  pages --dir component --dir helpers",
+    "test": "jest",
+    "lint": "next lint --dir  pages --dir component --dir helpers --dir tests",
     "format": "prettier-eslint --write $PWD/'**/*.js'"
   },
   "dependencies": {

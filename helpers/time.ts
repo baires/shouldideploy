@@ -5,6 +5,7 @@ export default class Time {
 
   constructor(timezone: string | null = null, customDate?: string) {
     this.timezone = timezone || Intl.DateTimeFormat().resolvedOptions().timeZone
+    this.customDate = new Date(customDate + 'T00:00:00Z')
     if (customDate) {
       const utcDate = new Date(customDate + 'T00:00:00Z')
       const offset = utcDate.getTimezoneOffset() * 60 * 1000

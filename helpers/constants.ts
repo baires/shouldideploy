@@ -79,7 +79,7 @@ export function dayHelper(time: Time) {
   if (time.isFriday13th()) {
     return REASONS_FOR_FRIDAY_13TH
   }
-  
+
   if (time.isFridayAfternoon()) {
     return REASONS_FOR_FRIDAY_AFTERNOON
   }
@@ -99,6 +99,6 @@ export function dayHelper(time: Time) {
   if (time.isAfternoon()) {
     return REASONS_FOR_AFTERNOON
   }
-  
+
   return REASONS_TO_DEPLOY
 }
