@@ -24,7 +24,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.10",
+    "@types/jest": "^29.5.11",
     "@types/node": "20.10.3",
     "@types/react": "18.2.41",
     "babel-eslint": "^10.1.0",
