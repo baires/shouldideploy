@@ -107,7 +107,7 @@ export const REASONS_FOR_CHRISTMAS = [
   ...REASONS_FOR_DAY_BEFORE_CHRISTMAS,
   'No, Rudolf will hunt you down 🦌 ',
   'Just watch Home Alone today',
-  "Shouldn't you be preparing a christmas diner?"
+  "Shouldn't you be preparing a christmas dinner?"
 ]
 
 export const REASONS_NEW_YEAR = [
