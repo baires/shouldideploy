@@ -30,7 +30,8 @@ export const REASONS_TO_NOT_DEPLOY = [
   "I'd rather have ice-cream 🍦",
   'How could you? 🥺',
   'Some people just want to watch the world burn 🔥',
-  "You like fire don't you?"
+  "You like fire don't you?",
+  "The bugs are just waiting for you"
 ]
 
 export const REASONS_FOR_THURSDAY_AFTERNOON = [
@@ -58,7 +59,8 @@ export const REASONS_FOR_FRIDAY_AFTERNOON = [
   'Why why Bro why?',
   'But but but... why?',
   'Deploys are for Monday, so you can fix them till Friday.',
-  'YOLO ! You only live once !'
+  'YOLO ! You only live once !',
+  "Error in line NaN Col -2 unexpected 'ↇ'"
 ]
 
 export const REASONS_FOR_FRIDAY_13TH = [
@@ -91,7 +93,8 @@ export const REASONS_FOR_WEEKEND = [
   'Beer?',
   'Drunk development is not a good idea!',
   'I see you deployed on Friday',
-  'Told you that Monday would be a better idea!'
+  'Told you that Monday would be a better idea!',
+  "There are 2^1000 other ideas."
 ]
 
 export const REASONS_FOR_DAY_BEFORE_CHRISTMAS = [
