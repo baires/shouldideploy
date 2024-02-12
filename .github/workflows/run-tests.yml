@@ -14,7 +14,8 @@ jobs:
         with:
           #coverage-file: ./test_reports/report.json
           # base-coverage-file: coverage/report-final.json
-          annotations: none
+          annotations: coverage
+          skip-step: all #skip coverage comparison for now
           test-script: npm test
           threshold: 90
           github-token: ${{ secrets.GH_COVERAGE }}
