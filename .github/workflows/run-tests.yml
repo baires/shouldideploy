@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ArtiomTr/jest-coverage-report-action@v2.1.3
+      - uses: ArtiomTr/jest-coverage-report-action@v2.2.6
         with:
           #coverage-file: ./test_reports/report.json
           # base-coverage-file: coverage/report-final.json
