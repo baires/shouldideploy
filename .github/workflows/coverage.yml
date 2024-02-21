@@ -1,0 +1,28 @@
+name: coverage
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    paths:
+      - '**.js'
+      - '**.ts'
+      - '**.tsx'
+      - '**.jsx'
+      
+jobs:
+  coverage-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
+      - name: Artifact Coverage
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: coverage

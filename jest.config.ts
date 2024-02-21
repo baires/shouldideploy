@@ -3,6 +3,7 @@ const config = {
   testEnvironment: 'node',
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   coverageDirectory: 'coverage',
+  coverageReporters: [["text", { file: 'coverage.txt' }]]
 };
 
 export default config
