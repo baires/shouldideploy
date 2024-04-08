@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
-    "@types/node": "20.11.30",
+    "@types/node": "20.12.5",
     "@types/react": "18.2.74",
     "babel-eslint": "^10.1.0",
     "eslint": "8.57.0",
