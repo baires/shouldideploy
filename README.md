@@ -16,7 +16,7 @@
 Reasons are located under [reasons.ts](https://github.com/baires/shouldideploy/blob/master/helpers/reasons.ts)
 
 ## API endpoint
-There is an enpoint to use on your CI or just for fun at `https://shouldideploy.today/api`
+There is an endpoint to use on your CI or just for fun at `https://shouldideploy.today/api`
 
 You can also provide optional parameters to customize the API response:
 
