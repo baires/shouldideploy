@@ -50,7 +50,7 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
         <title>Should I Deploy Today?</title>
       </Head>
       <div className={`wrapper ${!shouldIDeploy(now) && 'its-friday'}`}>
-        <Widget reason={initialReason} now={now} />
+        <Widget key={now.timezone} reason={initialReason} now={now} />
         <div className="meta">
           <Footer timezone={timezone} changeTimezone={changeTimezone} />
         </div>
