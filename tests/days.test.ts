@@ -52,10 +52,11 @@ describe('Time class', () => {
     expect(time.isFriday13th()).toBe(true)
   })
 
-  it('isWeekend', () => {
-    mockDate('2023-04-01T00:00:00') // Saturday, April 1st, 2023
-    const time = new Time('UTC')
-    expect(time.isWeekend()).toBe(true)
+  it('isWeekend should return true for Saturday and Sunday', () => {
+    const saturdayTime = new Time('UTC', '2023-01-07')
+    const sundayTime = new Time('UTC', '2023-01-08')
+    expect(saturdayTime.isWeekend()).toBe(true)
+    expect(sundayTime.isWeekend()).toBe(true)
   })
 
   it('isDayBeforeChristmas', () => {
@@ -154,5 +155,25 @@ describe('Time class', () => {
     mockDate('2024-01-01T00:00:00') // January 1st, 2024, 00:00 (midnight)
     const time = new Time('UTC')
     expect(time.isNewYear()).toBe(true)
+  })
+
+  it('toObject should return correct object', () => {
+    const time = new Time('UTC', '2023-01-01')
+    const obj = time.toObject()
+    expect(obj).toEqual({
+      timezone: 'UTC',
+      customDate: expect.any(Date)
+    })
+  })
+
+  it('now should return current date for custom date', () => {
+    const customDate = '2023-01-01'
+    const time = new Time('UTC', customDate)
+    expect(time.now()).toEqual(time.getDate())
+  })
+
+  it('should use default timezone when not provided', () => {
+    const time = new Time()
+    expect(time.timezone).toBe(Intl.DateTimeFormat().resolvedOptions().timeZone)
   })
 })
