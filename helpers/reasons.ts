@@ -31,7 +31,7 @@ export const REASONS_TO_NOT_DEPLOY = [
   'How could you? 🥺',
   'Some people just want to watch the world burn 🔥',
   "You like fire don't you?",
-  "The bugs are just waiting for you"
+  'The bugs are just waiting for you'
 ]
 
 export const REASONS_FOR_THURSDAY_AFTERNOON = [
@@ -94,7 +94,7 @@ export const REASONS_FOR_WEEKEND = [
   'Drunk development is not a good idea!',
   'I see you deployed on Friday',
   'Told you that Monday would be a better idea!',
-  "There are 2^1000 other ideas."
+  'There are 2^1000 other ideas.'
 ]
 
 export const REASONS_FOR_DAY_BEFORE_CHRISTMAS = [
