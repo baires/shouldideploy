@@ -61,7 +61,7 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   let timezone = Array.isArray(context.query.tz)
-    ? context.query.tz[0] ?? Time.DEFAULT_TIMEZONE
+    ? (context.query.tz[0] ?? Time.DEFAULT_TIMEZONE)
     : context.query.tz || Time.DEFAULT_TIMEZONE
 
   if (!Time.zoneExists(timezone)) {
