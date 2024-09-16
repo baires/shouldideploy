@@ -17,7 +17,7 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.25.1",
     "@vercel/og": "^0.6.2",
-    "date-fns": "^3.6.0",
+    "date-fns": "^4.0.0",
     "next": "^14.2.9",
     "prettier-eslint-cli": "^8.0.1",
     "react": "^18.3.1",
