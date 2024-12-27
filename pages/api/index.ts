@@ -25,6 +25,18 @@ const allowCors =
     return await fn(req, res)
   }
 
+/**
+ * Get local timezone using Intl API
+ * @return string
+ */
+const getLocalTimezone = (): string => {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone
+  } catch (e) {
+    return Time.DEFAULT_TIMEZONE
+  }
+}
+
 const handler = async (
   req: NextApiRequest,
   res: {
@@ -33,7 +45,8 @@ const handler = async (
     }
   }
 ) => {
-  const timezone = (req.query.tz as string) || Time.DEFAULT_TIMEZONE
+  // Use query timezone if provided, otherwise try to get local timezone
+  const timezone = (req.query.tz as string) || getLocalTimezone()
   const customDate = req.query.date as string
 
   if (!Time.zoneExists(timezone)) {

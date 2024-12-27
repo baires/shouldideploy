@@ -20,12 +20,12 @@ There is an endpoint to use on your CI or just for fun at `https://shouldideploy
 
 You can also provide optional parameters to customize the API response:
 
-- `tz`: The timezone to use when evaluating the date and time. The default value is UTC. Pass a valid timezone string, such as `America/New_York` or `Europe/London` default `UTC`.
+- `tz`: The timezone to use when evaluating the date and time. By default, it uses your local timezone. You can override this by passing a valid timezone string, such as `America/New_York` or `Europe/London`.
 - `date`: The date to evaluate. The default value is the current date. Pass a valid date string in the format `YYYY-MM-DD`, such as `2023-03-31`.
 
 ### Examples
 
-Get the default API response using the current date and time in the UTC timezone:
+Get the API response using your local timezone:
 
 
 ```
@@ -38,7 +38,7 @@ Get the API response for a specific timezone (e.g., Europe/London):
 https://shouldideploy.today/api?tz=Europe/London
 ```
 
-Get the API response for a specific date (e.g., 2023-03-31) in the UTC timezone:
+Get the API response for a specific date (e.g., 2023-03-31) in your local timezone:
 
 ```
 https://shouldideploy.today/api?date=2023-03-31
@@ -63,7 +63,7 @@ Example response:
 
 ```
 {
-  "timezone": "UTC",
+"timezone": "America/New_York",
   "date": "2023-03-31T00:00:00.000Z",
   "shouldideploy": false,
   "message": "It's Friday, better not deploy today."

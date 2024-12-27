@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Timezone from './timezone'
 
 interface IFooter {
@@ -7,6 +7,14 @@ interface IFooter {
 }
 
 const Footer = (props: IFooter) => {
+  useEffect(() => {
+    // Set initial timezone if not already set
+    if (!props.timezone) {
+      const localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+      props.changeTimezone(localTimezone)
+    }
+  }, [])
+
   return (
     <>
       <ul className="footer-list">
