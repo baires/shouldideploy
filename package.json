@@ -18,7 +18,7 @@
     "@babel/eslint-parser": "^7.26.8",
     "@vercel/og": "^1.0.0",
     "date-fns": "^4.1.0",
-    "next": "^15.1.2",
+    "next": "^15.2.1",
     "prettier-eslint-cli": "^8.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
