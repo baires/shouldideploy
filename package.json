@@ -21,7 +21,7 @@
     "next": "^15.2.1",
     "prettier-eslint-cli": "^8.0.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
