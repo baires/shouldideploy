@@ -15,7 +15,7 @@
     "format": "prettier-eslint --write $PWD/'**/*.js'"
   },
   "dependencies": {
-    "@babel/eslint-parser": "^7.27.1",
+    "@babel/eslint-parser": "^7.28.0",
     "@vercel/og": "^1.0.0",
     "date-fns": "^4.1.0",
     "next": "^15.3.2",
