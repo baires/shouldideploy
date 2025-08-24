@@ -1,6 +1,17 @@
 /* eslint-disable */
 var addSorting = (function() {
     'use strict';
+
+    // Utility function to escape HTML special characters
+    function escapeHTML(str) {
+        if (!str) return '';
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
     var cols,
         currentSort = {
             index: 0,
@@ -88,6 +99,8 @@ var addSorting = (function() {
             val = colNode.getAttribute('data-value');
             if (col.type === 'number') {
                 val = Number(val);
+            } else {
+                val = escapeHTML(val);
             }
             data[col.key] = val;
         }
