@@ -23,6 +23,34 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
   const [now, setNow] = useState<any>(
     new Time(initialNow.timezone, initialNow.customDate)
   )
+  const [theme, setTheme] = useState<string>('Light')
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) {
+      setTheme(savedTheme)
+      applyTheme(savedTheme)
+    } else {
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+        .matches
+        ? 'Dark'
+        : 'Light'
+      setTheme(systemTheme)
+      applyTheme(systemTheme)
+    }
+  }, [])
+
+  const applyTheme = (newTheme: string) => {
+    document.documentElement.setAttribute('data-theme', newTheme)
+  }
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'Light' ? 'Dark' : 'Light'
+
+    setTheme(nextTheme)
+    localStorage.setItem('theme', nextTheme)
+    applyTheme(nextTheme)
+  }
 
   const changeTimezone = (newTimezone: string) => {
     if (!Time.zoneExists(newTimezone)) {
@@ -52,7 +80,12 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
       <div className={`wrapper ${!shouldIDeploy(now) && 'its-friday'}`}>
         <Widget key={now.timezone} reason={initialReason} now={now} />
         <div className="meta">
-          <Footer timezone={timezone} changeTimezone={changeTimezone} />
+          <Footer
+            timezone={timezone}
+            changeTimezone={changeTimezone}
+            theme={theme}
+            toggleTheme={toggleTheme}
+          />
         </div>
       </div>
     </>

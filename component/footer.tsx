@@ -4,6 +4,8 @@ import Timezone from './timezone'
 interface IFooter {
   changeTimezone: (timezone: string) => void
   timezone: string
+  theme: string
+  toggleTheme: () => void
 }
 
 const Footer = (props: IFooter) => {
@@ -23,12 +25,12 @@ const Footer = (props: IFooter) => {
         </li>
         <li>
           <a
-            href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fshouldideploy.today%2F&text=Should%20I%20Deploy%20Today%3F:%20http%3A%2F%2Fshouldideploy.today"
+            href="https://x.com/intent/tweet?source=http%3A%2F%2Fshouldideploy.today%2F&text=Should%20I%20Deploy%20Today%3F:%20http%3A%2F%2Fshouldideploy.today"
             target="_blank"
             rel="noopener noreferrer"
-            title="Tweet"
+            title="Share on X"
           >
-            Twitter
+            X
           </a>
         </li>
         <li>
@@ -44,6 +46,16 @@ const Footer = (props: IFooter) => {
         <li>
           Timezone:{' '}
           <Timezone onChange={props.changeTimezone} timezone={props.timezone} />
+        </li>
+        <li>
+          Theme:{' '}
+          <a
+            onClick={props.toggleTheme}
+            className="theme-toggle"
+            title={`Current: ${props.theme}. Click to toggle light/dark`}
+          >
+            {props.theme}
+          </a>
         </li>
       </ul>
 

@@ -175,6 +175,10 @@ ul.footer-list select {
   color: #fff;
 }
 
+.its-friday #text {
+  color: #fff;
+}
+
 .its-friday .footer-list li {
   color: #ff9089;
 }
@@ -201,4 +205,150 @@ ul.footer-list select {
   .reason {
     padding: 0 2rem;
   }
+}
+
+/* Dark theme support */
+/* Transitions for smooth theme switching */
+body,
+.wrapper,
+#text,
+.tagline,
+#reload,
+.space-btn,
+ul.footer-list li,
+ul.footer-list a {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Light Theme (Default) */
+[data-theme='Light'] body {
+  background-color: #fff;
+  color: #000;
+}
+
+[data-theme='Light'] #text {
+  color: #111;
+}
+
+[data-theme='Light'] .tagline {
+  color: #999;
+}
+
+[data-theme='Light'] #reload {
+  color: #a3a3a3;
+}
+
+[data-theme='Light'] .space-btn {
+  border-color: #a3a3a3;
+  color: #000;
+}
+
+[data-theme='Light'] ul.footer-list li {
+  color: #222;
+}
+
+[data-theme='Light'] ul.footer-list a {
+  color: #777;
+}
+
+[data-theme='Light'] a:hover,
+[data-theme='Light'] a:active,
+[data-theme='Light'] a:focus {
+  color: #000;
+}
+
+/* Light Theme - Friday State */
+[data-theme='Light'] .its-friday {
+  background-color: #ff4136;
+}
+
+[data-theme='Light'] .its-friday .tagline {
+  color: #fff;
+}
+
+[data-theme='Light'] .its-friday #text {
+  color: #fff;
+}
+
+[data-theme='Light'] .its-friday .footer-list li {
+  color: #ff9089;
+}
+
+[data-theme='Light'] .its-friday #reload,
+[data-theme='Light'] .its-friday .footer-list a {
+  color: #b30a00;
+}
+
+[data-theme='Light'] .its-friday .space-btn,
+[data-theme='Light'] .its-friday span {
+  border-color: #b30a00;
+  color: #b30a00;
+}
+
+/* Dark Theme */
+[data-theme='Dark'] body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+[data-theme='Dark'] #text {
+  color: #ffffff;
+}
+
+[data-theme='Dark'] .tagline {
+  color: #a0a0a0;
+}
+
+[data-theme='Dark'] #reload {
+  color: #808080;
+}
+
+[data-theme='Dark'] .space-btn {
+  border-color: #808080;
+  color: #e0e0e0;
+}
+
+[data-theme='Dark'] ul.footer-list li {
+  color: #cccccc;
+}
+
+[data-theme='Dark'] ul.footer-list a {
+  color: #999999;
+}
+
+[data-theme='Dark'] a:hover,
+[data-theme='Dark'] a:active,
+[data-theme='Dark'] a:focus {
+  color: #ffffff;
+}
+
+/* Dark Theme - Friday State */
+[data-theme='Dark'] .its-friday {
+  background: linear-gradient(135deg, #4a0000 0%, #2b0000 100%);
+}
+
+[data-theme='Dark'] .its-friday .tagline {
+  color: #ffdad9;
+}
+
+[data-theme='Dark'] .its-friday .footer-list li {
+  color: #ffb4b0;
+}
+
+[data-theme='Dark'] .its-friday #reload,
+[data-theme='Dark'] .its-friday .footer-list a {
+  color: #ff8985;
+}
+
+[data-theme='Dark'] .its-friday .space-btn,
+[data-theme='Dark'] .its-friday span {
+  border-color: #ff8985;
+  color: #ff8985;
+}
+
+.theme-toggle {
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  text-transform: capitalize;
 }

@@ -39,12 +39,34 @@ export const shouldIDeploy = function (time: Time | null, date?: Date) {
   )
 }
 
-export const shouldIDeployColorTheme = function (time: Time | null) {
-  return shouldIDeploy(time) ? '#36a64f' : '#ff4136'
+export const shouldIDeployColorTheme = function (
+  time: Time | null,
+  theme?: string
+) {
+  const isDark = theme === 'Dark'
+  const canDeploy = shouldIDeploy(time)
+
+  if (isDark) {
+    return canDeploy
+      ? '#121212'
+      : 'linear-gradient(135deg, #4a0000 0%, #2b0000 100%)'
+  }
+
+  return canDeploy ? '#fff' : '#ff4136'
 }
 
-export const shouldIDeployFontTheme = function (time: Time | null) {
-  return shouldIDeploy(time) ? '#fff' : '#111'
+export const shouldIDeployFontTheme = function (
+  time: Time | null,
+  theme?: string
+) {
+  const isDark = theme === 'Dark'
+  const canDeploy = shouldIDeploy(time)
+
+  if (isDark) {
+    return canDeploy ? '#fff' : '#ffdad9'
+  }
+
+  return canDeploy ? '#111' : '#fff'
 }
 
 export const shouldIDeployFavIcon = function (time: Time | null) {
