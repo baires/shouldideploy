@@ -1,22 +1,22 @@
-import React from 'react'
-import { useTranslation } from '../helpers/i18n'
-import Timezone from './timezone'
+import React from "react";
+import { useTranslation } from "../helpers/i18n";
+import Timezone from "./timezone";
 
 interface IFooter {
-  changeTimezone: (timezone: string) => void
-  timezone: string
-  theme: string
-  toggleTheme: () => void
+  changeTimezone: (timezone: string) => void;
+  timezone: string;
+  theme: string;
+  toggleTheme: () => void;
 }
 
 const Footer = (props: IFooter) => {
-  const { t, language, setLanguage, availableLanguages } = useTranslation()
+  const { t, language, setLanguage, availableLanguages } = useTranslation();
 
   return (
     <>
       <ul className="footer-list">
         <li>
-          {t('footer.share')}{' '}
+          {t("footer.share")}{" "}
           <a
             href="https://x.com/intent/tweet?source=http%3A%2F%2Fshouldideploy.today%2F&text=Should%20I%20Deploy%20Today%3F:%20http%3A%2F%2Fshouldideploy.today"
             target="_blank"
@@ -27,7 +27,7 @@ const Footer = (props: IFooter) => {
           </a>
         </li>
         <li>
-          {t('footer.source')}{' '}
+          {t("footer.source")}{" "}
           <a
             href="http://github.com/baires/shouldideploy"
             target="_blank"
@@ -37,11 +37,11 @@ const Footer = (props: IFooter) => {
           </a>
         </li>
         <li>
-          {t('footer.timezone')}{' '}
+          {t("footer.timezone")}{" "}
           <Timezone onChange={props.changeTimezone} timezone={props.timezone} />
         </li>
         <li>
-          {t('footer.theme')}{' '}
+          {t("footer.theme")}{" "}
           <button
             onClick={props.toggleTheme}
             className="theme-toggle"
@@ -51,17 +51,17 @@ const Footer = (props: IFooter) => {
           </button>
         </li>
         <li>
-          {t('footer.language')}{' '}
+          {t("footer.language")}{" "}
           <select
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
             style={{
-              background: 'transparent',
-              border: 'none',
-              color: 'inherit',
-              fontFamily: 'inherit',
-              fontSize: 'inherit',
-              cursor: 'pointer'
+              background: "transparent",
+              border: "none",
+              color: "inherit",
+              fontFamily: "inherit",
+              fontSize: "inherit",
+              cursor: "pointer",
             }}
           >
             {availableLanguages.map((lang) => (
@@ -75,23 +75,23 @@ const Footer = (props: IFooter) => {
       <ul className="footer-list">
         <li>
           <a
-            href={`/api?tz=${props.timezone}&lang=${language}`}
+            href={`/api?tz=${encodeURIComponent(props.timezone)}&lang=${encodeURIComponent(language)}`}
             target="_blank"
           >
-            {t('footer.api')}
+            {t("footer.api")}
           </a>
         </li>
         <li>
           <a
-            href={`/api/slack?tz=${props.timezone}&lang=${language}`}
+            href={`/api/slack?tz=${encodeURIComponent(props.timezone)}&lang=${encodeURIComponent(language)}`}
             target="_blank"
           >
-            {t('footer.slack_api')}
+            {t("footer.slack_api")}
           </a>
         </li>
       </ul>
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
