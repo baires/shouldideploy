@@ -11,9 +11,7 @@
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/baires/shouldideploy)
 
-## Add your reasons
-
-Reasons are located under [reasons.ts](https://github.com/baires/shouldideploy/blob/master/helpers/reasons.ts)
+## Add new translations
 
 For adding new language translations, see [docs/adding-languages.md](docs/adding-languages.md)
 
