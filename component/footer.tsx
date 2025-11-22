@@ -37,7 +37,8 @@ const Footer = (props: IFooter) => {
           </a>
         </li>
         <li>
-          {t('footer.timezone')} {props.timezone}
+          {t('footer.timezone')}{' '}
+          <Timezone onChange={props.changeTimezone} timezone={props.timezone} />
         </li>
         <li>
           {t('footer.theme')}{' '}

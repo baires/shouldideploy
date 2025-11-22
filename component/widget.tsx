@@ -10,18 +10,7 @@ interface IWidget {
 
 const Widget = (props: IWidget) => {
   const [reason, setReasons] = React.useState<string>()
-  const [timezone, setTimezone] = React.useState<Time>()
   const { t } = useTranslation()
-
-  React.useEffect(() => {
-    // Initialize reasons on mount
-    updateReasons()
-
-    if (props.now !== timezone) {
-      setTimezone(props.now)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   /**
    * Get the reason key based on current time
