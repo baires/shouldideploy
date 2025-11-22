@@ -65,9 +65,9 @@ describe('Time Class', () => {
   })
 
   describe('Day Check Methods', () => {
-    const time = new Time(null, '2023-01-05')
+    let time: Time
     beforeEach(() => {
-      const time = new Time(null, '2023-01-05')
+      time = new Time(null, '2023-01-05')
     })
 
     it('should correctly identify Thursdays', () => {

@@ -59,7 +59,7 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
       return
     }
 
-    let newUrl = new URL(window.location.toString())
+    const newUrl = new URL(window.location.toString())
     newUrl.searchParams.set('tz', newTimezone)
     Router.push(newUrl.pathname + newUrl.search)
 

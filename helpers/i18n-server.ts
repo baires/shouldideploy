@@ -4,7 +4,6 @@ import esAR from '../locales/es-AR.json'
 import pt from '../locales/pt.json'
 
 type LocaleData = typeof en
-type Language = string
 
 const locales: Record<string, LocaleData> = {
   en,

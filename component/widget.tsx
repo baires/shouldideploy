@@ -72,7 +72,7 @@ const Widget = (props: IWidget) => {
    * @return void
    */
   const updateReasons = React.useCallback(() => {
-    let reasons = getReasons()
+    const reasons = getReasons()
     setReasons(getRandom(reasons))
   }, [getReasons])
 

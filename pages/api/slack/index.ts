@@ -27,9 +27,9 @@ export default (
     }
   }
 ) => {
-  let timezone = req.body.text || req.query.tz || Time.DEFAULT_TIMEZONE
-  let lang = req.query.lang
-  let time = Time.validOrNull(timezone)
+  const timezone = req.body.text || req.query.tz || Time.DEFAULT_TIMEZONE
+  const lang = req.query.lang
+  const time = Time.validOrNull(timezone)
   const thumb_url = `${getBaseUrl()}/api/og`
 
   // Get translated footer text (defaults to English)
