@@ -1,16 +1,4 @@
 import Time from './time'
-import {
-  REASONS_TO_DEPLOY,
-  REASONS_TO_NOT_DEPLOY,
-  REASONS_FOR_THURSDAY_AFTERNOON,
-  REASONS_FOR_FRIDAY_AFTERNOON,
-  REASONS_FOR_FRIDAY_13TH,
-  REASONS_FOR_AFTERNOON,
-  REASONS_FOR_WEEKEND,
-  REASONS_FOR_DAY_BEFORE_CHRISTMAS,
-  REASONS_FOR_CHRISTMAS,
-  REASONS_NEW_YEAR
-} from './reasons'
 import { Theme } from './themes'
 import { getTranslatedReasons } from './i18n-server'
 

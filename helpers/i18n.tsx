@@ -21,7 +21,9 @@ interface LanguageContextType {
   availableLanguages: string[]
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
+const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined
+)
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   children
@@ -62,7 +64,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   const t = (key: string) => {
     const keys = key.split('.')
     let value: any = getLocaleData(language)
-    
+
     for (const k of keys) {
       if (value && value[k] !== undefined) {
         value = value[k]

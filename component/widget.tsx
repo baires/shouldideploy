@@ -11,7 +11,7 @@ interface IWidget {
 const Widget = (props: IWidget) => {
   const [reason, setReasons] = React.useState<string>()
   const [timezone, setTimezone] = React.useState<Time>()
-  const { t, language } = useTranslation()
+  const { t } = useTranslation()
 
   React.useEffect(() => {
     // Initialize reasons on mount
@@ -23,48 +23,11 @@ const Widget = (props: IWidget) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  React.useEffect(() => {
-    document.addEventListener('keydown', onSpacePressOrClick)
-
-    return () => {
-      document.removeEventListener('keydown', onSpacePressOrClick)
-    }
-  }, [language])
-
-  React.useEffect(() => {
-    // Update reasons when language changes
-    updateReasons()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [language])
-
-  /**
-   * On hitting Space reload reasons
-   * @return void
-   */
-  const onSpacePressOrClick = (event: any) => {
-    if (event.type === 'click' || event?.keyCode == 32) {
-      // Prevent default space bar behavior (scrolling, dropdown triggering)
-      if (event?.keyCode == 32) {
-        event.preventDefault()
-      }
-      updateReasons()
-    }
-  }
-
-  /**
-   * Get reasons according to current time
-   * @return string[]
-   */
-  const getReasons = () => {
-    // Get reasons from translation based on current language
-    return t(`reasons.${getReasonKey()}`)
-  }
-
   /**
    * Get the reason key based on current time
    * @return string
    */
-  const getReasonKey = () => {
+  const getReasonKey = React.useCallback(() => {
     const time = props.now
 
     if (time.isDayBeforeChristmas()) {
@@ -104,16 +67,55 @@ const Widget = (props: IWidget) => {
     }
 
     return 'to_deploy'
-  }
+  }, [props.now])
+
+  /**
+   * Get reasons according to current time
+   * @return string[]
+   */
+  const getReasons = React.useCallback(() => {
+    // Get reasons from translation based on current language
+    return t(`reasons.${getReasonKey()}`)
+  }, [t, getReasonKey])
 
   /**
    * update and get random reasons
    * @return void
    */
-  const updateReasons = () => {
+  const updateReasons = React.useCallback(() => {
     let reasons = getReasons()
     setReasons(getRandom(reasons))
-  }
+  }, [getReasons])
+
+  React.useEffect(() => {
+    // Update reasons when language changes
+    updateReasons()
+  }, [updateReasons])
+
+  /**
+   * On hitting Space reload reasons
+   * @return void
+   */
+  const onSpacePressOrClick = React.useCallback(
+    (event: any) => {
+      if (event.type === 'click' || event?.keyCode == 32) {
+        // Prevent default space bar behavior (scrolling, dropdown triggering)
+        if (event?.keyCode == 32) {
+          event.preventDefault()
+        }
+        updateReasons()
+      }
+    },
+    [updateReasons]
+  )
+
+  React.useEffect(() => {
+    document.addEventListener('keydown', onSpacePressOrClick)
+
+    return () => {
+      document.removeEventListener('keydown', onSpacePressOrClick)
+    }
+  }, [onSpacePressOrClick])
 
   /**
    * Render widget

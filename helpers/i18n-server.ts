@@ -70,6 +70,9 @@ export function translate(key: string, lang?: string): any {
 /**
  * Get reasons array by type with translation support
  */
-export function getTranslatedReasons(reasonType: string, lang?: string): string[] {
+export function getTranslatedReasons(
+  reasonType: string,
+  lang?: string
+): string[] {
   return translate(`reasons.${reasonType}`, lang)
 }
