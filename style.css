@@ -196,9 +196,8 @@ ul.footer-list select {
 
 .reason {
   white-space: pre-line;
-  text-wrap: balance;
   word-break: break-word;
-  padding: 0 6rem;
+  padding: 0 4rem;
 }
 
 @media screen and (max-width: 400px) {
@@ -292,11 +291,7 @@ ul.footer-list a {
 }
 
 [data-theme='Dark'] #text {
-  color: #e0e0e0;
-}
-
-[data-theme='Dark'] .its-friday #text {
-  color: #ffdad9;
+  color: #ffffff;
 }
 
 [data-theme='Dark'] .tagline {

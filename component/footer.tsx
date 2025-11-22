@@ -1,54 +1,47 @@
-import React from 'react'
-import Timezone from './timezone'
+import React from "react";
+import { useTranslation } from "../helpers/i18n";
+import Timezone from "./timezone";
 
 interface IFooter {
-  changeTimezone: (timezone: string) => void
-  timezone: string
-  theme: string
-  toggleTheme: () => void
+  changeTimezone: (timezone: string) => void;
+  timezone: string;
+  theme: string;
+  toggleTheme: () => void;
 }
 
 const Footer = (props: IFooter) => {
+  const { t, language, setLanguage, availableLanguages } = useTranslation();
+
   return (
     <>
       <ul className="footer-list">
-        <li>Share:</li>
         <li>
-          <a
-            href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fshouldideploy.today%2F&t=Should%20I%20Deploy%20Today%3F"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Share on Facebook"
-          >
-            Facebook
-          </a>
-        </li>
-        <li>
+          {t("footer.share")}{" "}
           <a
             href="https://x.com/intent/tweet?source=http%3A%2F%2Fshouldideploy.today%2F&text=Should%20I%20Deploy%20Today%3F:%20http%3A%2F%2Fshouldideploy.today"
             target="_blank"
             rel="noopener noreferrer"
-            title="Share on X"
+            title="Xed? Share on X"
           >
             X
           </a>
         </li>
         <li>
-          Source:{' '}
+          {t("footer.source")}{" "}
           <a
+            href="http://github.com/baires/shouldideploy"
             target="_blank"
             rel="noopener noreferrer"
-            href="http://github.com/baires/shouldideploy/"
           >
             Github
           </a>
         </li>
         <li>
-          Timezone:{' '}
+          {t("footer.timezone")}{" "}
           <Timezone onChange={props.changeTimezone} timezone={props.timezone} />
         </li>
         <li>
-          Theme:{' '}
+          {t("footer.theme")}{" "}
           <button
             onClick={props.toggleTheme}
             className="theme-toggle"
@@ -57,22 +50,48 @@ const Footer = (props: IFooter) => {
             {props.theme}
           </button>
         </li>
+        <li>
+          {t("footer.language")}{" "}
+          <select
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}
+            style={{
+              background: "transparent",
+              border: "none",
+              color: "inherit",
+              fontFamily: "inherit",
+              fontSize: "inherit",
+              cursor: "pointer",
+            }}
+          >
+            {availableLanguages.map((lang) => (
+              <option key={lang} value={lang}>
+                {lang.toUpperCase()}
+              </option>
+            ))}
+          </select>
+        </li>
       </ul>
-
       <ul className="footer-list">
         <li>
-          <a href={'/api?tz=' + props.timezone}>
-            <mark>API</mark>
+          <a
+            href={`/api?tz=${encodeURIComponent(props.timezone)}&lang=${encodeURIComponent(language)}`}
+            target="_blank"
+          >
+            {t("footer.api")}
           </a>
         </li>
         <li>
-          <a href={'/api/slack?tz=' + props.timezone}>
-            <mark>Slack API</mark>
+          <a
+            href={`/api/slack?tz=${encodeURIComponent(props.timezone)}&lang=${encodeURIComponent(language)}`}
+            target="_blank"
+          >
+            {t("footer.slack_api")}
           </a>
         </li>
       </ul>
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

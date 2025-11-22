@@ -1,6 +1,7 @@
 import React from 'react'
-import { getRandom, dayHelper } from '../helpers/constants'
+import { getRandom } from '../helpers/constants'
 import Time from '../helpers/time'
+import { useTranslation } from '../helpers/i18n'
 
 interface IWidget {
   now: Time
@@ -9,43 +10,101 @@ interface IWidget {
 
 const Widget = (props: IWidget) => {
   const [reason, setReasons] = React.useState<string>()
-  const [timezone, setTimezone] = React.useState<Time>()
-
-  React.useEffect(() => {
-    if (props.now !== timezone) {
-      setTimezone(props.now)
-      updateReasons()
-    }
-    document.addEventListener('keydown', onSpacePressOrClick)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  const { t } = useTranslation()
 
   /**
-   * On hitting Space reload reasons
-   * @return void
+   * Get the reason key based on current time
+   * @return string
    */
-  const onSpacePressOrClick = (event: { type: string; keyCode?: number }) => {
-    if (event.type === 'click' || event?.keyCode == 32) {
-      updateReasons()
+  const getReasonKey = React.useCallback(() => {
+    const time = props.now
+
+    if (time.isDayBeforeChristmas()) {
+      return 'day_before_christmas'
     }
-  }
+
+    if (time.isChristmas()) {
+      return 'christmas'
+    }
+
+    if (time.isNewYear()) {
+      return 'new_year'
+    }
+
+    if (time.isFriday13th()) {
+      return 'friday_13th'
+    }
+
+    if (time.isFridayAfternoon()) {
+      return 'friday_afternoon'
+    }
+
+    if (time.isFriday()) {
+      return 'to_not_deploy'
+    }
+
+    if (time.isThursdayAfternoon()) {
+      return 'thursday_afternoon'
+    }
+
+    if (time.isWeekend()) {
+      return 'weekend'
+    }
+
+    if (time.isAfternoon()) {
+      return 'afternoon'
+    }
+
+    return 'to_deploy'
+  }, [props.now])
 
   /**
    * Get reasons according to current time
    * @return string[]
    */
-  const getReasons = () => {
-    return dayHelper(props.now)
-  }
+  const getReasons = React.useCallback(() => {
+    // Get reasons from translation based on current language
+    return t(`reasons.${getReasonKey()}`)
+  }, [t, getReasonKey])
 
   /**
    * update and get random reasons
    * @return void
    */
-  const updateReasons = () => {
-    let reasons = getReasons()
+  const updateReasons = React.useCallback(() => {
+    const reasons = getReasons()
     setReasons(getRandom(reasons))
-  }
+  }, [getReasons])
+
+  React.useEffect(() => {
+    // Update reasons when language changes
+    updateReasons()
+  }, [updateReasons])
+
+  /**
+   * On hitting Space reload reasons
+   * @return void
+   */
+  const onSpacePressOrClick = React.useCallback(
+    (event: React.MouseEvent | KeyboardEvent) => {
+      if (event.type === 'click' || ('key' in event && event.key === ' ')) {
+        // Prevent default space bar behavior (scrolling, dropdown triggering)
+        if ('key' in event && event.key === ' ') {
+          event.preventDefault()
+        }
+        updateReasons()
+      }
+    },
+    [updateReasons]
+  )
+
+  React.useEffect(() => {
+    document.addEventListener('keydown', onSpacePressOrClick)
+
+    return () => {
+      document.removeEventListener('keydown', onSpacePressOrClick)
+    }
+  }, [onSpacePressOrClick])
 
   /**
    * Render widget
@@ -53,12 +112,13 @@ const Widget = (props: IWidget) => {
    */
   return (
     <div className="item">
-      <h3 className="tagline">Should I Deploy Today?</h3>
+      <h3 className="tagline">{t('tagline')}</h3>
       <h2 id="text" className="reason">
         {reason}
       </h2>
       <span id="reload" onClick={onSpacePressOrClick}>
-        Hit <span className="space-btn">Space</span> or Click
+        {t('reload.hit')} <span className="space-btn">{t('reload.space')}</span>{' '}
+        {t('reload.or_click')}
       </span>
     </div>
   )

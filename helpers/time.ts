@@ -33,7 +33,7 @@ export default class Time {
     if (this.customDate) {
       return this.customDate
     }
-    let timeZoneDate = new Date().toLocaleString('en-US', {
+    const timeZoneDate = new Date().toLocaleString('en-US', {
       timeZone: this.timezone
     })
     return new Date(timeZoneDate)
@@ -49,6 +49,9 @@ export default class Time {
       Intl.DateTimeFormat('en-US', { timeZone }).format(Date.now())
       return true
     } catch (error) {
+      if (error instanceof RangeError) {
+        return false
+      }
       return false
     }
   }
@@ -69,7 +72,7 @@ export default class Time {
     if (this.customDate) {
       return this.customDate
     }
-    let timeZoneDate = new Date().toLocaleString('en-US', {
+    const timeZoneDate = new Date().toLocaleString('en-US', {
       timeZone: this.timezone
     })
     return new Date(timeZoneDate)
