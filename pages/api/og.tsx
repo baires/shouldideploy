@@ -7,6 +7,7 @@ import {
   shouldIDeployFontTheme
 } from '../../helpers/constants'
 import Time from '../../helpers/time'
+import { Theme } from '../../helpers/themes'
 
 export const config = {
   runtime: 'edge'
@@ -19,7 +20,7 @@ const font = fetch(
 export default async function handler(req: Request) {
   const fontData = await font
   const { searchParams } = new URL(req.url)
-  const theme = searchParams.get('theme') || 'Light'
+  const theme = searchParams.get('theme') || Theme.Light
   let timezone = Time.DEFAULT_TIMEZONE
   let time = Time.validOrNull(timezone)
 

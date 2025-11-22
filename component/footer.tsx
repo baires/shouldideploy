@@ -49,13 +49,13 @@ const Footer = (props: IFooter) => {
         </li>
         <li>
           Theme:{' '}
-          <a
+          <button
             onClick={props.toggleTheme}
             className="theme-toggle"
             title={`Current: ${props.theme}. Click to toggle light/dark`}
           >
             {props.theme}
-          </a>
+          </button>
         </li>
       </ul>
 

@@ -292,7 +292,11 @@ ul.footer-list a {
 }
 
 [data-theme='Dark'] #text {
-  color: #ffffff;
+  color: #e0e0e0;
+}
+
+[data-theme='Dark'] .its-friday #text {
+  color: #ffdad9;
 }
 
 [data-theme='Dark'] .tagline {

@@ -11,6 +11,7 @@ import {
   REASONS_FOR_CHRISTMAS,
   REASONS_NEW_YEAR
 } from './reasons'
+import { Theme } from './themes'
 
 export function getBaseUrl() {
   if (typeof window !== 'undefined') return ''
@@ -43,7 +44,7 @@ export const shouldIDeployColorTheme = function (
   time: Time | null,
   theme?: string
 ) {
-  const isDark = theme === 'Dark'
+  const isDark = theme === Theme.Dark
   const canDeploy = shouldIDeploy(time)
 
   if (isDark) {
@@ -59,7 +60,7 @@ export const shouldIDeployFontTheme = function (
   time: Time | null,
   theme?: string
 ) {
-  const isDark = theme === 'Dark'
+  const isDark = theme === Theme.Dark
   const canDeploy = shouldIDeploy(time)
 
   if (isDark) {
