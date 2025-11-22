@@ -54,7 +54,7 @@ const Footer = (props: IFooter) => {
           {t('footer.language')}{' '}
           <select
             value={language}
-            onChange={(e) => setLanguage(e.target.value as any)}
+            onChange={(e) => setLanguage(e.target.value)}
             style={{
               background: 'transparent',
               border: 'none',
@@ -74,12 +74,18 @@ const Footer = (props: IFooter) => {
       </ul>
       <ul className="footer-list">
         <li>
-          <a href="/api" target="_blank">
+          <a
+            href={`/api?tz=${props.timezone}&lang=${language}`}
+            target="_blank"
+          >
             {t('footer.api')}
           </a>
         </li>
         <li>
-          <a href="/api/slack" target="_blank">
+          <a
+            href={`/api/slack?tz=${props.timezone}&lang=${language}`}
+            target="_blank"
+          >
             {t('footer.slack_api')}
           </a>
         </li>
