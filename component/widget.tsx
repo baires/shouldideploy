@@ -86,10 +86,10 @@ const Widget = (props: IWidget) => {
    * @return void
    */
   const onSpacePressOrClick = React.useCallback(
-    (event: any) => {
-      if (event.type === 'click' || event?.keyCode == 32) {
+    (event: React.MouseEvent | KeyboardEvent) => {
+      if (event.type === 'click' || ('key' in event && event.key === ' ')) {
         // Prevent default space bar behavior (scrolling, dropdown triggering)
-        if (event?.keyCode == 32) {
+        if ('key' in event && event.key === ' ') {
           event.preventDefault()
         }
         updateReasons()

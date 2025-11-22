@@ -25,6 +25,26 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined
 )
 
+/**
+ * Find the best matching language from available locales
+ * Supports regional codes (e.g., 'es-AR') with fallback to base language (e.g., 'es')
+ */
+function findBestMatchingLanguage(lang: string): string {
+  // 1. Try exact match (e.g., 'es-AR')
+  if (locales[lang]) {
+    return lang
+  }
+
+  // 2. Try base language (e.g., 'es' from 'es-AR')
+  const baseLang = lang.split('-')[0]
+  if (locales[baseLang]) {
+    return baseLang
+  }
+
+  // 3. Fallback to English
+  return 'en'
+}
+
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   children
 }) => {
@@ -33,10 +53,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   useEffect(() => {
     const savedLang = localStorage.getItem('language')
     if (savedLang) {
-      setLanguage(savedLang)
+      setLanguage(findBestMatchingLanguage(savedLang))
     } else {
       const browserLang = navigator.language
-      setLanguage(browserLang)
+      setLanguage(findBestMatchingLanguage(browserLang))
     }
   }, [])
 
