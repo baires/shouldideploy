@@ -6,6 +6,10 @@ describe('i18n Server Helper', () => {
       expect(translate('meta.title', 'en')).toBe('Should I Deploy Today?')
     })
 
+    it('should default to English if language is not provided', () => {
+      expect(translate('meta.title')).toBe('Should I Deploy Today?')
+    })
+
     it('should translate a simple key in Spanish', () => {
       expect(translate('meta.title', 'es')).toBe('¿Debería desplegar hoy?')
     })

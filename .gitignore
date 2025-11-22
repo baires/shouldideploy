@@ -12,3 +12,4 @@ public/bundle.js
 .env
 .vercel
 .idea
+coverage/
