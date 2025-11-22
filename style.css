@@ -196,9 +196,8 @@ ul.footer-list select {
 
 .reason {
   white-space: pre-line;
-  text-wrap: balance;
   word-break: break-word;
-  padding: 0 6rem;
+  padding: 0 4rem;
 }
 
 @media screen and (max-width: 400px) {

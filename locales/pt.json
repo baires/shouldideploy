@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "title": "Devo fazer deploy hoje?",
+    "description": "Devo fazer deploy hoje?"
+  },
+  "tagline": "Devo fazer deploy hoje?",
+  "reload": {
+    "hit": "Pressione",
+    "space": "Espaço",
+    "or_click": "ou Clique"
+  },
+  "footer": {
+    "share": "Compartilhar:",
+    "source": "Código:",
+    "timezone": "Fuso horário:",
+    "theme": "Tema:",
+    "api": "API",
+    "slack_api": "Slack API",
+    "language": "Idioma:"
+  },
+  "slack": {
+    "footer": "Devo fazer deploy hoje?"
+  },
+  "reasons": {
+    "to_deploy": [
+      "Não vejo por que não",
+      "É um país livre",
+      "Vá em frente meu amigo!",
+      "Manda ver",
+      "Vai vai vai vai!",
+      "Vamos nessa!",
+      "Envia! 🚢",
+      "Siga o fluxo 🌊",
+      "Mais forte, melhor, mais rápido, mais forte",
+      "Arrasa!",
+      "Me deixe orgulhoso",
+      "Boa sorte!",
+      "Este é o caminho",
+      "Bata primeiro, bata forte, sem piedade!"
+    ],
+    "to_not_deploy": [
+      "Eu não recomendaria",
+      "Não, é sexta-feira",
+      "Que tal segunda-feira?",
+      "Hoje não",
+      "Não",
+      "Por quê?",
+      "Os testes passaram? Provavelmente não",
+      "¯\\_(ツ)_/¯",
+      "😹",
+      "Não",
+      "Não. Respire e conte até 10, comece de novo",
+      "Prefiro tomar um sorvete 🍦",
+      "Como você pôde? 🥺",
+      "Algumas pessoas só querem ver o mundo pegar fogo 🔥",
+      "Você gosta de fogo, não é?",
+      "Os bugs estão apenas esperando por você"
+    ],
+    "thursday_afternoon": [
+      "Você ainda quer dormir?",
+      "Ligue para seu parceiro(a)!",
+      "Vai ficar até tarde hoje?",
+      "Diga ao seu chefe que encontrou um bug e vá para casa",
+      "Que tal segunda-feira?",
+      "Eu não recomendaria",
+      "Hoje não",
+      "Não",
+      "Não. Respire e conte até 10, comece de novo"
+    ],
+    "friday_afternoon": [
+      "De jeito nenhum",
+      "Tá maluco?",
+      "No que você está pensando?",
+      "Não não não não não não não não",
+      "O que você acha de trabalhar noites e fins de semana?",
+      "🔥 🚒 🚨 ⛔️ 🔥 🚒 🚨 ⛔️ 🔥 🚒 🚨 ⛔️",
+      "Não! Deus! Por favor! Não!",
+      "Não não não não não não não!",
+      "Continue sonhando querido(a)",
+      "Por que irmão, por quê?",
+      "Mas mas mas... por quê?",
+      "Deploys são para segunda-feira, assim você pode consertá-los até sexta.",
+      "YOLO! Você só vive uma vez!",
+      "Erro na linha NaN Col -2 inesperado 'undefined'",
+      "us-east-1 não é uma região válida",
+      "500 Erro Interno do Servidor",
+      "Algo deu errado"
+    ],
+    "friday_13th": [
+      "Cara, sério? É sexta-feira 13!",
+      "Você acredita em má sorte?",
+      "Jason está te observando",
+      "Se você quer passar seu fim de semana em Crystal Lake, vá em frente",
+      "Rezar não ajuda se você tomar essa má decisão",
+      "Você olhou o calendário hoje?",
+      "📅 Sexta-feira 13. O que você acha disso?",
+      "Apenas não!",
+      "Mas mas mas... por quê?"
+    ],
+    "afternoon": [
+      "Você ainda quer dormir?",
+      "Ligue para seu parceiro(a)!",
+      "Vai ficar até tarde hoje?",
+      "Amanhã?",
+      "Não",
+      "Diga ao seu chefe que encontrou um bug e vá para casa",
+      "Você tem o dia todo pela frente amanhã!",
+      "Confie em mim, eles ficarão muito mais felizes se não quebrar durante a noite",
+      "O quanto você confia nas suas ferramentas de log?"
+    ],
+    "weekend": [
+      "Vá para casa, você está bêbado",
+      "Que tal segunda-feira?",
+      "Cerveja?",
+      "Desenvolver bêbado não é uma boa ideia!",
+      "Vejo que você fez deploy na sexta",
+      "Te disse que segunda seria uma ideia melhor!",
+      "Existem 2^1000 outras ideias."
+    ],
+    "day_before_christmas": [
+      "Você é o Papai Noel 🧑‍🎄 ou o quê?",
+      "🎶🎵 É melhor você tomar cuidado 🎵🎶",
+      "🎄 Aproveite as festas! 🎄 ",
+      "Tome mais um copo de gemada",
+      "Você não pode esperar até depois de abrir os presentes?",
+      "Claro, faça deploy... \n sua família vai adorar você consertando coisas no celular durante o jantar"
+    ],
+    "christmas": [
+      "Não, Rudolf vai te caçar 🦌 ",
+      "Apenas assista Esqueceram de Mim hoje",
+      "Você não deveria estar preparando a ceia de natal?"
+    ],
+    "new_year": [
+      "Feliz Ano Novo! \n faça deploy dia 2 de janeiro",
+      "Você não está de ressaca?",
+      "Tome outra taça de champanhe 🥂",
+      "Comemore hoje, faça deploy amanhã 🎇"
+    ]
+  }
+}

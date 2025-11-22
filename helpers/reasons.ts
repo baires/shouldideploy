@@ -1,124 +1,124 @@
 export const REASONS_TO_DEPLOY = [
-  "I don't see why not",
-  "It's a free country",
-  'Go ahead my friend!',
-  'Go for it',
-  'Go go go go!',
-  "Let's do it!",
-  'Ship it! 🚢',
-  'Go with the flow 🌊',
-  'Harder better faster stronger',
-  'Rock on!',
-  'Make me proud',
-  'Break a leg!',
-  'This Is the Way',
-  'Strike First, Strike Hard, No Mercy!'
+  'reasons.to_deploy.0',
+  'reasons.to_deploy.1',
+  'reasons.to_deploy.2',
+  'reasons.to_deploy.3',
+  'reasons.to_deploy.4',
+  'reasons.to_deploy.5',
+  'reasons.to_deploy.6',
+  'reasons.to_deploy.7',
+  'reasons.to_deploy.8',
+  'reasons.to_deploy.9',
+  'reasons.to_deploy.10',
+  'reasons.to_deploy.11',
+  'reasons.to_deploy.12',
+  'reasons.to_deploy.13'
 ]
 
 export const REASONS_TO_NOT_DEPLOY = [
-  "I wouldn't recommend it",
-  "No, it's Friday",
-  'What about Monday?',
-  'Not today',
-  'Nope',
-  'Why?',
-  'Did the tests pass? Probably not',
-  '¯\\_(ツ)_/¯',
-  '😹',
-  'No',
-  'No. Breathe and count to 10, start again',
-  "I'd rather have ice-cream 🍦",
-  'How could you? 🥺',
-  'Some people just want to watch the world burn 🔥',
-  "You like fire don't you?",
-  'The bugs are just waiting for you'
+  'reasons.to_not_deploy.0',
+  'reasons.to_not_deploy.1',
+  'reasons.to_not_deploy.2',
+  'reasons.to_not_deploy.3',
+  'reasons.to_not_deploy.4',
+  'reasons.to_not_deploy.5',
+  'reasons.to_not_deploy.6',
+  'reasons.to_not_deploy.7',
+  'reasons.to_not_deploy.8',
+  'reasons.to_not_deploy.9',
+  'reasons.to_not_deploy.10',
+  'reasons.to_not_deploy.11',
+  'reasons.to_not_deploy.12',
+  'reasons.to_not_deploy.13',
+  'reasons.to_not_deploy.14',
+  'reasons.to_not_deploy.15'
 ]
 
 export const REASONS_FOR_THURSDAY_AFTERNOON = [
-  'You still want to sleep?',
-  'Call your partner!',
-  'Gonna stay late today?',
-  'Tell your boss that you found a bug and go home',
-  'What about Monday?',
-  "I wouldn't recommend it",
-  'Not today',
-  'Nope',
-  'No. Breathe and count to 10, start again'
+  'reasons.thursday_afternoon.0',
+  'reasons.thursday_afternoon.1',
+  'reasons.thursday_afternoon.2',
+  'reasons.thursday_afternoon.3',
+  'reasons.thursday_afternoon.4',
+  'reasons.thursday_afternoon.5',
+  'reasons.thursday_afternoon.6',
+  'reasons.thursday_afternoon.7',
+  'reasons.thursday_afternoon.8'
 ]
 
 export const REASONS_FOR_FRIDAY_AFTERNOON = [
-  'Not by any chance',
-  'U mad?',
-  'What you are thinking?',
-  'No no no no no no no no',
-  'How do you feel about working nights and weekends?',
-  '🔥 🚒 🚨 ⛔️ 🔥 🚒 🚨 ⛔️ 🔥 🚒 🚨 ⛔️',
-  'No! God! Please! No',
-  'No no no no no no no!',
-  'Keep dreaming darling',
-  'Why why Bro why?',
-  'But but but... why?',
-  'Deploys are for Monday, so you can fix them till Friday.',
-  'YOLO ! You only live once !',
-  "Error in line NaN Col -2 unexpected 'undefined'",
-  'us-east-1 is not a valid region',
-  '500 Internal Server Error',
-  'Something went wrong'
+  'reasons.friday_afternoon.0',
+  'reasons.friday_afternoon.1',
+  'reasons.friday_afternoon.2',
+  'reasons.friday_afternoon.3',
+  'reasons.friday_afternoon.4',
+  'reasons.friday_afternoon.5',
+  'reasons.friday_afternoon.6',
+  'reasons.friday_afternoon.7',
+  'reasons.friday_afternoon.8',
+  'reasons.friday_afternoon.9',
+  'reasons.friday_afternoon.10',
+  'reasons.friday_afternoon.11',
+  'reasons.friday_afternoon.12',
+  'reasons.friday_afternoon.13',
+  'reasons.friday_afternoon.14',
+  'reasons.friday_afternoon.15',
+  'reasons.friday_afternoon.16'
 ]
 
 export const REASONS_FOR_FRIDAY_13TH = [
-  "Man, really? It's friday the 13th!",
-  'Do you believe in bad luck?',
-  'Jason is watching you',
-  'If you want to spend your weekend in Crystal Lake, go ahead',
-  'To pray is no help if you take this bad decision',
-  'Did you look at the calendar today?',
-  '📅 Friday the 13th. What do you think about it?',
-  'Just no!',
-  'But but but... why?'
+  'reasons.friday_13th.0',
+  'reasons.friday_13th.1',
+  'reasons.friday_13th.2',
+  'reasons.friday_13th.3',
+  'reasons.friday_13th.4',
+  'reasons.friday_13th.5',
+  'reasons.friday_13th.6',
+  'reasons.friday_13th.7',
+  'reasons.friday_13th.8'
 ]
 
 export const REASONS_FOR_AFTERNOON = [
-  'You still want to sleep?',
-  'Call your partner!',
-  'Gonna stay late today?',
-  'Tomorrow?',
-  'No',
-  'Tell your boss that you found a bug and go home',
-  'You have full day ahead of you tomorrow!',
-  "Trust me, they will be much happier if it wasn't broken for a night",
-  'How much do you trust your logging tools?'
+  'reasons.afternoon.0',
+  'reasons.afternoon.1',
+  'reasons.afternoon.2',
+  'reasons.afternoon.3',
+  'reasons.afternoon.4',
+  'reasons.afternoon.5',
+  'reasons.afternoon.6',
+  'reasons.afternoon.7',
+  'reasons.afternoon.8'
 ]
 
 export const REASONS_FOR_WEEKEND = [
-  "Go home, you're drunk",
-  'How about Monday?',
-  'Beer?',
-  'Drunk development is not a good idea!',
-  'I see you deployed on Friday',
-  'Told you that Monday would be a better idea!',
-  'There are 2^1000 other ideas.'
+  'reasons.weekend.0',
+  'reasons.weekend.1',
+  'reasons.weekend.2',
+  'reasons.weekend.3',
+  'reasons.weekend.4',
+  'reasons.weekend.5',
+  'reasons.weekend.6'
 ]
 
 export const REASONS_FOR_DAY_BEFORE_CHRISTMAS = [
-  'Are you Santa 🧑‍🎄 or what?',
-  '🎶🎵 You better watch out 🎵🎶',
-  '🎄 Enjoy the holiday season! 🎄 ',
-  'Just take another glass of eggnog',
-  "Can't you just wait after present unwrapping?",
-  'Sure, deploy... \n your family will appreciate you fixing things on your phone during dinner'
+  'reasons.day_before_christmas.0',
+  'reasons.day_before_christmas.1',
+  'reasons.day_before_christmas.2',
+  'reasons.day_before_christmas.3',
+  'reasons.day_before_christmas.4',
+  'reasons.day_before_christmas.5'
 ]
 
 export const REASONS_FOR_CHRISTMAS = [
   ...REASONS_FOR_DAY_BEFORE_CHRISTMAS,
-  'No, Rudolf will hunt you down 🦌 ',
-  'Just watch Home Alone today',
-  "Shouldn't you be preparing a christmas dinner?"
+  'reasons.christmas.0',
+  'reasons.christmas.1',
+  'reasons.christmas.2'
 ]
 
 export const REASONS_NEW_YEAR = [
-  'Happy New Year! \n deploy the 2nd of january',
-  "Aren't you hungover?",
-  'Take another glass of champagne 🥂',
-  'Celebrate today, deploy tomorrow 🎇'
+  'reasons.new_year.0',
+  'reasons.new_year.1',
+  'reasons.new_year.2',
+  'reasons.new_year.3'
 ]

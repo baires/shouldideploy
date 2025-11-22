@@ -15,6 +15,8 @@
 
 Reasons are located under [reasons.ts](https://github.com/baires/shouldideploy/blob/master/helpers/reasons.ts)
 
+For adding new language translations, see [docs/adding-languages.md](docs/adding-languages.md)
+
 ## API endpoint
 There is an endpoint to use on your CI or just for fun at `https://shouldideploy.today/api`
 
@@ -22,6 +24,7 @@ You can also provide optional parameters to customize the API response:
 
 - `tz`: The timezone to use when evaluating the date and time. The default value is UTC. Pass a valid timezone string, such as `America/New_York` or `Europe/London` default `UTC`.
 - `date`: The date to evaluate. The default value is the current date. Pass a valid date string in the format `YYYY-MM-DD`, such as `2023-03-31`.
+- `lang`: The language for the response message. Supports base languages (`en`, `es`, `pt`) and regional variants (`es-AR`). Falls back to base language or English if not found. Default is `en`.
 
 ### Examples
 
@@ -48,6 +51,18 @@ Get the API response for a specific date (e.g., 2023-03-31) in a specific timezo
 
 ```
 https://shouldideploy.today/api?tz=America/New_York&date=2023-03-31
+```
+
+Get the API response in Spanish:
+
+```
+https://shouldideploy.today/api?lang=es
+```
+
+Get the API response in Argentina Spanish with a specific timezone:
+
+```
+https://shouldideploy.today/api?lang=es-AR&tz=America/Buenos_Aires
 ```
 
 ## API Response

@@ -12,6 +12,7 @@ import {
   REASONS_NEW_YEAR
 } from './reasons'
 import { Theme } from './themes'
+import { getTranslatedReasons } from './i18n-server'
 
 export function getBaseUrl() {
   if (typeof window !== 'undefined') return ''
@@ -82,46 +83,51 @@ export const getRandom = function ranDay(list: string | string[]) {
 
 /**
  * Return a list of reasons according of time parameter
- * @param string[]
+ * @param time - Time object
+ * @param lang - Optional language code for translations (defaults to English)
+ * @returns string[]
  */
-export function dayHelper(time: Time) {
+export function dayHelper(time: Time, lang?: string): string[] {
   time = time || new Time(time)
 
+  // Default to English if no language specified
+  const language = lang || 'en'
+
   if (time.isDayBeforeChristmas()) {
-    return REASONS_FOR_DAY_BEFORE_CHRISTMAS
+    return getTranslatedReasons('day_before_christmas', language)
   }
 
   if (time.isChristmas()) {
-    return REASONS_FOR_CHRISTMAS
+    return getTranslatedReasons('christmas', language)
   }
 
   if (time.isNewYear()) {
-    return REASONS_NEW_YEAR
+    return getTranslatedReasons('new_year', language)
   }
 
   if (time.isFriday13th()) {
-    return REASONS_FOR_FRIDAY_13TH
+    return getTranslatedReasons('friday_13th', language)
   }
 
   if (time.isFridayAfternoon()) {
-    return REASONS_FOR_FRIDAY_AFTERNOON
+    return getTranslatedReasons('friday_afternoon', language)
   }
 
   if (time.isFriday()) {
-    return REASONS_TO_NOT_DEPLOY
+    return getTranslatedReasons('to_not_deploy', language)
   }
 
   if (time.isThursdayAfternoon()) {
-    return REASONS_FOR_THURSDAY_AFTERNOON
+    return getTranslatedReasons('thursday_afternoon', language)
   }
 
   if (time.isWeekend()) {
-    return REASONS_FOR_WEEKEND
+    return getTranslatedReasons('weekend', language)
   }
 
   if (time.isAfternoon()) {
-    return REASONS_FOR_AFTERNOON
+    return getTranslatedReasons('afternoon', language)
   }
 
-  return REASONS_TO_DEPLOY
+  return getTranslatedReasons('to_deploy', language)
 }
