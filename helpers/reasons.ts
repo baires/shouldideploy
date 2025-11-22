@@ -60,7 +60,10 @@ export const REASONS_FOR_FRIDAY_AFTERNOON = [
   'But but but... why?',
   'Deploys are for Monday, so you can fix them till Friday.',
   'YOLO ! You only live once !',
-  "Error in line NaN Col -2 unexpected 'ↇ'"
+  "Error in line NaN Col -2 unexpected 'undefined'",
+  'us-east-1 is not a valid region',
+  '500 Internal Server Error',
+  'Something went wrong'
 ]
 
 export const REASONS_FOR_FRIDAY_13TH = [

@@ -11,6 +11,7 @@ import Time from '../helpers/time'
 import Widget from '../component/widget'
 import Footer from '../component/footer'
 import Router from 'next/router'
+import { Theme, ThemeType } from '../helpers/themes'
 
 interface IPage {
   tz: string
@@ -23,6 +24,34 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
   const [now, setNow] = useState<any>(
     new Time(initialNow.timezone, initialNow.customDate)
   )
+  const [theme, setTheme] = useState<ThemeType>(Theme.Light)
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') as ThemeType | null
+    if (savedTheme) {
+      setTheme(savedTheme)
+      applyTheme(savedTheme)
+    } else {
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+        .matches
+        ? Theme.Dark
+        : Theme.Light
+      setTheme(systemTheme)
+      applyTheme(systemTheme)
+    }
+  }, [])
+
+  const applyTheme = (newTheme: ThemeType) => {
+    document.documentElement.setAttribute('data-theme', newTheme)
+  }
+
+  const toggleTheme = () => {
+    const nextTheme = theme === Theme.Light ? Theme.Dark : Theme.Light
+
+    setTheme(nextTheme)
+    localStorage.setItem('theme', nextTheme)
+    applyTheme(nextTheme)
+  }
 
   const changeTimezone = (newTimezone: string) => {
     if (!Time.zoneExists(newTimezone)) {
@@ -52,7 +81,12 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
       <div className={`wrapper ${!shouldIDeploy(now) && 'its-friday'}`}>
         <Widget key={now.timezone} reason={initialReason} now={now} />
         <div className="meta">
-          <Footer timezone={timezone} changeTimezone={changeTimezone} />
+          <Footer
+            timezone={timezone}
+            changeTimezone={changeTimezone}
+            theme={theme}
+            toggleTheme={toggleTheme}
+          />
         </div>
       </div>
     </>
