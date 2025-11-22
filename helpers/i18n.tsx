@@ -66,7 +66,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
     let value: any = getLocaleData(language)
 
     for (const k of keys) {
-      if (value && value[k] !== undefined) {
+      if (value && typeof value === 'object' && value[k] !== undefined) {
         value = value[k]
       } else {
         return key

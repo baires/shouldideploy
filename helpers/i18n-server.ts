@@ -48,13 +48,17 @@ export function translate(key: string, lang?: string): any {
   let value: any = getLocaleData(language)
 
   for (const k of keys) {
-    if (value && value[k] !== undefined) {
+    if (value && typeof value === 'object' && value[k] !== undefined) {
       value = value[k]
     } else {
       // Fallback to English if translation not found
       let fallbackValue: any = locales.en
       for (const fk of keys) {
-        if (fallbackValue && fallbackValue[fk] !== undefined) {
+        if (
+          fallbackValue &&
+          typeof fallbackValue === 'object' &&
+          fallbackValue[fk] !== undefined
+        ) {
           fallbackValue = fallbackValue[fk]
         } else {
           return key
