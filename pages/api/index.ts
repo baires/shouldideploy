@@ -35,6 +35,7 @@ const handler = async (
 ) => {
   const timezone = (req.query.tz as string) || Time.DEFAULT_TIMEZONE
   const customDate = req.query.date as string
+  const lang = req.query.lang as string | undefined
 
   if (!Time.zoneExists(timezone)) {
     return res.status(400).json({
@@ -57,7 +58,7 @@ const handler = async (
       ? new Date(customDate).toISOString()
       : time.now().toISOString(),
     shouldideploy: shouldIDeploy(time),
-    message: getRandom(dayHelper(time))
+    message: getRandom(dayHelper(time, lang))
   })
 }
 

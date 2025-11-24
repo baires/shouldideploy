@@ -21,8 +21,8 @@ export default async function handler(req: Request) {
   const fontData = await font
   const { searchParams } = new URL(req.url)
   const theme = searchParams.get('theme') || Theme.Light
-  let timezone = Time.DEFAULT_TIMEZONE
-  let time = Time.validOrNull(timezone)
+  const timezone = Time.DEFAULT_TIMEZONE
+  const time = Time.validOrNull(timezone)
 
   return new ImageResponse(
     (

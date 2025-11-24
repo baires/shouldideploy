@@ -9,6 +9,7 @@ import {
 } from '../helpers/constants'
 import Time from '../helpers/time'
 import Widget from '../component/widget'
+import { useTranslation } from '../helpers/i18n'
 import Footer from '../component/footer'
 import Router from 'next/router'
 import { Theme, ThemeType } from '../helpers/themes'
@@ -58,7 +59,7 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
       return
     }
 
-    let newUrl = new URL(window.location.toString())
+    const newUrl = new URL(window.location.toString())
     newUrl.searchParams.set('tz', newTimezone)
     Router.push(newUrl.pathname + newUrl.search)
 
@@ -66,17 +67,15 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
     setNow(new Time(newTimezone))
   }
 
+  const { t } = useTranslation()
+
   return (
     <>
       <Head>
-        <link
-          rel="icon"
-          type="image/png"
-          href={shouldIDeployFavIcon(now)}
-          sizes="32x32"
-        />
+        <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
+        <link rel="icon" href={shouldIDeployFavIcon(now)} />
         <meta property="og:image" content={`${getBaseUrl()}/api/og`} />
-        <title>Should I Deploy Today?</title>
       </Head>
       <div className={`wrapper ${!shouldIDeploy(now) && 'its-friday'}`}>
         <Widget key={now.timezone} reason={initialReason} now={now} />
