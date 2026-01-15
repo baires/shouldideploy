@@ -1,4 +1,5 @@
 import React from 'react'
+import { NextApiRequest, NextApiResponse } from 'next'
 import { ImageResponse } from '@vercel/og'
 import {
   getRandom,
@@ -8,23 +9,21 @@ import {
 } from '../../helpers/constants'
 import Time from '../../helpers/time'
 import { Theme } from '../../helpers/themes'
+import { readFileSync } from 'fs'
+import { join } from 'path'
 
-export const config = {
-  runtime: 'edge'
-}
+const fontData = readFileSync(
+  join(process.cwd(), 'public/fonts/GeneralSans-Bold.otf')
+)
 
-const font = fetch(
-  new URL('../../public/fonts/GeneralSans-Bold.otf', import.meta.url)
-).then((res) => res.arrayBuffer())
-
-export default async function handler(req: Request) {
-  const fontData = await font
-  const { searchParams } = new URL(req.url)
-  const theme = searchParams.get('theme') || Theme.Light
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const theme = (req.query.theme as string) || Theme.Light
   const timezone = Time.DEFAULT_TIMEZONE
   const time = Time.validOrNull(timezone)
 
-  return new ImageResponse(
+  res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800')
+
+  const imageResponse = new ImageResponse(
     (
       <div
         style={{
@@ -143,4 +142,8 @@ export default async function handler(req: Request) {
       ]
     }
   )
+  res.status(200)
+  res.setHeader('Content-Type', 'image/png')
+  const buffer = await (imageResponse as unknown as Response).arrayBuffer()
+  res.end(Buffer.from(buffer))
 }
