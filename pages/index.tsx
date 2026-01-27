@@ -1,5 +1,6 @@
 // index.tsx
 import React, { useEffect, useState } from 'react'
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import {
   shouldIDeploy,
@@ -63,7 +64,9 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
     Router.push(newUrl.pathname + newUrl.search)
 
     setTimezone(newTimezone)
-    setNow(new Time(newTimezone))
+    // Preserve custom date if present in URL
+    const dateParam = newUrl.searchParams.get('date')
+    setNow(dateParam ? new Time(newTimezone, dateParam) : new Time(newTimezone))
   }
 
   const { t } = useTranslation()
@@ -91,16 +94,36 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
   )
 }
 
-export const getStaticProps = async () => {
-  const timezone = Time.DEFAULT_TIMEZONE
-  const time = Time.validOrNull(timezone)
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { tz, date } = context.query
+  const timezone = (tz as string) || Time.DEFAULT_TIMEZONE
+  const customDate = date as string | undefined
+
+  if (!Time.zoneExists(timezone)) {
+    return {
+      props: {
+        tz: Time.DEFAULT_TIMEZONE,
+        now: new Time(Time.DEFAULT_TIMEZONE).toObject()
+      }
+    }
+  }
+
+  let time: Time
+  if (customDate) {
+    try {
+      time = new Time(timezone, customDate)
+    } catch {
+      time = new Time(timezone)
+    }
+  } else {
+    time = new Time(timezone)
+  }
 
   return {
     props: {
       tz: timezone,
-      now: time ? time.toObject() : null
-    },
-    revalidate: 3600
+      now: time.toObject()
+    }
   }
 }
 
