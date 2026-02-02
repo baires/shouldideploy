@@ -6,7 +6,7 @@
 
 * Run:
     * `npm i` — install deps.
-    * `npm run dev` start dev server
+    * `npm run dev` — start the dev server.
     * `now dev` if you need local serveless function (requires now)
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/baires/shouldideploy)
