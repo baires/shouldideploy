@@ -3,18 +3,5 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/api/slack/(.*)",
-      "destination": "/api/slack"
-    },
-    {
-      "source": "/api/og/(.*)",
-      "destination": "/api/og"
-    },
-    {
-      "source": "/api/((?!og|slack|favicon).*)",
-      "destination": "/api"
-    }
-  ]
+  "redirects": []
 }
