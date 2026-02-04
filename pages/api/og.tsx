@@ -1,5 +1,4 @@
 import React from 'react'
-import { NextApiRequest, NextApiResponse } from 'next'
 import { ImageResponse } from '@vercel/og'
 import {
   getRandom,
@@ -9,21 +8,33 @@ import {
 } from '../../helpers/constants'
 import Time from '../../helpers/time'
 import { Theme } from '../../helpers/themes'
-import { readFileSync } from 'fs'
-import { join } from 'path'
 
-const fontData = readFileSync(
-  join(process.cwd(), 'public/fonts/GeneralSans-Bold.otf')
-)
+// Edge runtime configuration
+export const config = {
+  runtime: 'edge'
+}
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const theme = (req.query.theme as string) || Theme.Light
+// Module-level font cache for edge runtime
+let fontCache: ArrayBuffer | null = null
+
+export default async function handler(req: Request) {
+  const { searchParams } = new URL(req.url)
+  const theme = searchParams.get('theme') || Theme.Light
   const timezone = Time.DEFAULT_TIMEZONE
   const time = Time.validOrNull(timezone)
 
-  res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800')
+  // Lazy load font on first request
+  if (!fontCache) {
+    const fontUrl = new URL('/fonts/GeneralSans-Bold.otf', req.url)
+    fontCache = await fetch(fontUrl).then(res => res.arrayBuffer())
+  }
 
-  const imageResponse = new ImageResponse(
+  // Ensure fontCache is not null before using
+  if (!fontCache) {
+    return new Response('Font loading failed', { status: 500 })
+  }
+
+  return new ImageResponse(
     (
       <div
         style={{
@@ -135,15 +146,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       fonts: [
         {
           name: 'GeneralSans',
-          data: fontData,
+          data: fontCache,
           weight: 700,
           style: 'normal'
         }
-      ]
+      ],
+      headers: {
+        'Cache-Control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800'
+      }
     }
   )
-  res.status(200)
-  res.setHeader('Content-Type', 'image/png')
-  const buffer = await (imageResponse as unknown as Response).arrayBuffer()
-  res.end(Buffer.from(buffer))
 }
