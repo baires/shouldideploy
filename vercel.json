@@ -13,7 +13,7 @@
       "destination": "/api/og"
     },
     {
-      "source": "/api/((?!og|slack).*)",
+      "source": "/api/((?!og|slack|favicon).*)",
       "destination": "/api"
     }
   ]
