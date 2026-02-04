@@ -1,11 +1,7 @@
 // index.tsx
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
-import {
-  shouldIDeploy,
-  shouldIDeployFavIcon,
-  getBaseUrl
-} from '../helpers/constants'
+import { shouldIDeploy, getBaseUrl } from '../helpers/constants'
 import Time from '../helpers/time'
 import Widget from '../component/widget'
 import { useTranslation } from '../helpers/i18n'
@@ -73,7 +69,7 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
       <Head>
         <title>{t('meta.title')}</title>
         <meta name="description" content={t('meta.description')} />
-        <link rel="icon" href={shouldIDeployFavIcon(now)} />
+        <link rel="icon" href="/api/favicon" />
         <meta property="og:image" content={`${getBaseUrl()}/api/og`} />
       </Head>
       <div className={`wrapper ${!shouldIDeploy(now) && 'its-friday'}`}>
