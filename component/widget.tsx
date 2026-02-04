@@ -56,7 +56,7 @@ const Widget = (props: IWidget) => {
     }
 
     return 'to_deploy'
-  }, [props.now])
+  }, [props.now.timezone, props.now.customDate])
 
   /**
    * Get reasons according to current time

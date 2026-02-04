@@ -1,6 +1,10 @@
-import { NextApiRequest, NextApiResponse } from 'next'
 import Time from '../../helpers/time'
 import { getRandom, dayHelper, shouldIDeploy } from '../../helpers/constants'
+
+// Edge runtime configuration
+export const config = {
+  runtime: 'edge'
+}
 
 type ApiResponse = {
   error?: { message: string; type: string; code: number }
@@ -10,31 +14,41 @@ type ApiResponse = {
   message?: string
 }
 
-const handler = async (
-  req: NextApiRequest,
-  res: NextApiResponse<ApiResponse>
-) => {
+const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
-    res.setHeader('Access-Control-Allow-Origin', '*')
-    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS')
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
-    res.status(200).end()
-    return
-  }
-
-  const timezone = (req.query.tz as string) || Time.DEFAULT_TIMEZONE
-  const customDate = req.query.date as string
-  const lang = req.query.lang as string | undefined
-
-  if (!Time.zoneExists(timezone)) {
-    return res.status(400).json({
-      error: {
-        message: `Timezone \`${timezone}\` does not exist`,
-        type: 'Bad Request',
-        code: 400
+    return new Response(null, {
+      status: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET,OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type'
       }
     })
+  }
+
+  const { searchParams } = new URL(req.url)
+  const timezone = searchParams.get('tz') || Time.DEFAULT_TIMEZONE
+  const customDate = searchParams.get('date')
+  const lang = searchParams.get('lang') || undefined
+
+  if (!Time.zoneExists(timezone)) {
+    return new Response(
+      JSON.stringify({
+        error: {
+          message: `Timezone \`${timezone}\` does not exist`,
+          type: 'Bad Request',
+          code: 400
+        }
+      } as ApiResponse),
+      {
+        status: 400,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
+      }
+    )
   }
 
   const parsedDate = customDate
@@ -42,19 +56,27 @@ const handler = async (
     : undefined
   const time = parsedDate ? new Time(timezone, parsedDate) : new Time(timezone)
 
-  res.setHeader('Access-Control-Allow-Origin', '*')
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS')
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
-  res.setHeader('Cache-Control', 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400')
-
-  res.status(200).json({
-    timezone: timezone,
-    date: customDate
-      ? new Date(customDate).toISOString()
-      : time.now().toISOString(),
-    shouldideploy: shouldIDeploy(time),
-    message: getRandom(dayHelper(time, lang))
-  })
+  return new Response(
+    JSON.stringify({
+      timezone: timezone,
+      date: customDate
+        ? new Date(customDate).toISOString()
+        : time.now().toISOString(),
+      shouldideploy: shouldIDeploy(time),
+      message: getRandom(dayHelper(time, lang))
+    } as ApiResponse),
+    {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET,OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Cache-Control':
+          'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400'
+      }
+    }
+  )
 }
 
 export default handler

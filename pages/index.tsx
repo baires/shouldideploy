@@ -77,7 +77,7 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
         <meta property="og:image" content={`${getBaseUrl()}/api/og`} />
       </Head>
       <div className={`wrapper ${!shouldIDeploy(now) && 'its-friday'}`}>
-        <Widget key={now.timezone} reason={initialReason} now={now} />
+        <Widget reason={initialReason} now={now} />
         <div className="meta">
           <Footer
             timezone={timezone}
