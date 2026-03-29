@@ -1,12 +1,12 @@
 // index.tsx
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { shouldIDeploy, getBaseUrl } from '../helpers/constants'
 import Time from '../helpers/time'
 import Widget from '../component/widget'
 import { useTranslation } from '../helpers/i18n'
 import Footer from '../component/footer'
-import Router from 'next/router'
 import { Theme, ThemeType } from '../helpers/themes'
 
 interface IPage {
@@ -16,6 +16,7 @@ interface IPage {
 }
 
 const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
+  const router = useRouter()
   const [timezone, setTimezone] = useState<string>(tz)
   const [now, setNow] = useState<any>(
     new Time(initialNow.timezone, initialNow.customDate)
@@ -56,13 +57,16 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
 
     const newUrl = new URL(window.location.toString())
     newUrl.searchParams.set('tz', newTimezone)
-    Router.push(newUrl.pathname + newUrl.search)
+    router.push(newUrl.pathname + newUrl.search)
 
     setTimezone(newTimezone)
     setNow(new Time(newTimezone))
   }
 
   const { t } = useTranslation()
+  const customDate = typeof router.query.date === 'string' ? router.query.date : undefined
+  const displayedTime = customDate ? new Time(timezone, customDate) : now
+  const displayedReason = initialReason
 
   return (
     <>
@@ -72,8 +76,8 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
         <link rel="icon" href="/api/favicon" />
         <meta property="og:image" content={`${getBaseUrl()}/api/og`} />
       </Head>
-      <div className={`wrapper ${!shouldIDeploy(now) && 'its-friday'}`}>
-        <Widget reason={initialReason} now={now} />
+      <div className={`wrapper ${!shouldIDeploy(displayedTime) && 'its-friday'}`}>
+        <Widget reason={displayedReason} now={displayedTime} />
         <div className="meta">
           <Footer
             timezone={timezone}
