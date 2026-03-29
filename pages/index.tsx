@@ -1,12 +1,12 @@
 // index.tsx
 import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { shouldIDeploy, getBaseUrl } from '../helpers/constants'
 import Time from '../helpers/time'
 import Widget from '../component/widget'
 import { useTranslation } from '../helpers/i18n'
 import Footer from '../component/footer'
-import Router from 'next/router'
 import { Theme, ThemeType } from '../helpers/themes'
 
 interface IPage {
@@ -16,6 +16,7 @@ interface IPage {
 }
 
 const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
+  const router = useRouter()
   const [timezone, setTimezone] = useState<string>(tz)
   const [now, setNow] = useState<any>(
     new Time(initialNow.timezone, initialNow.customDate)
@@ -23,6 +24,13 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
   const [theme, setTheme] = useState<ThemeType>(Theme.Light)
 
   useEffect(() => {
+    const queryTimezone = router.query.tz
+    const timezoneFromQuery = Array.isArray(queryTimezone) ? queryTimezone[0] : queryTimezone
+    if (timezoneFromQuery && Time.zoneExists(timezoneFromQuery)) {
+      setTimezone(timezoneFromQuery)
+      setNow(new Time(timezoneFromQuery))
+    }
+
     const savedTheme = localStorage.getItem('theme') as ThemeType | null
     if (savedTheme) {
       setTheme(savedTheme)
@@ -35,7 +43,7 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
       setTheme(systemTheme)
       applyTheme(systemTheme)
     }
-  }, [])
+  }, [router.query.tz])
 
   const applyTheme = (newTheme: ThemeType) => {
     document.documentElement.setAttribute('data-theme', newTheme)
@@ -56,7 +64,7 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
 
     const newUrl = new URL(window.location.toString())
     newUrl.searchParams.set('tz', newTimezone)
-    Router.push(newUrl.pathname + newUrl.search)
+    router.push(newUrl.pathname + newUrl.search)
 
     setTimezone(newTimezone)
     setNow(new Time(newTimezone))
