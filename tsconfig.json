@@ -91,7 +91,7 @@
     "noEmit": true,
     "incremental": true,
     "rootDir": ".",
-    "moduleResolution": "node16",
+    "moduleResolution": "bundler",
     "ignoreDeprecations": "6.0",
     "isolatedModules": true,
     "jsx": "react-jsx"
