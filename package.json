@@ -27,7 +27,7 @@
     "@types/node": "25.5.0",
     "@types/react": "19.2.2",
     "babel-eslint": "^10.1.0",
-    "eslint": "^10.1.0",
+    "eslint": "^10.2.1",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.5",
     "jest": "^30.3.0",
