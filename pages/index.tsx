@@ -17,20 +17,14 @@ interface IPage {
 
 const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
   const router = useRouter()
-  const [timezone, setTimezone] = useState<string>(tz)
-  const [now, setNow] = useState<any>(
-    new Time(initialNow.timezone, initialNow.customDate)
-  )
+  const queryTz = router.query.tz
+  const resolvedTz =
+    typeof queryTz === 'string' && Time.zoneExists(queryTz) ? queryTz : tz
+  const [timezone, setTimezone] = useState<string>(resolvedTz)
+  const [now, setNow] = useState<any>(new Time(resolvedTz, initialNow.customDate))
   const [theme, setTheme] = useState<ThemeType>(Theme.Light)
 
   useEffect(() => {
-    const queryTimezone = router.query.tz
-    const timezoneFromQuery = Array.isArray(queryTimezone) ? queryTimezone[0] : queryTimezone
-    if (timezoneFromQuery && Time.zoneExists(timezoneFromQuery)) {
-      setTimezone(timezoneFromQuery)
-      setNow(new Time(timezoneFromQuery))
-    }
-
     const savedTheme = localStorage.getItem('theme') as ThemeType | null
     if (savedTheme) {
       setTheme(savedTheme)
@@ -43,7 +37,7 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
       setTheme(systemTheme)
       applyTheme(systemTheme)
     }
-  }, [router.query.tz])
+  }, [])
 
   const applyTheme = (newTheme: ThemeType) => {
     document.documentElement.setAttribute('data-theme', newTheme)
