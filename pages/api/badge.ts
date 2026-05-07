@@ -38,7 +38,7 @@ export function buildSegments(verdict: string, reason: string, canDeploy: boolea
   ]
 }
 
-function renderSvg(segments: BadgeSegment[]): string {
+export function renderSvg(segments: BadgeSegment[]): string {
   const totalWidth = segments.reduce((sum, s) => sum + s.width, 0)
 
   const rects = segments

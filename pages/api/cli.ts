@@ -15,7 +15,8 @@ export default async function handler(req: Request): Promise<Response> {
       status: 400,
       headers: {
         'Content-Type': 'text/plain; charset=utf-8',
-        'Cache-Control': 'no-store'
+        'Cache-Control': 'no-store',
+        'Access-Control-Allow-Origin': '*'
       }
     })
   }
@@ -30,7 +31,8 @@ export default async function handler(req: Request): Promise<Response> {
     status: canDeploy ? 200 : 425,
     headers: {
       'Content-Type': 'text/plain; charset=utf-8',
-      'Cache-Control': CACHE
+      'Cache-Control': CACHE,
+      'Access-Control-Allow-Origin': '*'
     }
   })
 }

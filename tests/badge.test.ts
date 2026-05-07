@@ -1,4 +1,4 @@
-import { truncate, MAX_REASON_CHARS } from '../pages/api/badge'
+import { truncate, buildSegments, renderSvg, MAX_REASON_CHARS } from '../pages/api/badge'
 
 async function callBadge(tz?: string, lang?: string): Promise<{ status: number; body: string; contentType: string | null }> {
   const url = new URL('http://localhost/api/badge')
@@ -20,6 +20,13 @@ describe('/api/badge', () => {
     expect(status).toBe(200)
     expect(contentType).toContain('image/svg+xml')
     expect(body).toContain('<svg')
+    expect(body).toContain('YES')
+  })
+
+  it('shows NO verdict on Friday', async () => {
+    jest.useFakeTimers().setSystemTime(new Date('2023-01-13T10:00:00Z')) // Friday
+    const { body } = await callBadge('UTC')
+    expect(body).toContain('NO')
   })
 
   it('uses green color on safe day', async () => {
@@ -55,5 +62,16 @@ describe('truncate', () => {
 
   it('MAX_REASON_CHARS is 37', () => {
     expect(MAX_REASON_CHARS).toBe(37)
+  })
+})
+
+describe('renderSvg / xmlEscape', () => {
+  it('xmlEscape: renderSvg escapes XML-special characters in segment labels', () => {
+    const segments = buildSegments('NO', 'A & B <test>', false)
+    const svg = renderSvg(segments)
+    expect(svg).not.toContain('A & B')
+    expect(svg).toContain('&amp;')
+    expect(svg).not.toContain('<test>')
+    expect(svg).toContain('&lt;test&gt;')
   })
 })
