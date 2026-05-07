@@ -89,6 +89,22 @@ const Footer = (props: IFooter) => {
             {t("footer.slack_api")}
           </a>
         </li>
+        <li>
+          <a
+            href={`/api/badge?tz=${encodeURIComponent(props.timezone)}&lang=${encodeURIComponent(language)}`}
+            target="_blank"
+          >
+            {t("footer.badge")}
+          </a>
+        </li>
+        <li>
+          <a
+            href={`/api/cli?tz=${encodeURIComponent(props.timezone)}&lang=${encodeURIComponent(language)}`}
+            target="_blank"
+          >
+            {t("footer.cli")}
+          </a>
+        </li>
       </ul>
     </>
   );

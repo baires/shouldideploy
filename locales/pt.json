@@ -16,6 +16,8 @@
     "theme": "Tema:",
     "api": "API",
     "slack_api": "Slack API",
+    "badge": "Badge",
+    "cli": "CLI",
     "language": "Idioma:"
   },
   "slack": {
