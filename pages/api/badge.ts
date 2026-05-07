@@ -1,5 +1,4 @@
-import Time from '../../helpers/time'
-import { getRandom, dayHelper, shouldIDeploy } from '../../helpers/constants'
+import { resolveDeployContext } from '../../helpers/deploy-context'
 
 export const config = { runtime: 'edge' }
 
@@ -79,10 +78,9 @@ export default async function handler(req: Request): Promise<Response> {
 
   try {
     const { searchParams } = new URL(req.url)
-    const timezone = searchParams.get('tz') || Time.DEFAULT_TIMEZONE
-    const lang = searchParams.get('lang') || undefined
+    const ctx = resolveDeployContext(searchParams)
 
-    if (!Time.zoneExists(timezone)) {
+    if ('type' in ctx) {
       return new Response('Timezone does not exist', {
         status: 400,
         headers: {
@@ -93,11 +91,7 @@ export default async function handler(req: Request): Promise<Response> {
       })
     }
 
-    const time = new Time(timezone)
-    const canDeploy = shouldIDeploy(time)
-    const reason = getRandom(dayHelper(time, lang))
-    const verdict = canDeploy ? 'YES' : 'NO'
-
+    const { canDeploy, reason, verdict } = ctx
     const segments = buildSegments(verdict, reason, canDeploy)
     const svg = renderSvg(segments)
 

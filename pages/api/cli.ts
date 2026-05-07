@@ -1,5 +1,4 @@
-import Time from '../../helpers/time'
-import { getRandom, dayHelper, shouldIDeploy } from '../../helpers/constants'
+import { resolveDeployContext } from '../../helpers/deploy-context'
 
 export const config = { runtime: 'edge' }
 
@@ -15,11 +14,10 @@ export default async function handler(req: Request): Promise<Response> {
 
   try {
     const { searchParams } = new URL(req.url)
-    const timezone = searchParams.get('tz') || Time.DEFAULT_TIMEZONE
-    const lang = searchParams.get('lang') || undefined
+    const ctx = resolveDeployContext(searchParams)
 
-    if (!Time.zoneExists(timezone)) {
-      return new Response(`Timezone \`${timezone}\` does not exist`, {
+    if ('type' in ctx) {
+      return new Response(`Timezone \`${ctx.timezone}\` does not exist`, {
         status: 400,
         headers: {
           'Content-Type': 'text/plain; charset=utf-8',
@@ -29,10 +27,7 @@ export default async function handler(req: Request): Promise<Response> {
       })
     }
 
-    const time = new Time(timezone)
-    const canDeploy = shouldIDeploy(time)
-    const reason = getRandom(dayHelper(time, lang))
-    const verdict = canDeploy ? 'YES' : 'NO'
+    const { canDeploy, reason, verdict } = ctx
     const body = `[shouldideploy] ${verdict}: ${reason}`
 
     return new Response(body, {
