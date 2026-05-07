@@ -42,7 +42,7 @@ export function renderSvg(segments: BadgeSegment[]): string {
   const totalWidth = segments.reduce((sum, s) => sum + s.width, 0)
 
   const rects = segments
-    .map(s => `<rect x="${s.x}" width="${s.width}" height="20" fill="${s.color}"/>`)
+    .map(s => `<rect x="${Math.round(s.x)}" width="${Math.round(s.width)}" height="20" fill="${xmlEscape(s.color)}"/>`)
     .join('\n  ')
 
   const texts = segments
@@ -55,14 +55,14 @@ export function renderSvg(segments: BadgeSegment[]): string {
     })
     .join('\n')
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}" height="20">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${Math.round(totalWidth)}" height="20">
   <linearGradient id="s" x2="0" y2="100%">
     <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
     <stop offset="1" stop-opacity=".1"/>
   </linearGradient>
-  <rect rx="3" width="${totalWidth}" height="20" fill="#555"/>
+  <rect rx="3" width="${Math.round(totalWidth)}" height="20" fill="#555"/>
   ${rects}
-  <rect rx="3" width="${totalWidth}" height="20" fill="url(#s)"/>
+  <rect rx="3" width="${Math.round(totalWidth)}" height="20" fill="url(#s)"/>
   <g font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11">
     ${texts}
   </g>
@@ -75,7 +75,7 @@ export default async function handler(req: Request): Promise<Response> {
   const lang = searchParams.get('lang') || undefined
 
   if (!Time.zoneExists(timezone)) {
-    return new Response(`Timezone \`${timezone}\` does not exist`, {
+    return new Response('Timezone does not exist', {
       status: 400,
       headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' }
     })
@@ -93,7 +93,8 @@ export default async function handler(req: Request): Promise<Response> {
     status: 200,
     headers: {
       'Content-Type': 'image/svg+xml',
-      'Cache-Control': CACHE
+      'Cache-Control': CACHE,
+      'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'"
     }
   })
 }
