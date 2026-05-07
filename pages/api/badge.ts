@@ -70,31 +70,50 @@ export function renderSvg(segments: BadgeSegment[]): string {
 }
 
 export default async function handler(req: Request): Promise<Response> {
-  const { searchParams } = new URL(req.url)
-  const timezone = searchParams.get('tz') || Time.DEFAULT_TIMEZONE
-  const lang = searchParams.get('lang') || undefined
-
-  if (!Time.zoneExists(timezone)) {
-    return new Response('Timezone does not exist', {
-      status: 400,
-      headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' }
+  if (req.method !== 'GET') {
+    return new Response('Method Not Allowed', {
+      status: 405,
+      headers: { Allow: 'GET', 'Cache-Control': 'no-store' }
     })
   }
 
-  const time = new Time(timezone)
-  const canDeploy = shouldIDeploy(time)
-  const reason = getRandom(dayHelper(time, lang))
-  const verdict = canDeploy ? 'YES' : 'NO'
+  try {
+    const { searchParams } = new URL(req.url)
+    const timezone = searchParams.get('tz') || Time.DEFAULT_TIMEZONE
+    const lang = searchParams.get('lang') || undefined
 
-  const segments = buildSegments(verdict, reason, canDeploy)
-  const svg = renderSvg(segments)
-
-  return new Response(svg, {
-    status: 200,
-    headers: {
-      'Content-Type': 'image/svg+xml',
-      'Cache-Control': CACHE,
-      'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'"
+    if (!Time.zoneExists(timezone)) {
+      return new Response('Timezone does not exist', {
+        status: 400,
+        headers: {
+          'Content-Type': 'text/plain; charset=utf-8',
+          'Cache-Control': 'no-store',
+          'Access-Control-Allow-Origin': '*'
+        }
+      })
     }
-  })
+
+    const time = new Time(timezone)
+    const canDeploy = shouldIDeploy(time)
+    const reason = getRandom(dayHelper(time, lang))
+    const verdict = canDeploy ? 'YES' : 'NO'
+
+    const segments = buildSegments(verdict, reason, canDeploy)
+    const svg = renderSvg(segments)
+
+    return new Response(svg, {
+      status: 200,
+      headers: {
+        'Content-Type': 'image/svg+xml',
+        'Cache-Control': CACHE,
+        'Access-Control-Allow-Origin': '*',
+        'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'"
+      }
+    })
+  } catch {
+    return new Response('Internal Server Error', {
+      status: 500,
+      headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' }
+    })
+  }
 }
