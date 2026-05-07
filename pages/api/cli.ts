@@ -13,7 +13,10 @@ export default async function handler(req: Request): Promise<Response> {
   if (!Time.zoneExists(timezone)) {
     return new Response(`Timezone \`${timezone}\` does not exist`, {
       status: 400,
-      headers: { 'Content-Type': 'text/plain' }
+      headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'Cache-Control': 'no-store'
+      }
     })
   }
 
@@ -26,7 +29,7 @@ export default async function handler(req: Request): Promise<Response> {
   return new Response(body, {
     status: canDeploy ? 200 : 425,
     headers: {
-      'Content-Type': 'text/plain',
+      'Content-Type': 'text/plain; charset=utf-8',
       'Cache-Control': CACHE
     }
   })
