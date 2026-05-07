@@ -7,6 +7,7 @@ const CACHE = 'public, max-age=60, s-maxage=300, stale-while-revalidate=3600'
 const LEFT_WIDTH = 110
 const CHAR_WIDTH = 6.5
 const PADDING = 20
+export const MAX_REASON_CHARS = 37
 
 type BadgeSegment = {
   label: string
@@ -15,11 +16,20 @@ type BadgeSegment = {
   width: number
 }
 
-function truncate(text: string, max = 37): string {
+function xmlEscape(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;')
+}
+
+export function truncate(text: string, max = MAX_REASON_CHARS): string {
   return text.length > max ? text.slice(0, max) + '…' : text
 }
 
-function buildSegments(verdict: string, reason: string, canDeploy: boolean): BadgeSegment[] {
+export function buildSegments(verdict: string, reason: string, canDeploy: boolean): BadgeSegment[] {
   const rightText = `${verdict} · ${truncate(reason)}`
   const rightWidth = Math.round(rightText.length * CHAR_WIDTH + PADDING)
   return [
@@ -38,9 +48,10 @@ function renderSvg(segments: BadgeSegment[]): string {
   const texts = segments
     .map(s => {
       const cx = s.x + s.width / 2
+      const label = xmlEscape(s.label)
       return `
-    <text x="${cx}" y="15" fill="#010101" fill-opacity=".3" text-anchor="middle">${s.label}</text>
-    <text x="${cx}" y="14" fill="#fff" text-anchor="middle">${s.label}</text>`
+    <text x="${cx}" y="15" fill="#010101" fill-opacity=".3" text-anchor="middle">${label}</text>
+    <text x="${cx}" y="14" fill="#fff" text-anchor="middle">${label}</text>`
     })
     .join('\n')
 
