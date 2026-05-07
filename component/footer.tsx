@@ -77,6 +77,7 @@ const Footer = (props: IFooter) => {
           <a
             href={`/api?tz=${encodeURIComponent(props.timezone)}&lang=${encodeURIComponent(language)}`}
             target="_blank"
+            rel="noopener noreferrer"
           >
             {t("footer.api")}
           </a>
@@ -85,6 +86,7 @@ const Footer = (props: IFooter) => {
           <a
             href={`/api/slack?tz=${encodeURIComponent(props.timezone)}&lang=${encodeURIComponent(language)}`}
             target="_blank"
+            rel="noopener noreferrer"
           >
             {t("footer.slack_api")}
           </a>
@@ -93,6 +95,7 @@ const Footer = (props: IFooter) => {
           <a
             href={`/api/badge?tz=${encodeURIComponent(props.timezone)}&lang=${encodeURIComponent(language)}`}
             target="_blank"
+            rel="noopener noreferrer"
           >
             {t("footer.badge")}
           </a>
@@ -101,6 +104,7 @@ const Footer = (props: IFooter) => {
           <a
             href={`/api/cli?tz=${encodeURIComponent(props.timezone)}&lang=${encodeURIComponent(language)}`}
             target="_blank"
+            rel="noopener noreferrer"
           >
             {t("footer.cli")}
           </a>
