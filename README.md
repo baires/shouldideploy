@@ -63,6 +63,30 @@ Get the API response in Argentina Spanish with a specific timezone:
 https://shouldideploy.today/api?lang=es-AR&tz=America/Buenos_Aires
 ```
 
+## Integrations
+
+### Badge
+
+Embed a live deploy-status badge in any README:
+
+```markdown
+![Should I Deploy?](https://shouldideploy.today/api/badge?tz=America/New_York)
+```
+
+Supports `?tz=` (IANA timezone, default UTC) and `?lang=` (language code, default `en`).
+
+### CLI / Pipeline gate
+
+Block a deploy step in any CI pipeline:
+
+```bash
+curl --fail -s "https://shouldideploy.today/api/cli?tz=America/New_York" && ./deploy.sh
+```
+
+Returns `[shouldideploy] YES: <reason>` with HTTP 200 when safe to deploy, or `[shouldideploy] NO: <reason>` with HTTP 425 when not. `curl --fail` exits non-zero on 4xx/5xx, blocking `&& deploy.sh`.
+
+Supports `?tz=` and `?lang=` parameters.
+
 ## API Response
 
 The API returns a JSON object containing the following keys:
