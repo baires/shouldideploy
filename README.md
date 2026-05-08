@@ -75,6 +75,20 @@ Embed a live deploy-status badge in any README:
 
 Supports `?tz=` (IANA timezone, default UTC) and `?lang=` (language code, default `en`).
 
+You can also customize the badge appearance with the `?style=` parameter. Supported styles (same as [shields.io](https://shields.io)):
+
+| Style | Preview |
+|-------|---------|
+| `flat` (default) | ![flat](https://shouldideploy.today/api/badge?tz=America/New_York&style=flat) |
+| `flat-square` | ![flat-square](https://shouldideploy.today/api/badge?tz=America/New_York&style=flat-square) |
+| `plastic` | ![plastic](https://shouldideploy.today/api/badge?tz=America/New_York&style=plastic) |
+| `for-the-badge` | ![for-the-badge](https://shouldideploy.today/api/badge?tz=America/New_York&style=for-the-badge) |
+| `social` | ![social](https://shouldideploy.today/api/badge?tz=America/New_York&style=social) |
+
+```markdown
+![Should I Deploy?](https://shouldideploy.today/api/badge?tz=America/New_York&style=for-the-badge)
+```
+
 ### CLI / Pipeline gate
 
 Block a deploy step in any CI pipeline:
