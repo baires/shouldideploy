@@ -63,6 +63,44 @@ Get the API response in Argentina Spanish with a specific timezone:
 https://shouldideploy.today/api?lang=es-AR&tz=America/Buenos_Aires
 ```
 
+## Integrations
+
+### Badge
+
+Embed a live deploy-status badge in any README:
+
+```markdown
+![Should I Deploy?](https://shouldideploy.today/api/badge?tz=America/New_York)
+```
+
+Supports `?tz=` (IANA timezone, default UTC) and `?lang=` (language code, default `en`).
+
+You can also customize the badge appearance with the `?style=` parameter. Supported styles (same as [shields.io](https://shields.io)):
+
+| Style | Preview |
+|-------|---------|
+| `flat` (default) | ![flat](https://shouldideploy.today/api/badge?tz=America/New_York&style=flat) |
+| `flat-square` | ![flat-square](https://shouldideploy.today/api/badge?tz=America/New_York&style=flat-square) |
+| `plastic` | ![plastic](https://shouldideploy.today/api/badge?tz=America/New_York&style=plastic) |
+| `for-the-badge` | ![for-the-badge](https://shouldideploy.today/api/badge?tz=America/New_York&style=for-the-badge) |
+| `social` | ![social](https://shouldideploy.today/api/badge?tz=America/New_York&style=social) |
+
+```markdown
+![Should I Deploy?](https://shouldideploy.today/api/badge?tz=America/New_York&style=for-the-badge)
+```
+
+### CLI / Pipeline gate
+
+Block a deploy step in any CI pipeline:
+
+```bash
+curl --fail -s "https://shouldideploy.today/api/cli?tz=America/New_York" && ./deploy.sh
+```
+
+Returns `[shouldideploy] YES: <reason>` with HTTP 200 when safe to deploy, or `[shouldideploy] NO: <reason>` with HTTP 425 when not. `curl --fail` exits non-zero on 4xx/5xx, blocking `&& deploy.sh`.
+
+Supports `?tz=` and `?lang=` parameters.
+
 ## API Response
 
 The API returns a JSON object containing the following keys:

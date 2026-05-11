@@ -46,7 +46,7 @@ export default class Time {
    */
   static zoneExists(timeZone: string): boolean {
     try {
-      Intl.DateTimeFormat('en-US', { timeZone }).format(Date.now())
+      Intl.DateTimeFormat('en-US', { timeZone }).format(0)
       return true
     } catch (error) {
       if (error instanceof RangeError) {
