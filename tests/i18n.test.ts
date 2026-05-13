@@ -14,6 +14,10 @@ describe('i18n Server Helper', () => {
       expect(translate('meta.title', 'es')).toBe('¿Debería desplegar hoy?')
     })
 
+    it('should translate a simple key in Czech', () => {
+      expect(translate('meta.title', 'cs')).toBe('Mám dnes nasadit?')
+    })
+
     it('should use specific regional translation (es-AR) when available', () => {
       expect(translate('meta.title', 'es-AR')).toBe('¿Debería deployar hoy?')
     })

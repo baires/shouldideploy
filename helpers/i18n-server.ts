@@ -2,6 +2,7 @@ import en from '../locales/en.json'
 import es from '../locales/es.json'
 import esAR from '../locales/es-AR.json'
 import pt from '../locales/pt.json'
+import cs from '../locales/cs.json'
 
 type LocaleData = typeof en
 
@@ -9,7 +10,8 @@ const locales: Record<string, LocaleData> = {
   en,
   es,
   'es-AR': esAR,
-  pt
+  pt,
+  cs
 }
 
 /**
