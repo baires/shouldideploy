@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "title": "Mám dnes nasadit?",
+    "description": "Mám dnes nasadit?"
+  },
+  "tagline": "Mám dnes nasadit?",
+  "reload": {
+    "hit": "Stiskni",
+    "space": "Mezerník",
+    "or_click": "nebo klikni"
+  },
+  "footer": {
+    "share": "Sdílet:",
+    "source": "Zdroj:",
+    "timezone": "Časové pásmo:",
+    "theme": "Motiv:",
+    "api": "API",
+    "slack_api": "Slack API",
+    "badge": "Odznak",
+    "cli": "CLI",
+    "language": "Jazyk:"
+  },
+  "slack": {
+    "footer": "Mám dnes nasadit?"
+  },
+  "reasons": {
+    "to_deploy": [
+      "Nevidím důvod, proč ne",
+      "Nic ti nebrání",
+      "Do toho, příteli!",
+      "Jdi do toho",
+      "Jdi, jdi, jdi, jdi!",
+      "Pojďme na to!",
+      "Vypusť to! 🚢",
+      "Jdi s proudem 🌊",
+      "Víc, líp, dřív, silněji",
+      "Rozbal to!",
+      "Udělej mi radost",
+      "Zlom vaz!",
+      "Tohle je ta cesta",
+      "Rychle, tvrdě, bez milosti!",
+      "To dáš!",
+      "Neboj se vlka nic.",
+      "Je to rychlejší než šalina v kopci!",
+      "Je to rychlejší než linka C v ranní špičce!"
+    ],
+    "to_not_deploy": [
+      "Nedoporučoval bych to",
+      "Ne, je pátek",
+      "A co v pondělí?",
+      "Dneska ne",
+      "Ani nápad",
+      "Proč?",
+      "Prošly testy? Pravděpodobně ne",
+      "¯\\_(ツ)_/¯",
+      "😹",
+      "Ne",
+      "Ne. Nadechni se, napočítej do deseti a začni znovu",
+      "Radši bych si dal zmrzlinu 🍦",
+      "Jak jsi mohl? 🥺",
+      "Někdo prostě jen chce sledovat svět v plamenech 🔥",
+      "Máš rád oheň, že?",
+      "Chyby na tebe už čekají",
+      "To neřeš, to je feature!",
+      "To mi ho vyndej!",
+      "Klid, to je jenom hotfix.",
+      "Máme to v p*či, pane hrábě.",
+      "To je nápad jak stavět metro v Brně.",
+      "To je nápad jak jet v pátek odpoledne po magistrále."
+    ],
+    "thursday_afternoon": [
+      "Ještě chceš spát?",
+      "Zavolej své polovičce!",
+      "Budeš tu dneska dlouho?",
+      "Řekni šéfovi, že jsi našel chybu a jdi domů",
+      "A co v pondělí?",
+      "Nedoporučoval bych to",
+      "Dneska ne",
+      "Ani nápad",
+      "Ne. Nadechni se, napočítej do deseti a začni znovu"
+    ],
+    "friday_afternoon": [
+      "V žádném případě",
+      "Blázníš?",
+      "Na co myslíš?",
+      "Ne ne ne ne ne ne ne ne",
+      "Jak se cítíš ohledně práce po nocích a o víkendech?",
+      "🔥 🚒 🚨 ⛔️ 🔥 🚒 🚨 ⛔️ 🔥 🚒 🚨 ⛔️",
+      "Ne! Bože! Prosím! Ne",
+      "Ne ne ne ne ne ne ne!",
+      "Sni dál, miláčku",
+      "Proč, proč, brácho, proč?",
+      "Ale ale ale... proč?",
+      "Nasazuje se v pondělí, abys to mohl do pátku opravit.",
+      "YOLO ! Žiješ jenom jednou !",
+      "Chyba na řádku NaN Col -2 nečekané 'undefined'",
+      "us-east-1 není platný region",
+      "500 Interní chyba serveru",
+      "Něco se pokazilo",
+      "Pátek, blázni mají svátek.",
+      "Padla! Jde se na pivo.",
+      "To radši pojedu šalinou na Prýgl, než tohle nasadit.",
+      "To radši půjdu krmit turisty na Karlův most.",
+      "Klid, nasadíme to a pak se potkáme na Náplavce."
+    ],
+    "friday_13th": [
+      "Chlape, vážně? Je pátek třináctého!",
+      "Věříš na smůlu?",
+      "Černá kočka už ti přebíhá přes cestu. 🐈‍⬛",
+      "Jestli chceš strávit víkend u opravování bugů, tak klidně...",
+      "Modlitby nepomůžou, pokud uděláš tohle špatné rozhodnutí",
+      "Díval ses dneska do kalendáře?",
+      "📅 Pátek třináctého. Co si o tom myslíš?",
+      "Prostě ne!",
+      "Ale ale ale... proč?"
+    ],
+    "afternoon": [
+      "Ještě chceš spát?",
+      "Zavolej své polovičce!",
+      "Budeš tu dneska dlouho?",
+      "Zítra?",
+      "Ne",
+      "Řekni šéfovi, že jsi našel chybu a jdi domů",
+      "Zítra máš před sebou celý den!",
+      "Věř mi, budou mnohem raději, když to nebude celou noc rozbité",
+      "Jak moc věříš svým logovacím nástrojům?"
+    ],
+    "weekend": [
+      "Jdi domů, jsi opilý",
+      "Co takhle v pondělí?",
+      "Pivo?",
+      "Vývoj v opilosti není dobrý nápad!",
+      "Vidím, že jsi nasadil v pátek",
+      "Říkal jsem ti, že pondělí bude lepší nápad!",
+      "Existuje 2^1000 jiných nápadů."
+    ],
+    "day_before_christmas": [
+      "Čekáš na Ježíška 🎄 nebo co?",
+      "🎶🎵 Měl by sis dát pozor 🎵🎶",
+      "🎄 Užij si svátky! 🎄 ",
+      "Dej si radši další skleničku svařáku 🍷",
+      "Nemůžeš počkat až po rozbalování dárků?",
+      "Jasně, nasazuj... \n tvoje rodina určitě ocení, když budeš u večeře opravovat věci na mobilu"
+    ],
+    "christmas": [
+      "Ježíšek ti za tohle nic nepřinese! 🎁",
+      "Dneska se radši koukej na Sám doma",
+      "Neměl bys spíš připravovat vánoční večeři?"
+    ],
+    "new_year": [
+      "Šťastný nový rok! \n nasaď to 2. ledna",
+      "Nemáš kocovinu?",
+      "Dej si další skleničku šampaňského 🥂",
+      "Dneska slav, nasazuj zítra 🎇"
+    ]
+  }
+}
