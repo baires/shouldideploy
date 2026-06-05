@@ -42,7 +42,8 @@
       "Zmoreš ti to!",
       "Nič se ne boj.",
       "To bo hitrejše kot klanec na Trojanah!",
-      "To bo hitrejše kot ljubljanska obvoznica ob petkih zjutraj!"
+      "To bo hitrejše kot ljubljanska obvoznica ob petkih zjutraj!",
+      "To bo šlo skozi gladko ko špricer po grlu!"
     ],
     "to_not_deploy": [
       "Ne bi priporočal",
@@ -66,7 +67,8 @@
       "Pomiri se, to je samo hotfix.",
       "Vse je šlo v franže, gospod grof.",
       "To je ideja na nivoju gradnje drugega tira v enem letu.",
-      "To je ideja na nivoju vožnje po ljubljanski obvoznici v petek popoldne."
+      "To je ideja na nivoju vožnje po ljubljanski obvoznici v petek popoldne.",
+      "Čuj ti, ne izzivaj, da ti ne bo treba celega vikenda reševat ko mariborskega podhodna! 🌊"
     ],
     "thursday_afternoon": [
       "Bi rad sploh še kaj spal?",
@@ -77,7 +79,8 @@
       "Ne bi priporočal",
       "Danes raje ne",
       "Niti slučajno",
-      "Ne. Vdihni, preštej do deset in začni znova"
+      "Ne. Vdihni, preštej do deset in začni znova",
+            "Četrtek popoldne je že mali petek, toti koda naj počaka v kleti! 🍇"
     ],
     "friday_afternoon": [
       "V nobenem primeru",
@@ -132,7 +135,9 @@
       "Programiranje pod vplivom alkohola ni dobra ideja!",
       "Vidim, da si kodo objavil v petek",
       "Saj sem ti rekel, da bi bil ponedeljek boljša ideja!",
-      "Obstaja 2^1000 boljših idej."
+      "Obstaja 2^1000 boljših idej.",
+      "Čuj ti, fantič, za vikend se gre na Pohorje al pa v klet, ne pa na produkcijo! 🌲",
+      "Ma dej, zdej se dela jota, ne pa koda! Maši spat!"
     ],
     "day_before_christmas": [
       "Čakaš Božička 🎄 ali kaj?",
