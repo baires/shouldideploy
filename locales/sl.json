@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "title": "Naj danes objavim kodo?",
+    "description": "Naj danes objavim kodo?"
+  },
+  "tagline": "Naj danes objavim kodo?",
+  "reload": {
+    "hit": "Pritisni",
+    "space": "Preslednico",
+    "or_click": "ali klikni"
+  },
+  "footer": {
+    "share": "Deli:",
+    "source": "Vir:",
+    "timezone": "Časovni pas:",
+    "theme": "Tema:",
+    "api": "API",
+    "slack_api": "Slack API",
+    "badge": "Značka",
+    "cli": "CLI",
+    "language": "Jezik:"
+  },
+  "slack": {
+    "footer": "Naj danes objavim kodo?"
+  },
+  "reasons": {
+    "to_deploy": [
+      "Ne vidim razloga, zakaj ne",
+      "Nič te ne ovira",
+      "Dajmo, prijatelj!",
+      "Samo pojdi v akcijo",
+      "Akcija, akcija, akcija!",
+      "Pa dajmo!",
+      "Splovi to! 🚢",
+      "Prepusti se toku 🌊",
+      "Več, bolje, hitreje, močneje",
+      "Razturaj!",
+      "Razveseli me",
+      "Srečno!",
+      "To je prava pot",
+      "Hitro, neusmiljeno, brez milosti!",
+      "Zmoreš ti to!",
+      "Nič se ne boj.",
+      "To bo hitrejše kot klanec na Trojanah!",
+      "To bo hitrejše kot ljubljanska obvoznica ob petkih zjutraj!"
+    ],
+    "to_not_deploy": [
+      "Ne bi priporočal",
+      "Ne, petek je",
+      "Kaj pa v ponedeljek?",
+      "Danes raje ne",
+      "Niti slučajno",
+      "Zakaj?",
+      "So testi šli skozi? Verjetno ne",
+      "¯\\_(ツ)_/¯",
+      "😹",
+      "Ne",
+      "Ne. Vdihni, preštej do deset in začni znova",
+      "Raje bi šel na sladoled 🍦",
+      "Kako si mogel? 🥺",
+      "Nekateri ljudje pač želijo videti svet v plamenih 🔥",
+      "Rada imaš ogenj, kajne?",
+      "Hrošči te že komaj čakajo",
+      "Ne sekiraj se, to je feature!",
+      "Pa saj me bo kap!",
+      "Pomiri se, to je samo hotfix.",
+      "Vse je šlo v franže, gospod grof.",
+      "To je ideja na nivoju gradnje drugega tira v enem letu.",
+      "To je ideja na nivoju vožnje po ljubljanski obvoznici v petek popoldne."
+    ],
+    "thursday_afternoon": [
+      "Bi rad sploh še kaj spal?",
+      "Pokliči svojo boljšo polovico!",
+      "Boš danes dolgo ostal tukaj?",
+      "Reci šefu, da si našel hrošča, in pojdi domov",
+      "Kaj pa v ponedeljek?",
+      "Ne bi priporočal",
+      "Danes raje ne",
+      "Niti slučajno",
+      "Ne. Vdihni, preštej do deset in začni znova"
+    ],
+    "friday_afternoon": [
+      "V nobenem primeru",
+      "Si znorel?",
+      "O čem sploh razmišljaš?",
+      "Ne ne ne ne ne ne ne ne",
+      "Kako ti diši delo ponoči in med vikendom?",
+      "🔥 🚒 🚨 ⛔️ 🔥 🚒 🚨 ⛔️ 🔥 🚒 🚨 ⛔️",
+      "Ne! Moj bog! Prosim, ne!",
+      "Ne ne ne ne ne ne ne!",
+      "Sanjaj naprej, srček",
+      "Zakaj, zakaj, stari, zakaj?",
+      "Ampak ampak ampak... zakaj?",
+      "Koda se objavlja v ponedeljek, da jo lahko do petka popraviš.",
+      "YOLO! Živiš samo enkrat!",
+      "Napaka v vrstici NaN Col -2 nepričakovano 'undefined'",
+      "us-east-1 ni veljavna regija",
+      "500 Interna napaka strežnika",
+      "Nekaj je šlo narobe",
+      "Petek, slab dan za zagon klastra.",
+      "Konec je! Gremo na pivo.",
+      "Raje se grem drenjat na Bled med turiste, kot pa da to objavim.",
+      "Raje grem hranit golobe na Tromostovje.",
+      "Sprosti se, objavimo to, potem pa se dobimo na Metelkovi."
+    ],
+    "friday_13th": [
+      "Stari, resno? Petek trinajsti je!",
+      "Verjameš v nesrečo?",
+      "Črna mačka ti že prečka pot. 🐈‍疤",
+      "Če želiš vikend preživeti ob popravljanju hroščev, potem kar izvoli...",
+      "Molitve ne bodo pomagale, če sprejmeš to slabo odločitev",
+      "Si sploh pogledal danes na koledar?",
+      "📅 Petek trinajsti. Kaj si misliš o tem?",
+      "Preprosto ne!",
+      "Ampak ampak ampak... zakaj?"
+    ],
+    "afternoon": [
+      "Bi rad sploh še kaj spal?",
+      "Pokliči svojo boljšo polovico!",
+      "Boš danes dolgo ostal tukaj?",
+      "Jutri?",
+      "Ne",
+      "Reci šefu, da si našel hrošča, in pojdi domov",
+      "Jutri imaš pred sabo cel dan!",
+      "Verjemi mi, veliko bolj veseli bodo, če ne bo cela stvar sesuta celo noč",
+      "Kako močno zaupaš svojim orodjem za beleženje logov?"
+    ],
+    "weekend": [
+      "Pojdi domov, pijan si",
+      "Kaj pa v ponedeljek?",
+      "Pivo?",
+      "Programiranje pod vplivom alkohola ni dobra ideja!",
+      "Vidim, da si kodo objavil v petek",
+      "Saj sem ti rekel, da bi bil ponedeljek boljša ideja!",
+      "Obstaja 2^1000 boljših idej."
+    ],
+    "day_before_christmas": [
+      "Čakaš Božička 🎄 ali kaj?",
+      "🎶🎵 Raje bodi previden 🎵🎶",
+      "🎄 Uživaj v praznikih! 🎄 ",
+      "Raje si privošči še en kozarec kuhanega vina 🍷",
+      "Ne moreš počakati, da se odvijejo darila?",
+      "Jasno, kar objavi... \n tvoja družina bo zagotovo navdušena, ko boš med večerjo reševal zadeve na telefonu"
+    ],
+    "christmas": [
+      "Božiček ti za tole ne bo prinesel ničesar! 🎁",
+      "Danes raje glej Sam doma",
+      "Nebi moral raje pripravljati božične večerje?"
+    ],
+    "new_year": [
+      "Srečno novo leto! \n objavi to 2. januarja",
+      "Nimaš mačka?",
+      "Spij raje še en kozarec šampanjca 🥂",
+      "Danes praznuj, objavljaj jutri 🎇"
+    ]
+  }
+}
