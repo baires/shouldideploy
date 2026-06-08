@@ -45,6 +45,7 @@ const handler = async (req: Request): Promise<Response> => {
         status: 400,
         headers: {
           'Content-Type': 'application/json',
+          'Cache-Control': 'no-store',
           'Access-Control-Allow-Origin': '*'
         }
       }
@@ -72,8 +73,7 @@ const handler = async (req: Request): Promise<Response> => {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET,OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type',
-        'Cache-Control':
-          'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400'
+        'Cache-Control': 'no-store'
       }
     }
   )
