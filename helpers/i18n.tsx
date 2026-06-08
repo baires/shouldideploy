@@ -4,6 +4,7 @@ import es from '../locales/es.json'
 import esAR from '../locales/es-AR.json'
 import pt from '../locales/pt.json'
 import cs from '../locales/cs.json'
+import sl from '../locales/sl.json'
 
 type LocaleData = typeof en
 type Language = string
@@ -13,7 +14,8 @@ const locales: Record<string, LocaleData> = {
   es,
   'es-AR': esAR,
   pt,
-  cs
+  cs,
+  sl
 }
 
 interface LanguageContextType {

@@ -18,6 +18,10 @@ describe('i18n Server Helper', () => {
       expect(translate('meta.title', 'cs')).toBe('Mám dnes nasadit?')
     })
 
+    it('should translate a simple key in Slovenian', () => {
+      expect(translate('meta.title', 'sl')).toBe('Naj danes objavim kodo?')
+    })
+
     it('should use specific regional translation (es-AR) when available', () => {
       expect(translate('meta.title', 'es-AR')).toBe('¿Debería deployar hoy?')
     })
@@ -54,8 +58,10 @@ describe('i18n Server Helper', () => {
     it('should return translated reasons', () => {
       const reasonsEn = getTranslatedReasons('to_deploy', 'en')
       const reasonsEs = getTranslatedReasons('to_deploy', 'es')
+      const reasonsSl = getTranslatedReasons('to_deploy', 'sl')
       expect(reasonsEn).toContain("I don't see why not")
       expect(reasonsEs).toContain("No veo por qué no")
+      expect(reasonsSl).toContain("Ne vidim razloga, zakaj ne")
     })
   })
 })
