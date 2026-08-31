@@ -30,7 +30,7 @@
     "eslint": "^10.8.0",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.5",
-    "jest": "^30.4.2",
+    "jest": "^30.5.0",
     "lint-staged": "^17.3.0",
     "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
