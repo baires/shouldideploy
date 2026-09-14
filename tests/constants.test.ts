@@ -15,7 +15,7 @@ describe('getBaseUrl', () => {
   const originalEnv = process.env
 
   beforeEach(() => {
-    // @ts-ignore
+    // @ts-expect-error test environment modification
     delete global.window
     process.env = { ...originalEnv }
     delete process.env.VERCEL_URL
@@ -28,7 +28,7 @@ describe('getBaseUrl', () => {
   })
 
   it('returns empty string when window is defined', () => {
-    // @ts-ignore
+    // @ts-expect-error test environment modification
     global.window = {}
     expect(getBaseUrl()).toBe('')
   })
@@ -253,7 +253,7 @@ describe('dayHelper', () => {
   })
 
   it('handles null time by creating new Time', () => {
-    // @ts-ignore
+    // @ts-expect-error testing null time input
     const reasons = dayHelper(null)
     expect(Array.isArray(reasons)).toBe(true)
   })
