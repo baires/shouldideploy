@@ -18,14 +18,14 @@
     "@vercel/og": "^1.0.2",
     "next": "^16.3.4",
     "prettier-eslint-cli": "^9.2.1",
-    "react": "^19.2.8",
+    "react": "^19.3.0",
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/jest": "^30.0.0",
     "@types/node": "26.5.0",
-    "@types/react": "19.2.18",
+    "@types/react": "19.3.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^10.10.0",
     "eslint-config-prettier": "^10.1.8",
