@@ -15,7 +15,7 @@
     "format": "prettier-eslint --write $PWD/'**/*.js'"
   },
   "dependencies": {
-    "@vercel/og": "^1.0.2",
+    "@vercel/og": "^1.0.1",
     "next": "^16.3.4",
     "prettier-eslint-cli": "^9.2.1",
     "react": "^19.2.8",
@@ -30,9 +30,9 @@
     "eslint": "^10.10.0",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
-    "jest": "^30.5.1",
+    "jest": "^30.5.2",
     "lint-staged": "^17.5.1",
-    "ts-jest": "^29.4.12",
+    "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "6.0.2",
     "typescript-eslint": "^8.70.0"
