@@ -1,0 +1,263 @@
+{
+  "date": "2026-10-30",
+  "method": "Three cold-navigation Lighthouse mobile runs per iteration against a local next start production server; simulated throttling. Baseline-normalized and final-isolated use identical installed dependency versions.",
+  "iterations": {
+    "baseline": {
+      "runs": [
+        {
+          "score": 0.97,
+          "first-contentful-paint": 755.8902,
+          "largest-contentful-paint": 1805.8901999999998,
+          "speed-index": 769.8026539859341,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0.09589136150969471,
+          "total-byte-weight": 141556
+        },
+        {
+          "score": 0.99,
+          "first-contentful-paint": 753.8801000000001,
+          "largest-contentful-paint": 1832.8801,
+          "speed-index": 853.9460420292999,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0.0415898330058214,
+          "total-byte-weight": 141556
+        },
+        {
+          "score": 0.97,
+          "first-contentful-paint": 757.3661,
+          "largest-contentful-paint": 1807.3661,
+          "speed-index": 757.3661,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0.09589136150969471,
+          "total-byte-weight": 141556
+        }
+      ],
+      "median": {
+        "score": 0.97,
+        "first-contentful-paint": 755.8902,
+        "largest-contentful-paint": 1807.3661,
+        "speed-index": 769.8026539859341,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.09589136150969471,
+        "total-byte-weight": 141556
+      }
+    },
+    "ssr": {
+      "runs": [
+        {
+          "score": 1,
+          "first-contentful-paint": 756.2633000000001,
+          "largest-contentful-paint": 1806.2633,
+          "speed-index": 756.2633000000001,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0,
+          "total-byte-weight": 141571
+        },
+        {
+          "score": 1,
+          "first-contentful-paint": 754.4244000000001,
+          "largest-contentful-paint": 1804.4244,
+          "speed-index": 754.4244000000001,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0,
+          "total-byte-weight": 141571
+        },
+        {
+          "score": 1,
+          "first-contentful-paint": 754.1877,
+          "largest-contentful-paint": 1804.1877,
+          "speed-index": 754.1877,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0,
+          "total-byte-weight": 141571
+        }
+      ],
+      "median": {
+        "score": 1,
+        "first-contentful-paint": 754.4244000000001,
+        "largest-contentful-paint": 1804.4244,
+        "speed-index": 754.4244000000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "total-byte-weight": 141571
+      }
+    },
+    "inline-css": {
+      "runs": [
+        {
+          "score": 0.99,
+          "first-contentful-paint": 635.76505,
+          "largest-contentful-paint": 1959.5301,
+          "speed-index": 635.76505,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0,
+          "total-byte-weight": 150213
+        },
+        {
+          "score": 0.99,
+          "first-contentful-paint": 639.9078,
+          "largest-contentful-paint": 1955.8156,
+          "speed-index": 639.9078,
+          "total-blocking-time": 1,
+          "cumulative-layout-shift": 0,
+          "total-byte-weight": 150213
+        },
+        {
+          "score": 1,
+          "first-contentful-paint": 640.53705,
+          "largest-contentful-paint": 1809.0740999999998,
+          "speed-index": 640.53705,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0,
+          "total-byte-weight": 150213
+        }
+      ],
+      "median": {
+        "score": 0.99,
+        "first-contentful-paint": 639.9078,
+        "largest-contentful-paint": 1955.8156,
+        "speed-index": 639.9078,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "total-byte-weight": 150213
+      }
+    },
+    "baseline-normalized": {
+      "runs": [
+        {
+          "score": 0.97,
+          "first-contentful-paint": 763.2097000000001,
+          "largest-contentful-paint": 1963.2097000000003,
+          "speed-index": 763.2097000000001,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0.09589136150969471,
+          "total-byte-weight": 150753
+        },
+        {
+          "score": 0.99,
+          "first-contentful-paint": 755.1782000000001,
+          "largest-contentful-paint": 1955.1781999999998,
+          "speed-index": 755.1782000000001,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0.005519037105299117,
+          "total-byte-weight": 150753
+        },
+        {
+          "score": 0.95,
+          "first-contentful-paint": 754.2559000000001,
+          "largest-contentful-paint": 1954.2559,
+          "speed-index": 754.2559000000001,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0.1310146177116291,
+          "total-byte-weight": 150753
+        }
+      ],
+      "median": {
+        "score": 0.97,
+        "first-contentful-paint": 755.1782000000001,
+        "largest-contentful-paint": 1955.1781999999998,
+        "speed-index": 755.1782000000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.09589136150969471,
+        "total-byte-weight": 150753
+      }
+    },
+    "final": {
+      "runs": [
+        {
+          "score": 1,
+          "first-contentful-paint": 606.3063,
+          "largest-contentful-paint": 1804.6126,
+          "speed-index": 606.3063,
+          "total-blocking-time": 27,
+          "cumulative-layout-shift": 0,
+          "total-byte-weight": 139433
+        },
+        {
+          "score": 1,
+          "first-contentful-paint": 638.07785,
+          "largest-contentful-paint": 1808.1556999999998,
+          "speed-index": 638.07785,
+          "total-blocking-time": 25,
+          "cumulative-layout-shift": 0,
+          "total-byte-weight": 139433
+        },
+        {
+          "score": 1,
+          "first-contentful-paint": 639.0751,
+          "largest-contentful-paint": 1808.1502,
+          "speed-index": 639.0751,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0,
+          "total-byte-weight": 139433
+        }
+      ],
+      "median": {
+        "score": 1,
+        "first-contentful-paint": 638.07785,
+        "largest-contentful-paint": 1808.1502,
+        "speed-index": 638.07785,
+        "total-blocking-time": 25,
+        "cumulative-layout-shift": 0,
+        "total-byte-weight": 139433
+      }
+    },
+    "final-isolated": {
+      "runs": [
+        {
+          "score": 1,
+          "first-contentful-paint": 602.83155,
+          "largest-contentful-paint": 1837.6631000000002,
+          "speed-index": 1570.646140043726,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0,
+          "total-byte-weight": 139433
+        },
+        {
+          "score": 0.99,
+          "first-contentful-paint": 603.31055,
+          "largest-contentful-paint": 1804.6211,
+          "speed-index": 603.31055,
+          "total-blocking-time": 71,
+          "cumulative-layout-shift": 0,
+          "total-byte-weight": 139433
+        },
+        {
+          "score": 1,
+          "first-contentful-paint": 632.8692,
+          "largest-contentful-paint": 1803.7384,
+          "speed-index": 632.8692,
+          "total-blocking-time": 0,
+          "cumulative-layout-shift": 0,
+          "total-byte-weight": 139433
+        }
+      ],
+      "median": {
+        "score": 1,
+        "first-contentful-paint": 603.31055,
+        "largest-contentful-paint": 1804.6211,
+        "speed-index": 632.8692,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "total-byte-weight": 139433
+      }
+    }
+  },
+  "lighthouseVersion": "13.5.0",
+  "chrome": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+  "throttling": {
+    "rttMs": 150,
+    "throughputKbps": 1638.4,
+    "requestLatencyMs": 562.5,
+    "downloadThroughputKbps": 1474.5600000000002,
+    "uploadThroughputKbps": 675,
+    "cpuSlowdownMultiplier": 4
+  },
+  "viewport": {
+    "mobile": true,
+    "width": 412,
+    "height": 823,
+    "deviceScaleFactor": 1.75,
+    "disabled": false
+  }
+}

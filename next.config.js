@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    // The entire stylesheet is under 6 KB. Inline it in generated HTML to
+    // remove the render-blocking request, including theme/media-query rules.
+    optimizeCss: { inlineThreshold: 10000 },
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
   },
