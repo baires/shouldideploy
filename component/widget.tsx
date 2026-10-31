@@ -1,15 +1,14 @@
 import React from 'react'
-import { getRandom } from '../helpers/constants'
 import Time from '../helpers/time'
 import { useTranslation } from '../helpers/i18n'
 
 interface IWidget {
   now: Time
-  reason: string
+  reasonSeed: number
 }
 
 const Widget = (props: IWidget) => {
-  const [reason, setReasons] = React.useState<string>()
+  const [reasonSeed, setReasonSeed] = React.useState(props.reasonSeed)
   const { t } = useTranslation()
 
   /**
@@ -58,28 +57,13 @@ const Widget = (props: IWidget) => {
     return 'to_deploy'
   }, [props.now.timezone, props.now.customDate])
 
-  /**
-   * Get reasons according to current time
-   * @return string[]
-   */
-  const getReasons = React.useCallback(() => {
-    // Get reasons from translation based on current language
-    return t(`reasons.${getReasonKey()}`)
-  }, [t, getReasonKey])
-
-  /**
-   * update and get random reasons
-   * @return void
-   */
+  // The seed is serialized with the page so SSR and hydration choose the
+  // same message. Language/time changes derive a message without another render.
+  const reasons: string[] = t(`reasons.${getReasonKey()}`)
+  const reason = reasons[Math.floor(reasonSeed * reasons.length)]
   const updateReasons = React.useCallback(() => {
-    const reasons = getReasons()
-    setReasons(getRandom(reasons))
-  }, [getReasons])
-
-  React.useEffect(() => {
-    // Update reasons when language changes
-    updateReasons()
-  }, [updateReasons])
+    setReasonSeed(Math.random())
+  }, [])
 
   /**
    * On hitting Space reload reasons

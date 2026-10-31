@@ -12,7 +12,7 @@ import { Theme, ThemeType } from '../helpers/themes'
 interface IPage {
   tz: string
   now: { timezone: string; customDate: string }
-  initialReason: string
+  reasonSeed: number
 }
 
 const isValidCustomDate = (date?: string): date is string => {
@@ -24,7 +24,7 @@ const isValidCustomDate = (date?: string): date is string => {
   return !Number.isNaN(parsedDate.getTime()) && parsedDate.toISOString().startsWith(date)
 }
 
-const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
+const Page: React.FC<IPage> = ({ tz, now: initialNow, reasonSeed }) => {
   const router = useRouter()
   const queryTz = router.query.tz
   const resolvedTz =
@@ -93,7 +93,7 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, initialReason }) => {
         <meta property="og:image" content={`${getBaseUrl()}/api/og`} />
       </Head>
       <div className={`wrapper ${!shouldIDeploy(now) && 'its-friday'}`}>
-        <Widget reason={initialReason} now={now} />
+        <Widget reasonSeed={reasonSeed} now={now} />
         <div className="meta">
           <Footer
             timezone={timezone}
@@ -113,6 +113,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
+      reasonSeed: Math.random(),
       tz: timezone,
       now: time ? time.toObject() : null
     },
