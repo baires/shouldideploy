@@ -44,7 +44,7 @@ cp scripts/performance-audit.mjs /tmp/shouldideploy-perf/audit.mjs
 node /tmp/shouldideploy-perf/audit.mjs comparison http://localhost:3100/
 ```
 
-The audit uses macOS Google Chrome by default; set `CHROME_PATH` to override it. Full Lighthouse JSON reports are written to `/tmp/shouldideploy-perf/results` (override with `PERF_OUTPUT`). Temporary tooling stays outside project dependencies.
+The audit uses macOS Google Chrome by default; set `CHROME_PATH` to override it. Full Lighthouse JSON reports are written to a unique private directory under the OS temporary directory; its path is printed at startup. Set `PERF_OUTPUT` to choose the parent directory. Report files are created exclusively with owner-only permissions. Temporary tooling stays outside project dependencies.
 
 Browser checks use the same temporary dependencies and should run from the repository root:
 
