@@ -27,10 +27,9 @@ const isValidCustomDate = (date?: string): date is string => {
 const Page: React.FC<IPage> = ({ tz, now: initialNow, reasonSeed }) => {
   const router = useRouter()
   const queryTz = router.query.tz
-  const resolvedTz =
-    typeof queryTz === 'string' && Time.zoneExists(queryTz) ? queryTz : tz
-  const [timezone, setTimezone] = useState<string>(resolvedTz)
-  const [now, setNow] = useState<any>(new Time(resolvedTz, initialNow.customDate))
+  const queryDate = router.query.date
+  const [now, setNow] = useState(() => new Time(tz, initialNow.customDate))
+  const timezone = now.timezone
   const [theme, setTheme] = useState<ThemeType>(Theme.Light)
 
   useEffect(() => {
@@ -49,13 +48,27 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, reasonSeed }) => {
   }, [])
 
   useEffect(() => {
+    if (!router.isReady) return
+
+    let resolvedTimezone = tz
+    if (typeof queryTz === 'string' && Time.zoneExists(queryTz)) {
+      resolvedTimezone = queryTz
+    } else {
+      try {
+        const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+        if (Time.zoneExists(browserTimezone)) resolvedTimezone = browserTimezone
+      } catch {
+        resolvedTimezone = tz
+      }
+    }
+
     const customDate =
-      typeof router.query.date === 'string' && isValidCustomDate(router.query.date)
-        ? router.query.date
+      typeof queryDate === 'string' && isValidCustomDate(queryDate)
+        ? queryDate
         : undefined
 
-    setNow(new Time(timezone, customDate))
-  }, [router.query.date])
+    setNow(new Time(resolvedTimezone, customDate))
+  }, [router.isReady, queryTz, queryDate, tz])
 
   const applyTheme = (newTheme: ThemeType) => {
     document.documentElement.setAttribute('data-theme', newTheme)
@@ -77,9 +90,6 @@ const Page: React.FC<IPage> = ({ tz, now: initialNow, reasonSeed }) => {
     const newUrl = new URL(window.location.toString())
     newUrl.searchParams.set('tz', newTimezone)
     router.push(newUrl.pathname + newUrl.search)
-
-    setTimezone(newTimezone)
-    setNow(new Time(newTimezone))
   }
 
   const { t } = useTranslation()
