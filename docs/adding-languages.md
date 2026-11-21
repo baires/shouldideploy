@@ -13,12 +13,16 @@ This guide explains how to add new language translations to the application.
    - Keep the same JSON structure
    - Don't change the keys, only the values
 
-3. **Import the locale in server-side i18n**
+3. **Register the locale in the client side loader**
+   - Open `helpers/locale-loading.ts`.
+   - Add the new locale to the `loaders` object using the language code as the key and a dynamic import pointing to the translation file.
+
+4. **Import the locale in server-side i18n**
    - Open `helpers/i18n-server.ts`
    - Add import: `import {lang} from '../locales/{lang}.json'`
    - Add to `locales` object: `{lang}: {lang}`
 
-4. **Test**
+5. **Test**
    - Restart dev server
    - Test API: `curl "localhost:3000/api?lang={lang}"`
    - Test UI: Change language in footer dropdown
@@ -34,13 +38,17 @@ This guide explains how to add new language translations to the application.
    - Modify strings to use regional slang, terms, or cultural references
    - Keep the same JSON structure
 
-3. **Import the locale in server-side i18n**
+3. **Register the locale in the client side loader**
+   - Open `helpers/locale-loading.ts`.
+   - Add the new locale to the `loaders` object using the language code as the key and a dynamic import pointing to the translation file.
+
+4. **Import the locale in server-side i18n**
    - Open `helpers/i18n-server.ts`
    - Add import: `import {langREGION} from '../locales/{lang}-{REGION}.json'`
    - Add to `locales` object: `'{lang}-{REGION}': {langREGION}`
    - Note: Use quotes for keys with hyphens
 
-4. **Test**
+5. **Test**
    - Restart dev server
    - Test API: `curl "localhost:3000/api?lang={lang}-{REGION}"`
    - Test fallback: `curl "localhost:3000/api?lang={lang}-XX"` should use base language
