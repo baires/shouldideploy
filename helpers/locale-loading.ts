@@ -11,6 +11,7 @@ const loaders: Record<string, () => Promise<{ default: LocaleData }>> = {
   sl: () => import('../locales/sl.json'),
   el: () => import('../locales/el.json'),
   bg: () => import('../locales/bg.json'),
+  'zh-HK': () => import('../locales/zh-HK.json'),
 }
 
 export const availableLanguages = ['en', ...Object.keys(loaders)]
