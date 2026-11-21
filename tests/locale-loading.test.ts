@@ -11,6 +11,7 @@ describe('locale loading', () => {
     ['cs', 'cs', 'Mám dnes nasadit?'],
     ['sl', 'sl', 'Naj danes objavim kodo?'],
     ['el', 'el', 'Να κάνω deploy σήμερα;'],
+    ['zh-HK', 'zh-HK', '今日應唔應該Deploy?'],
   ])('loads %s with the correct regional fallback', async (requested, language, title) => {
     const locale = await loadLocale(requested)
     expect(locale.language).toBe(language)
