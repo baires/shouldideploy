@@ -37,7 +37,7 @@
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "6.0.2",
-    "typescript-eslint": "^8.72.0"
+    "typescript-eslint": "^8.73.0"
   },
   "overrides": {
     "typescript": "6.0.2"
