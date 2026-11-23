@@ -6,6 +6,7 @@ import cs from '../locales/cs.json'
 import sl from '../locales/sl.json'
 import el from '../locales/el.json'
 import bg from '../locales/bg.json'
+import zhHK from '../locales/zh-HK.json'
 
 type LocaleData = typeof en
 
@@ -17,7 +18,8 @@ const locales: Record<string, LocaleData> = {
   cs,
   sl,
   el,
-  bg
+  bg,
+  'zh-HK':zhHK
 }
 
 /**
