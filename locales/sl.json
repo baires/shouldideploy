@@ -157,6 +157,28 @@
       "Nimaš mačka?",
       "Spij raje še en kozarec šampanjca 🥂",
       "Danes praznuj, objavljaj jutri 🎇"
+    ],
+    "thanksgiving": [
+      "Pojdi jest purana 🦃",
+      "Bodi hvaležen, da danes ne nameščaš",
+      "Nikogar ni, ki bi naredil rollback",
+      "Podaj omako, ne builda",
+      "Namesti v ponedeljek, danes jej pito 🥧"
+    ],
+    "black_friday": [
+      "Danes je Black Friday. Želiš, da bo črni petek tudi za tvoje strežnike?",
+      "Promet je rekorden, tveganje tudi",
+      "Code freeze! 🥶",
+      "Danes naj padajo samo cene 💸",
+      "Dežurni inženir te že sovraži",
+      "Ne. Danes ne. Ne na Black Friday."
+    ],
+    "cyber_monday": [
+      "Danes je Cyber Monday, strežniki se že potijo 🥵",
+      "Code freeze še vedno velja 🥶",
+      "Klicala je stran za plačilo: drži se stran",
+      "Popusti so aktivni, namestitve niso",
+      "Počakaj vsaj do torka"
     ]
   }
 }

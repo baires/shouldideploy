@@ -83,7 +83,10 @@ This means:
     "weekend": ["...", "..."],
     "day_before_christmas": ["...", "..."],
     "christmas": ["...", "..."],
-    "new_year": ["...", "..."]
+    "new_year": ["...", "..."],
+    "thanksgiving": ["...", "..."],
+    "black_friday": ["...", "..."],
+    "cyber_monday": ["...", "..."]
   }
 }
 ```

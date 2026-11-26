@@ -137,6 +137,28 @@
       "Você não está de ressaca?",
       "Tome outra taça de champanhe 🥂",
       "Comemore hoje, faça deploy amanhã 🎇"
+    ],
+    "thanksgiving": [
+      "Vai comer peru 🦃",
+      "Agradeça por não ter feito deploy hoje",
+      "Não tem ninguém para fazer rollback",
+      "Passa o molho, não o build",
+      "Deploy na segunda, hoje é dia de torta 🥧"
+    ],
+    "black_friday": [
+      "É Black Friday. Quer que seja uma sexta-feira negra para os seus servidores também?",
+      "O tráfego está nas alturas, e o risco também",
+      "Code freeze! 🥶",
+      "A única coisa que deve cair hoje são os preços 💸",
+      "Quem está de plantão já te odeia",
+      "Não. Hoje não. Não na Black Friday."
+    ],
+    "cyber_monday": [
+      "É Cyber Monday, os servidores já estão suando 🥵",
+      "O code freeze continua 🥶",
+      "A página de checkout ligou: pediu para você ficar longe",
+      "As ofertas estão no ar, os deploys não",
+      "Espere pelo menos até terça"
     ]
   }
 }

@@ -30,6 +30,18 @@ const Widget = (props: IWidget) => {
       return 'new_year'
     }
 
+    if (time.isThanksgiving()) {
+      return 'thanksgiving'
+    }
+
+    if (time.isBlackFriday()) {
+      return 'black_friday'
+    }
+
+    if (time.isCyberMonday()) {
+      return 'cyber_monday'
+    }
+
     if (time.isFriday13th()) {
       return 'friday_13th'
     }
