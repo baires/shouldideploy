@@ -151,6 +151,28 @@
       "Reprends une coupe de champagne 🥂",
       "Fête aujourd'hui, déploie demain 🎇",
       "Bonne année, bonne santé, et surtout pas de rollback"
+    ],
+    "thanksgiving": [
+      "Va plutôt manger de la dinde 🦃",
+      "Réjouis-toi de ne pas avoir déployé aujourd’hui",
+      "Il n’y a personne pour faire un rollback",
+      "Fais passer la sauce et garde le build pour plus tard",
+      "Aujourd’hui, c’est jour de tarte 🥧"
+    ],
+    "black_friday": [
+      "C’est le Black Friday. Tes serveurs aussi risquent de passer un vendredi noir.",
+      "Le trafic bat des records, et le risque aussi",
+      "Gel des déploiements ! 🥶",
+      "Les prix sont les seuls à pouvoir chuter aujourd’hui 💸",
+      "Laisse l’équipe d’astreinte passer un vendredi tranquille",
+      "Attends la fin du Black Friday."
+    ],
+    "cyber_monday": [
+      "C’est le Cyber Monday, les serveurs transpirent déjà 🥵",
+      "Le gel des déploiements est toujours en vigueur 🥶",
+      "La page de paiement a appelé. Elle préfère qu’on la laisse tranquille.",
+      "Les promos sont en ligne, les déploiements attendront",
+      "Attends au moins jusqu’à mardi"
     ]
   }
 }
