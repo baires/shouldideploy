@@ -40,8 +40,8 @@ describe('i18n Server Helper', () => {
     })
 
     it('should fall back to English if key missing in target language', () => {
-      // 'fr' is not in the locales list, so it should fallback to 'en'
-      expect(translate('meta.title', 'fr')).toBe('Should I Deploy Today?')
+      // 'de' is not in the locales list, so it should fallback to 'en'
+      expect(translate('meta.title', 'de')).toBe('Should I Deploy Today?')
     })
 
     it('should return the key if not found in any language', () => {

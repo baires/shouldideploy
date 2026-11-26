@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "title": "Est-ce que je peux déployer aujourd'hui ?",
+    "description": "Est-ce que je peux déployer aujourd'hui ?"
+  },
+  "tagline": "Est-ce que je peux déployer aujourd'hui ?",
+  "reload": {
+    "hit": "Appuie sur",
+    "space": "Espace",
+    "or_click": "ou clique"
+  },
+  "footer": {
+    "share": "Partager :",
+    "source": "Source :",
+    "timezone": "Fuseau horaire :",
+    "theme": "Thème :",
+    "api": "API",
+    "slack_api": "API Slack",
+    "badge": "Badge",
+    "cli": "CLI",
+    "language": "Langue :"
+  },
+  "slack": {
+    "footer": "Est-ce que je peux déployer aujourd'hui"
+  },
+  "reasons": {
+    "to_deploy": [
+      "Je ne vois pas pourquoi pas",
+      "On est en démocratie",
+      "Vas-y mon pote !",
+      "Fonce",
+      "Allez allez allez !",
+      "C'est parti !",
+      "Mets en prod ! 🚢",
+      "Laisse-toi porter 🌊",
+      "Harder better faster stronger",
+      "Rock'n'roll !",
+      "Rends-moi fier",
+      "Merde !",
+      "Allez les Bleus !",
+      "On lâche rien !",
+      "On ne sait jamais, sur un malentendu ça peut marcher",
+      "Allez, à l'abordage !"
+    ],
+    "to_not_deploy": [
+      "Je ne te le conseille pas",
+      "Non, on est vendredi",
+      "Et lundi, alors ?",
+      "Pas aujourd'hui",
+      "Nan",
+      "Pourquoi ?",
+      "Les tests sont passés ? Sûrement pas",
+      "¯\\_(ツ)_/¯",
+      "😹",
+      "Non",
+      "Non. Respire, compte jusqu'à 10, et recommence",
+      "Je préfère une glace 🍦",
+      "Comment tu peux me faire ça ? 🥺",
+      "Allumer le feu 🔥, c'est ça ton plan ?",
+      "Tu aimes jouer avec le feu, hein ?",
+      "Les bugs n'attendent que toi",
+      "Faut pas respirer la compote, ça fait tousser",
+      "C'est pas faux. Mais non."
+    ],
+    "thursday_afternoon": [
+      "Tu comptes dormir cette nuit ?",
+      "Appelle ta moitié !",
+      "Tu vas finir tard ce soir ?",
+      "Dis à ton chef que t'as trouvé un bug et rentre chez toi",
+      "Et lundi, alors ?",
+      "Je ne te le conseille pas",
+      "Pas aujourd'hui",
+      "Nan",
+      "Non. Respire, compte jusqu'à 10, et recommence",
+      "Okaaaay... non."
+    ],
+    "friday_afternoon": [
+      "Même pas en rêve",
+      "T'es fou ?",
+      "Mais qu'est-ce qui te passe par la tête ?",
+      "Non non non non non non non non",
+      "Ça te dit de bosser la nuit et le week-end ?",
+      "🔥 🚒 🚨 ⛔️ 🔥 🚒 🚨 ⛔️ 🔥 🚒 🚨 ⛔️",
+      "Non ! Mon Dieu ! Pitié ! Non",
+      "Non non non non non non non !",
+      "Continue de rêver, mon chou",
+      "Pourquoi, mais pourquoi ?",
+      "Mais mais mais... pourquoi ?",
+      "On déploie le lundi, comme ça t'as jusqu'au vendredi pour réparer.",
+      "YOLO ! On ne vit qu'une fois !",
+      "Error in line NaN Col -2 unexpected 'undefined'",
+      "us-east-1 is not a valid region",
+      "500 Internal Server Error",
+      "Une erreur est survenue",
+      "Ils sont fous ces devs !",
+      "Les cons, ça ose tout. C'est même à ça qu'on les reconnaît.",
+      "Cassé !",
+      "Nom de Zeus ! Pas un vendredi, Marty !"
+    ],
+    "friday_13th": [
+      "Sérieux ? On est vendredi 13 !",
+      "Tu crois à la malchance ?",
+      "Un chat noir vient de passer 🐈‍⬛",
+      "Vendredi 13 : joue plutôt au Loto",
+      "Prier ne te sauvera pas si tu fais ça",
+      "T'as regardé le calendrier aujourd'hui ?",
+      "📅 Vendredi 13. T'en penses quoi ?",
+      "Juste non !",
+      "Mais mais mais... pourquoi ?",
+      "Par Toutatis, pas aujourd'hui !"
+    ],
+    "afternoon": [
+      "Tu comptes dormir cette nuit ?",
+      "Appelle ta moitié !",
+      "Tu vas finir tard ce soir ?",
+      "Demain ?",
+      "Non",
+      "Dis à ton chef que t'as trouvé un bug et rentre chez toi",
+      "T'as toute la journée de demain devant toi !",
+      "Crois-moi, ils préfèrent une nuit sans panne",
+      "Tu fais confiance à tes logs à ce point-là ?"
+    ],
+    "weekend": [
+      "Rentre chez toi, t'es bourré",
+      "Et lundi, alors ?",
+      "Une bière ?",
+      "Coder bourré, c'est pas une bonne idée !",
+      "Je vois que t'as déployé vendredi",
+      "Je t'avais dit que lundi c'était mieux !",
+      "Il y a 2^1000 autres idées.",
+      "Va manger, le gras c'est la vie"
+    ],
+    "day_before_christmas": [
+      "T'es le Père Noël 🧑‍🎄 ou quoi ?",
+      "🎶🎵 Petit papa Noël 🎵🎶",
+      "🎄 Profite des fêtes ! 🎄 ",
+      "Reprends donc une part de bûche",
+      "Tu peux pas attendre l'ouverture des cadeaux ?",
+      "Vas-y, déploie... \n ta famille adorera te voir réparer la prod sur ton téléphone pendant le réveillon"
+    ],
+    "christmas": [
+      "Non, le Père Fouettard va passer te voir",
+      "Va plutôt t'occuper de la dinde aux marrons",
+      "Tu devrais pas être en train de préparer le repas de Noël ?",
+      "Le Père Noël est une ordure. Toi aussi si tu déploies aujourd'hui",
+      "Joyeux Noël, Félix !"
+    ],
+    "new_year": [
+      "Bonne année ! \n déploie le 2 janvier",
+      "T'as pas la gueule de bois ?",
+      "Reprends une coupe de champagne 🥂",
+      "Fête aujourd'hui, déploie demain 🎇",
+      "Bonne année, bonne santé, et surtout pas de rollback"
+    ]
+  }
+}

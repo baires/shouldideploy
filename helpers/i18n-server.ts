@@ -1,6 +1,7 @@
 import en from '../locales/en.json'
 import es from '../locales/es.json'
 import esAR from '../locales/es-AR.json'
+import fr from '../locales/fr.json'
 import pt from '../locales/pt.json'
 import cs from '../locales/cs.json'
 import sl from '../locales/sl.json'
@@ -14,6 +15,7 @@ const locales: Record<string, LocaleData> = {
   en,
   es,
   'es-AR': esAR,
+  fr,
   pt,
   cs,
   sl,
