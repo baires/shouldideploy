@@ -5,13 +5,14 @@ describe('locale loading', () => {
     ['en', 'en', 'Should I Deploy Today?'],
     ['es-AR', 'es-AR', '¿Debería deployar hoy?'],
     ['es-MX', 'es', '¿Debería desplegar hoy?'],
-    ['fr-CA', 'en', 'Should I Deploy Today?'],
+    ['de-AT', 'en', 'Should I Deploy Today?'],
     ['bg', 'bg', 'Да деплойна ли днес?'],
     ['pt', 'pt', 'Devo fazer deploy hoje?'],
     ['cs', 'cs', 'Mám dnes nasadit?'],
     ['sl', 'sl', 'Naj danes objavim kodo?'],
     ['el', 'el', 'Να κάνω deploy σήμερα;'],
     ['zh-HK', 'zh-HK', '今日應唔應該Deploy?'],
+    ['fr-CA', 'fr', "Est-ce que je peux déployer aujourd'hui ?"],
   ])('loads %s with the correct regional fallback', async (requested, language, title) => {
     const locale = await loadLocale(requested)
     expect(locale.language).toBe(language)

@@ -6,6 +6,7 @@ export type LocaleData = typeof en
 const loaders: Record<string, () => Promise<{ default: LocaleData }>> = {
   es: () => import('../locales/es.json'),
   'es-AR': () => import('../locales/es-AR.json'),
+  fr: () => import('../locales/fr.json'),
   pt: () => import('../locales/pt.json'),
   cs: () => import('../locales/cs.json'),
   sl: () => import('../locales/sl.json'),
