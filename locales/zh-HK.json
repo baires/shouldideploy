@@ -136,6 +136,28 @@
       "你唔係仲酒醉緊咩?",
       "不如飲多杯香檳啦 🥂",
       "今日盡情慶祝,聽日先deploy 🎇"
+    ],
+    "thanksgiving": [
+      "去食火雞啦 🦃",
+      "感恩你今日冇 deploy",
+      "冇人幫你 rollback",
+      "遞個汁過嚟，唔好遞 build",
+      "星期一先 deploy，今日食批 🥧"
+    ],
+    "black_friday": [
+      "今日係 Black Friday，你想你啲 server 都黑色星期五？",
+      "流量爆燈，風險都爆燈",
+      "Code freeze！🥶",
+      "今日只應該跌價 💸",
+      "On-call 嗰位已經恨死你",
+      "唔得。今日唔得。Black Friday 唔得。"
+    ],
+    "cyber_monday": [
+      "今日係 Cyber Monday，啲 server 已經出晒汗 🥵",
+      "Code freeze 仲未完 🥶",
+      "結帳頁打嚟話：唔該你行開",
+      "優惠上咗線，deploy 未得",
+      "起碼等到星期二啦"
     ]
   }
 }

@@ -93,6 +93,18 @@ export function dayHelper(time: Time, lang?: string): string[] {
     return getTranslatedReasons('new_year', language)
   }
 
+  if (time.isThanksgiving()) {
+    return getTranslatedReasons('thanksgiving', language)
+  }
+
+  if (time.isBlackFriday()) {
+    return getTranslatedReasons('black_friday', language)
+  }
+
+  if (time.isCyberMonday()) {
+    return getTranslatedReasons('cyber_monday', language)
+  }
+
   if (time.isFriday13th()) {
     return getTranslatedReasons('friday_13th', language)
   }

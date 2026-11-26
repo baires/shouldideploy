@@ -137,6 +137,28 @@
       "Aren't you hungover?",
       "Take another glass of champagne 🥂",
       "Celebrate today, deploy tomorrow 🎇"
+    ],
+    "thanksgiving": [
+      "Go eat some turkey 🦃",
+      "Give thanks you didn't deploy today",
+      "Nobody is around to roll it back",
+      "Pass the gravy, not the build",
+      "Deploy on Monday, eat pie today 🥧"
+    ],
+    "black_friday": [
+      "It's Black Friday. Do you want it to be a Black Friday for your servers too?",
+      "Traffic is at an all-time high, and so is the risk",
+      "Code freeze! 🥶",
+      "The only thing that should drop today is prices 💸",
+      "Your on-call engineer already hates you",
+      "Nope. Not today. Not on Black Friday."
+    ],
+    "cyber_monday": [
+      "It's Cyber Monday, the servers are already sweating 🥵",
+      "Code freeze is still on 🥶",
+      "The checkout page called, it wants you to stay away",
+      "Deals are live, deploys are not",
+      "Wait until Tuesday, at least"
     ]
   }
 }

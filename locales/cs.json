@@ -152,6 +152,28 @@
       "Nemáš kocovinu?",
       "Dej si další skleničku šampaňského 🥂",
       "Dneska slav, nasazuj zítra 🎇"
+    ],
+    "thanksgiving": [
+      "Běž si dát krocana 🦃",
+      "Buď vděčný, že dnes nenasazuješ",
+      "Nikdo tu není, kdo by udělal rollback",
+      "Podej omáčku, ne build",
+      "Nasaď v pondělí, dnes si dej koláč 🥧"
+    ],
+    "black_friday": [
+      "Je Black Friday. Chceš, aby to byl černý pátek i pro tvoje servery?",
+      "Provoz je rekordní a riziko taky",
+      "Code freeze! 🥶",
+      "Dnes by měly padat jen ceny 💸",
+      "Tvůj kolega na pohotovosti už tě nenávidí",
+      "Ne. Dnes ne. Ne na Black Friday."
+    ],
+    "cyber_monday": [
+      "Je Cyber Monday, servery se už potí 🥵",
+      "Code freeze stále platí 🥶",
+      "Volala stránka pokladny: máš se jí držet dál",
+      "Slevy běží, nasazení ne",
+      "Počkej aspoň do úterý"
     ]
   }
 }

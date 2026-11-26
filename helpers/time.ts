@@ -176,10 +176,59 @@ export default class Time {
   }
 
   /**
+   * Is it Thanksgiving (US, fourth Thursday of November)?
+   * @returns boolean
+   */
+  isThanksgiving(): boolean {
+    const date = this.getDate()
+    return (
+      date.getMonth() === 10 &&
+      date.getDay() === 4 &&
+      date.getDate() >= 22 &&
+      date.getDate() <= 28
+    )
+  }
+
+  /**
+   * Is it Black Friday (the day after Thanksgiving)?
+   * @returns boolean
+   */
+  isBlackFriday(): boolean {
+    const date = this.getDate()
+    return (
+      date.getMonth() === 10 &&
+      date.getDay() === 5 &&
+      date.getDate() >= 23 &&
+      date.getDate() <= 29
+    )
+  }
+
+  /**
+   * Is it Cyber Monday (the Monday after Thanksgiving)?
+   * Falls between November 26th and December 2nd.
+   * @returns boolean
+   */
+  isCyberMonday(): boolean {
+    const date = this.getDate()
+    return (
+      date.getDay() === 1 &&
+      ((date.getMonth() === 10 && date.getDate() >= 26) ||
+        (date.getMonth() === 11 && date.getDate() <= 2))
+    )
+  }
+
+  /**
    * Combine if holidays
    * @returns boolean
    */
   isHolidays(): boolean {
-    return this.isDayBeforeChristmas() || this.isChristmas() || this.isNewYear()
+    return (
+      this.isDayBeforeChristmas() ||
+      this.isChristmas() ||
+      this.isNewYear() ||
+      this.isThanksgiving() ||
+      this.isBlackFriday() ||
+      this.isCyberMonday()
+    )
   }
 }
