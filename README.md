@@ -89,6 +89,25 @@ You can also customize the badge appearance with the `?style=` parameter. Suppor
 ![Should I Deploy?](https://shouldideploy.today/api/badge?tz=America/New_York&style=for-the-badge)
 ```
 
+### GitHub Action
+
+The official way to gate PRs and deploy jobs on GitHub: [baires/shouldideploy-action](https://github.com/baires/shouldideploy-action).
+
+```yaml
+- uses: baires/shouldideploy-action@v1
+```
+
+By default it fails the step (blocking the job) on no-deploy days — set `fail-on-no-deploy: "false"` to only warn instead. It can also post a sticky comment on the PR with the verdict and reason:
+
+```yaml
+- uses: baires/shouldideploy-action@v1
+  with:
+    comment-on-pr: "true"
+    github-token: ${{ secrets.GITHUB_TOKEN }}
+```
+
+See the [action's README](https://github.com/baires/shouldideploy-action#readme) for all inputs and outputs.
+
 ### CLI / Pipeline gate
 
 Block a deploy step in any CI pipeline:
@@ -124,7 +143,7 @@ Example response:
 
 ## Community projects
  - [gustamms/devo-fazer-deploy-hoje](https://github.com/gustamms/devo-fazer-deploy-hoje) Versão brasileira do site https://shouldideploy.today/
- - [timelfrink/shouldideploy-action](https://github.com/timelfrink/shouldideploy-action) This action checks the website shouldideploy.today and stops deployments if the site tells us not to do so.
+ - [timelfrink/shouldideploy-action](https://github.com/timelfrink/shouldideploy-action) This action checks the website shouldideploy.today and stops deployments if the site tells us not to do so. (See [GitHub Action](#github-action) above for the official action.)
  - [panacaqui/should-i-deploy-today-discord-bot](https://github.com/panacaqui/should-i-deploy-today-discord-bot) A simple API to send a daily message from shouldideploy.today in a Discord channel.
  - [MatheusHAS/shouldideploytoday-for-pipeline](https://github.com/MatheusHAS/shouldideploytoday-for-pipeline) This example of implementation, consumes the shouldideploy.today API to decide on my pipeline if will be deploy process run or not.
  - [Brunomachadob/shouldideploy-slack](https://github.com/Brunomachadob/shouldideploy-slack) Should I Deploy Slack command
